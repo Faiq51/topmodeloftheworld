@@ -1,0 +1,877 @@
+/* ==========================================================================
+   1. GLOBAL SETUP
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    /* High-end background with overlay for text readability */
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('../images/a.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: scroll; 
+    min-height: 100vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================================================
+   2. NAVIGATION BAR
+   ========================================================================== */
+nav {
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #d4af37;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #d4af37;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+/* ==========================================================================
+   3. HERO SECTION (Centered Content)
+   ========================================================================== */
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.hero-container {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    padding: 60px 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    text-align: center;
+    max-width: 900px;
+    width: 100%;
+}
+
+.text-top {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 300;
+}
+
+.text-middle {
+    font-family: 'Playfair Display', serif;
+    color: #d4af37;
+    font-size: 4rem; /* Larger gold font */
+    margin: 0 0 20px 0;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+.text-bottom {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin: 0 0 35px 0;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* Call to Action Button */
+.cta-button {
+    display: block;
+    width: 100%; /* Makes it span the full width of the form */
+    padding: 15px;
+    background-color: #d4af37;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #fff;
+}
+
+/* ==========================================================================
+   4. FOOTER
+   ========================================================================== */
+footer {
+    background-color: #000;
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid #1a1a1a;
+}
+
+.social-container {
+    margin-bottom: 20px;
+}
+
+.social-container a {
+    color: #d4af37;
+    font-size: 1.8rem;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+.social-container a:hover {
+    color: #fff;
+}
+
+.footer-nav {
+    margin-bottom: 15px;
+}
+
+.footer-nav a {
+    color: #888;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+footer p {
+    color: #555;
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
+
+/* ==========================================================================
+   5. MOBILE RESPONSIVENESS (Hamburger Menu & Scaling)
+   ========================================================================== */
+.menu-toggle {
+    display: none;
+    color: #d4af37;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* Form Page Specifics */
+.form-page {
+    padding: 60px 20px;
+}
+
+.form-container {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(15px);
+    padding: 50px;
+    border-radius: 10px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    max-width: 700px;
+    width: 100%;
+    margin: auto;
+}
+
+.form-subtitle {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+label {
+    color: #d4af37;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+input, select {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #444;
+    padding: 12px;
+    color: #fff;
+    border-radius: 5px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: #d4af37;
+}
+
+.apply-form .cta-button {
+    width: 100%;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+@media (max-width: 992px) {
+    nav {
+        justify-content: flex-end;
+        padding: 1.5rem 5%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none; /* Controlled by JS */
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.98);
+        padding: 30px;
+        text-align: center;
+        border-bottom: 2px solid #d4af37;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .text-middle {
+        font-size: 2.5rem;
+    }
+
+    .hero-container {
+        padding: 40px 20px;
+    }
+}
+
+/* Fix for invisible dropdown options */
+select option {
+    background-color: #1a1a1a; /* Dark background for the list */
+    color: #ffffff;            /* White text for the list */
+    padding: 10px;
+}
+
+/* Ensure the select box itself looks right */
+select {
+    appearance: none; /* Removes default browser styling */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="%23d4af37"><path d="M0 0l6 6 6-6z"/></svg>'); /* Custom gold arrow */
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    padding-right: 40px !important;
+}
+
+.apply-form .cta-button {
+    background-color: #d4af37; /* Solid gold background */
+    color: #000;               /* Black text */
+    border: none;
+    width: 100%;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.apply-form .cta-button:hover {
+    background-color: #fff;    /* Turns white on hover */
+    color: #000;
+}
+
+/* ==========================================================================
+   ABOUT PAGE SPECIFIC STYLES
+   ========================================================================== */
+
+/* This makes the container hold the long text correctly */
+.about-content {
+    max-width: 900px;
+    margin: 2em auto;
+}
+
+/* This ensures your paragraphs are visible and readable */
+.about-text-wrapper {
+    text-align: left; /* Aligns long text to the left for better reading */
+    color: #ffffff;   /* Forces text to be white */
+    line-height: 1.8; /* Adds space between lines */
+    margin-top: 30px;
+}
+
+.about-text-wrapper p {
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+}
+
+/* Styles the "Experience" and "Competition" headings */
+.gold-heading {
+    color: #d4af37;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    margin: 35px 0 15px 0;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    padding-bottom: 5px;
+}
+
+/* Styles the Interview/Swimsuit/Gown list */
+.criteria-list {
+    list-style: none;
+    padding: 20px;
+    margin: 25px 0;
+    display: flex;
+    justify-content: space-around;
+    background: rgba(255, 255, 255, 0.05); /* Slight highlight box */
+    border-radius: 8px;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.criteria-list li {
+    color: #d4af37;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+/* Mobile fix for the list */
+@media (max-width: 600px) {
+    .criteria-list {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+/* Style for checkbox labels in the declaration section */
+.form-group input[type="checkbox"] {
+    cursor: pointer;
+    accent-color: #d4af37; /* Makes the checkbox gold in modern browsers */
+    transform: scale(1.2);
+}
+
+/* Ensure headings inside forms match the "About" page style */
+.apply-form .gold-heading {
+    margin-top: 40px;
+    font-size: 1.2rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    padding-bottom: 5px;
+}
+
+
+.payment-notice {
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid #d4af37;
+    padding: 20px;
+    margin: 30px 0;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.payment-notice strong {
+    color: #d4af37;
+    font-size: 1.4rem;
+    display: block;
+    margin-top: 5px;
+}
+
+.small-text {
+    font-size: 0.75rem;
+    color: #ccc;
+    margin-top: 10px;
+}
+
+/* Media Hub Layout */
+/* Fix for Media Hub Cards */
+.media-card {
+    display: block;
+    padding: 40px 20px;
+    text-align: center;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    text-decoration: none !important; /* Removes the underline */
+    transition: 0.3s;
+}
+
+.media-card:hover {
+    border-color: #d4af37;
+    background: rgba(212, 175, 55, 0.05);
+}
+
+.media-card i {
+    font-size: 2.5rem;
+    color: #d4af37; /* Forces icon to be Gold */
+    margin-bottom: 15px;
+    display: block;
+}
+
+.media-card h3 {
+    color: #fff; /* Forces "Australia/International" to be White */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.media-card p {
+    color: #d4af37; /* Forces subtitle to be Gold */
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Removes the "visited" purple color from all links in cards */
+.media-card, .media-card:visited, .media-card:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* --- Media Page Specific Fixes --- */
+
+/* Ensures the container boxes are clickable and styled correctly */
+.media-card {
+    display: block;
+    padding: 60px 20px; /* Increased padding for a more 'luxury' feel */
+    text-align: center;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    text-decoration: none !important; 
+    margin-bottom: 20px;
+    transition: all 0.4s ease;
+    background: rgba(0, 0, 0, 0.2); /* Subtle dark backing */
+}
+
+/* Hover effect for the boxes */
+.media-card:hover {
+    border-color: #d4af37;
+    background: rgba(212, 175, 55, 0.1);
+    transform: translateY(-5px);
+}
+
+/* Force icons to stay Gold */
+.media-card i {
+    font-size: 3rem;
+    color: #d4af37 !important;
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* Force headings to stay White */
+.media-card h3 {
+    color: #ffffff !important;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+/* Force sub-text to stay Gold */
+.media-card p {
+    color: #d4af37 !important;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Final safety to prevent purple/blue links */
+.media-card, .media-card:visited, .media-card:active {
+    text-decoration: none;
+    outline: none;
+}
+
+.photo-item {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    aspect-ratio: 3 / 4; /* This forces the uniform dimension */
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This prevents stretching */
+    filter: grayscale(20%);
+    transition: 0.5s;
+}
+
+.photo-item:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+.photo-caption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.7);
+    color: #d4af37;
+    padding: 10px;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.social-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.social-link-card {
+    background: rgba(212, 175, 55, 0.05);
+    border: 1px solid #d4af37;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-link-card i {
+    font-size: 3rem;
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+
+.social-link-card span {
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.social-link-card:hover {
+    background: #d4af37;
+}
+
+.social-link-card:hover i, 
+.social-link-card:hover span {
+    color: #000;
+}
+
+/* Uniform Photo Grid */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.photo-item {
+    position: relative;
+    aspect-ratio: 3 / 4; /* Forces uniform height/width ratio */
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops the image perfectly without stretching */
+    transition: transform 0.5s ease;
+}
+
+.photo-item:hover img {
+    transform: scale(1.05);
+}
+
+.photo-caption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    color: #d4af37;
+    padding: 15px;
+    font-size: 0.9rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Sponsors Section Styling */
+.sponsor-tier {
+    margin-bottom: 60px;
+}
+
+.sponsor-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.sponsor-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+    width: 100%;
+}
+
+/* Responsive Widths for Tiers */
+.main-partner { max-width: 500px; height: 250px; } /* Platinum is Big */
+.gold-grid .sponsor-item { max-width: 300px; height: 180px; } /* Gold is Medium */
+.silver-grid .sponsor-item { max-width: 200px; height: 120px; } /* Silver is Small */
+
+.sponsor-item img {
+    max-width: 80%;
+    max-height: 80%;
+    filter: grayscale(100%) brightness(1.5); /* Optional: Makes all logos look uniform/elegant */
+    transition: 0.4s;
+}
+
+.sponsor-item:hover {
+    border-color: #d4af37;
+    background: rgba(212, 175, 55, 0.08);
+}
+
+.sponsor-item:hover img {
+    filter: grayscale(0%) brightness(1); /* Brings back logo color on hover */
+}
+
+/* Styling for the architect credit */
+.architect-credit {
+    font-size: 0.65rem;
+    opacity: 0.4;
+    margin-top: 15px;
+    letter-spacing: 0.5px;
+    color: #888; /* Soft grey to blend with the footer */
+    text-transform: uppercase;
+    transition: opacity 0.3s ease;
+}
+
+.architect-credit:hover {
+    opacity: 0.8; /* Subtle highlight when hovered */
+    color: #d4af37; /* Turns slightly gold to match the brand */
+}
+
+/* Sitemap specific styles */
+.gold-link {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.gold-link:hover {
+    color: #d4af37;
+    padding-left: 5px; /* Subtle "push" effect on hover */
+}
+
+.sitemap-section h3 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+<script data-goatcounter="https://topmodeloftheworld.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+/* Keep links consistent - No Purple */
+a, a:visited {
+    color: #d4af37 !important; /* Forces the Gold color */
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+/* White glow when hovering or tapping on mobile */
+a:hover, a:active {
+    color: #ffffff !important;
+}
+
+/* --- Final Mobile Navigation Overwrite --- */
+@media screen and (max-width: 768px) {
+    /* All the code I gave you goes here */
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        color: #d4af37; /* Gold color for the 3 lines */
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 1001;
+        transition: 0.3s;
+    }
+
+        .nav-links li {
+        margin: 20px 0;
+    }
+}
+
+/* Mobile Menu Visibility Force */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hidden by default on mobile */
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #000;
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* When JS adds the 'active' class, this takes over */
+    .nav-links.active {
+        display: flex !important;
+        left: 0 !important;
+    }
+
+    .menu-toggle {
+        display: block !important;
+        z-index: 1001; /* Sits above the menu */
+        cursor: pointer;
+    }
+}
+
+/* This ensures that when the 'active' class is added, the menu actually moves */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        left: -100%; /* Start off-screen to the left */
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #000; /* Solid black for luxury feel */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: 0.4s ease-in-out;
+        z-index: 1000;
+        visibility: hidden; /* Keep it hidden until active */
+    }
+
+    .nav-links.active {
+        left: 0 !important; /* Slide into view */
+        visibility: visible !important;
+        display: flex !important;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+        opacity: 0;
+    }
+
+    .nav-links.active li {
+        opacity: 1;
+        transition: 0.4s ease 0.2s;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* The container div */
+    .nav-links {
+        position: fixed;
+        left: -100%; /* Hidden off-screen */
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.98); /* Solid black */
+        display: flex;
+        flex-direction: column; /* Stacks links vertically */
+        align-items: center;
+        justify-content: center;
+        transition: 0.4s ease-in-out;
+        z-index: 1000;
+    }
+
+    /* When the JS toggles 'active' */
+    .nav-links.active {
+        left: 0 !important;
+    }
+
+    /* Target the links inside the div */
+    .nav-links a {
+        color: #d4af37 !important; /* Force Gold */
+        font-size: 1.5rem;
+        margin: 15px 0;
+        text-decoration: none;
+        font-family: 'Open Sans', sans-serif;
+    }
+    
+    /* Ensure the button stays visible on top of the menu */
+    .menu-toggle {
+        display: block !important;
+        position: relative;
+        z-index: 1001; 
+        cursor: pointer;
+    }
+}
+
+/* DELETE OLD MOBILE NAV RULES AND USE THIS ONE ONLY */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide it initially */
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #000 !important; /* Solid Black */
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* This is what the JavaScript triggers */
+    .nav-links.active {
+        display: flex !important; /* Forces it to show */
+        left: 0 !important;
+    }
+
+    .nav-links a {
+        color: #d4af37 !important; /* Gold links */
+        padding: 20px;
+        font-size: 1.5rem;
+        text-decoration: none;
+    }
+
+    .menu-toggle {
+        display: block !important;
+        z-index: 1001; /* Keeps the button above the black menu */
+        position: relative;
+    }
+}
