@@ -94,20 +94,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-</script>
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const menuBtn = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
+document.addEventListener('DOMContentLoaded', function() {
+    const btn = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.nav-links');
 
-    if (menuBtn && navLinks) {
-        menuBtn.addEventListener('click', (e) => {
-            e.preventDefault(); // Prevents the page from flickering
-            navLinks.classList.toggle('active');
-            console.log('Menu toggled');
-        });
-    } else {
-        console.error('Menu elements not found. Check your class names.');
+    if (btn && menu) {
+        btn.onclick = function() {
+            // Toggle the menu
+            menu.classList.toggle('active');
+            // Toggle the rotation
+            btn.classList.toggle('is-active');
+            console.log("Menu state:", menu.classList.contains('active'));
+        };
     }
 });
 </script>
