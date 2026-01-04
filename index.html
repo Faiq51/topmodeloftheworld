@@ -110,5 +110,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
+
+<script>
+// This 'window.onclick' version is the most compatible for mobile browsers
+window.onclick = function(event) {
+    // If the user clicks the hamburger or the icon inside it
+    if (event.target.matches('.menu-toggle') || event.target.matches('.fas')) {
+        const menu = document.querySelector('.nav-links');
+        const btn = document.querySelector('.menu-toggle');
+        
+        if (menu) {
+            menu.classList.toggle('active');
+            btn.classList.toggle('is-active');
+            console.log("Menu toggled via global click");
+        }
+    }
+}
+</script>
 </body>
 </html>
