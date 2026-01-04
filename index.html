@@ -81,7 +81,35 @@
 </footer>
 <div style="display:none;">
     </div>
-    <script src="js/script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
 
+    if (menuBtn) {
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            // This rotates the icon slightly when clicked for a "pro" feel
+            menuBtn.style.transform = navLinks.classList.contains('active') ? 'rotate(90deg)' : 'rotate(0deg)';
+        });
+    }
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (menuBtn && navLinks) {
+        menuBtn.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevents the page from flickering
+            navLinks.classList.toggle('active');
+            console.log('Menu toggled');
+        });
+    } else {
+        console.error('Menu elements not found. Check your class names.');
+    }
+});
+</script>
 </body>
 </html>
