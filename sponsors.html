@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Partners & Sponsors – Top Model of the World - Australia</title>
+    <title>Partners & Sponsors – Top Model of the World - Australia</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -29,16 +29,19 @@
 <body>
 
     <nav>
-        <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="apply.html">Apply Now</a>
-            <a href="register.html">Register</a>
-            <a href="sponsors.html">Sponsors</a>
-            <a href="media.html">Media</a>
-            <a href="contact.html">Contact Us</a>
-        </div>
+<div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+    
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="apply.html">Apply Now</a>
+        <a href="register.html">Register</a>
+        <a href="sponsors.html">Sponsors</a>
+        <a href="media.html">Media</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
     </nav>
 
     <main class="form-page">
@@ -114,5 +117,17 @@
 </div>
     <script src="js/script.js"></script>
 </footer>
+<script>
+window.onclick = function(event) {
+    if (event.target.matches('.menu-toggle') || event.target.matches('.fas')) {
+        const menu = document.querySelector('.nav-links');
+        const btn = document.querySelector('.menu-toggle');
+        if (menu) {
+            menu.classList.toggle('active');
+            btn.classList.toggle('is-active');
+        }
+    }
+}
+</script>
 </body>
 </html>

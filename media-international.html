@@ -30,10 +30,19 @@
 <body>
 
     <nav>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="media.html">Back to Media</a>
-        </div>
+  <div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+    
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="apply.html">Apply Now</a>
+        <a href="register.html">Register</a>
+        <a href="sponsors.html">Sponsors</a>
+        <a href="media.html">Media</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
     </nav>
 
     <main class="form-page">
@@ -43,30 +52,53 @@
 
             <h3 class="gold-heading">Featured Global Events</h3>
             <div class="social-links-grid">
-                
-                <a href="https://www.instagram.com/p/DN4pw7Okkjl/" target="_blank" class="social-link-card">
-                    <i class="fab fa-instagram"></i>
-                    <span>31st Edition: Egypt Highlights</span>
-                </a>
+                <div class="photo-item">
+                    <img src="images/Eygpt2025.jpg" alt="Eygpt2025.jpg" width="100" height="75" class="video-trigger">
+                    <div class="photo-caption">Participants - Model of the World Finals - Eygpt 2025</div>
+                </div>
+                </div>
 
-                <a href="https://www.youtube.com/watch?v=53sNMin-LGU" target="_blank" class="social-link-card">
-                    <i class="fab fa-youtube"></i>
-                    <span>World Grand Finale - Live Stream</span>
-                </a>
+<div id="lightbox-modal" class="lightbox">
+    <span class="close-lightbox">&times;</span>
+    <div id="lightbox-loader" class="lightbox-loader"></div>
+    
+    <img class="lightbox-content" id="lightbox-img">
+    
+    <div id="video-container" style="display:none;">
+        <iframe id="lightbox-video" class="lightbox-content" 
+                src="" frameborder="0" 
+                allow="autoplay; encrypted-media" allowfullscreen>
+        </iframe>
+    </div>
+</div>
 
-                <a href="https://www.youtube.com/watch?v=NCIpBOQSS1E" target="_blank" class="social-link-card">
-                    <i class="fab fa-youtube"></i>
-                    <span>World Grand Finale - Live Stream</span>
-                </a>
 
 
-                <a href="https://facebook.com/TOPMODEL/photos" target="_blank" class="social-link-card">
-                    <i class="fab fa-facebook"></i>
-                    <span>Official Global Photo Archive</span>
-                </a>
+<div class="media-grid">
+    <div class="media-box">
+        <a href="https://www.youtube.com/watch?v=53sNMin-LGU" class="video-trigger" target="_blank">
+            <img src="https://img.youtube.com/vi/53sNMin-LGU/maxresdefault.jpg" alt="International Media Coverage">
+            <div class="play-overlay">
+                <i class="fas fa-play"></i>
             </div>
+            <div class="media-title">World Finals - Media Highlights</div>
+        </a>
+    </div>
 
-            <div class="embed-container" style="margin-top: 50px; border-top: 1px solid rgba(212, 175, 55, 0.2); padding-top: 30px;">
+    <div class="media-box">
+        <a href="https://www.youtube.com/watch?v=NCIpBOQSS1E" class="video-trigger" target="_blank">
+            <img src="https://img.youtube.com/vi/NCIpBOQSS1E/maxresdefault.jpg" alt="Official Interview">
+            <div class="play-overlay">
+                <i class="fas fa-play"></i>
+            </div>
+            <div class="media-title">Top Model Australia - Road to the Finals</div>
+        </a>
+    </div>
+</div>
+
+
+
+     <div class="embed-container" style="margin-top: 50px; border-top: 1px solid rgba(212, 175, 55, 0.2); padding-top: 30px;">
                 <h3 class="gold-heading">Live Feed</h3>
                 <p style="color: #aaa; margin-bottom: 20px;">Stay updated with the latest from the world stage.</p>
                 
@@ -100,6 +132,17 @@
 
 </footer>
 <script src="js/script.js"></script>
-
+<script>
+window.onclick = function(event) {
+    if (event.target.matches('.menu-toggle') || event.target.matches('.fas')) {
+        const menu = document.querySelector('.nav-links');
+        const btn = document.querySelector('.menu-toggle');
+        if (menu) {
+            menu.classList.toggle('active');
+            btn.classList.toggle('is-active');
+        }
+    }
+}
+</script>
 </body>
 </html>

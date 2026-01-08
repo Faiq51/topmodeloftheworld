@@ -11,9 +11,19 @@
 <body>
 
     <nav>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-        </div>
+<div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+    
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="apply.html">Apply Now</a>
+        <a href="register.html">Register</a>
+        <a href="sponsors.html">Sponsors</a>
+        <a href="media.html">Media</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
     </nav>
 
 <main>
@@ -22,8 +32,6 @@
             <h1 class="text-middle">Thank You!</h1>
             <p class="text-bottom">Your application has been received successfully.</p>
             <p class="text-bottom">Our organizers will review your details and contact you via email within the next 7 days.</p>
-            <br>
-            <a href="index.html" class="cta-button">Return Home</a>
         </div>
     </section>
 </main>
@@ -46,5 +54,17 @@
 </div>
 </footer>
     <script src="js/script.js"></script>
+<script>
+window.onclick = function(event) {
+    if (event.target.matches('.menu-toggle') || event.target.matches('.fas')) {
+        const menu = document.querySelector('.nav-links');
+        const btn = document.querySelector('.menu-toggle');
+        if (menu) {
+            menu.classList.toggle('active');
+            btn.classList.toggle('is-active');
+        }
+    }
+}
+</script>
 </body>
 </html>

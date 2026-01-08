@@ -29,16 +29,19 @@
 <body>
 
     <nav>
-        <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="apply.html">Apply Now</a>
-            <a href="register.html">Register</a>
-            <a href="sponsors.html">Sponsors</a>
-            <a href="media.html">Media</a>
-            <a href="contact.html">Contact Us</a>
-        </div>
+<div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+    
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="apply.html">Apply Now</a>
+        <a href="register.html">Register</a>
+        <a href="sponsors.html">Sponsors</a>
+        <a href="media.html">Media</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
     </nav>
 
     <main class="form-page">
@@ -93,5 +96,17 @@
 
 
     <script src="js/script.js"></script>
+<script>
+window.onclick = function(event) {
+    if (event.target.matches('.menu-toggle') || event.target.matches('.fas')) {
+        const menu = document.querySelector('.nav-links');
+        const btn = document.querySelector('.menu-toggle');
+        if (menu) {
+            menu.classList.toggle('active');
+            btn.classList.toggle('is-active');
+        }
+    }
+}
+</script>
 </body>
 </html>

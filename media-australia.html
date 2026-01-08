@@ -29,11 +29,19 @@
 <body>
 
     <nav>
-        <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="media.html">Back to Media</a>
-        </div>
+<div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+    
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="apply.html">Apply Now</a>
+        <a href="register.html">Register</a>
+        <a href="sponsors.html">Sponsors</a>
+        <a href="media.html">Media</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
     </nav>
 
     <main class="form-page">
@@ -48,17 +56,48 @@
 
             <h3 class="gold-heading" id="current">2026 National Finalists</h3>
             <div class="photo-grid">
-                <div class="photo-item">
-                    <img src="images/placeholder-model.jpg" alt="Model Name">
-                    <div class="photo-caption">Victoria Kirk - NSW</div>
-                </div>
-                </div>
+<div class="gallery-grid">
+    <div class="gallery-item">
+<div id="lightbox-modal" class="lightbox">
+    <span class="close-lightbox">&times;</span>
+    <div id="lightbox-loader" class="lightbox-loader"></div>
+    <img class="lightbox-content" id="lightbox-img">
+</div>
+
+
+<style>
+  .image-container {
+    display: flex;
+    gap: 15px; /* Adds 10 pixels of space between all direct children */
+  }
+</style>
+
+<div class="image-container">
+<a href="images\Gallery\aus\full-current.year.event.aus\TMOTW-01.jpg" class="lightbox-trigger">
+    <img src="images\Gallery\aus\thumbs-current.year.event.aus\TMOTW-01.webp" alt="Masika Kambere" loading="lazy">Masika Kambere</a>
+<p></p>
+<a href="images\Gallery\aus\full-current.year.event.aus\TMOTW-02.jpg" class="lightbox-trigger">
+    <img src="images\Gallery\aus\thumbs-current.year.event.aus\TMOTW-02.webp" alt="Masika Kambere" loading="lazy">Masika Kambere</a>
+    </div>
+</div>
 
             <h3 class="gold-heading" id="ceremony" style="margin-top: 80px;">The Grand Finale</h3>
             <div class="photo-grid">
                  <div class="photo-item">
-                    <img src="images/placeholder-event.jpg" alt="Finale">
-                    <div class="photo-caption">Crowning Moment</div>
+<div class="image-container">
+<a href="images\Gallery\aus\full-current.year.event.aus\TMOTW-03.jpg" class="lightbox-trigger">
+    <img src="images\Gallery\aus\thumbs-current.year.event.aus\TMOTW-03.webp" alt="Summer Fashion" loading="lazy">Summer Fashion</a>
+<p></p>
+<a href="images\Gallery\aus\full-current.year.event.aus\TMOTW-04.jpg" class="lightbox-trigger">
+    <img src="images\Gallery\aus\thumbs-current.year.event.aus\TMOTW-04.webp" alt="White Gown" loading="lazy">White Gown</a>
+<p></p>
+<a href="images\Gallery\aus\full-current.year.event.aus\TMOTW-05.jpg" class="lightbox-trigger">
+    <img src="images\Gallery\aus\thumbs-current.year.event.aus\TMOTW-05.webp" alt="Top 10 Winners" loading="lazy">Top 10 Winners</a>
+
+    </div>
+</div>
+</div>
+
                 </div>
             </div>
 
@@ -91,5 +130,18 @@
 
 </footer>
     <script src="js/script.js"></script>
+
+<script>
+window.onclick = function(event) {
+    if (event.target.matches('.menu-toggle') || event.target.matches('.fas')) {
+        const menu = document.querySelector('.nav-links');
+        const btn = document.querySelector('.menu-toggle');
+        if (menu) {
+            menu.classList.toggle('active');
+            btn.classList.toggle('is-active');
+        }
+    }
+}
+</script>
 </body>
 </html>
