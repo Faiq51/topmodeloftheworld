@@ -1409,3 +1409,11 @@ lightbox.onclick = (e) => { if (e.target === lightbox) closeLightbox(); };
 }
 
 
+.terms-container {
+    background: rgba(15, 15, 15, 0.6) !important; /* Use a very dark grey instead of pure black */
+    backdrop-filter: blur(15px) saturate(150%);
+    -webkit-backdrop-filter: blur(15px) saturate(150%);
+    will-change: backdrop-filter; /* Tells the browser to prepare for a filter */
+}
+
+
