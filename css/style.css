@@ -1390,21 +1390,18 @@ lightbox.onclick = (e) => { if (e.target === lightbox) closeLightbox(); };
 
 /* This recreates the dark semi-transparent box */
 .terms-container {
-    /* The 'a' in rgba stands for Alpha (Transparency). 0.6 is 60% solid */
-    background: rgba(0, 0, 0, 0.65) !important; 
+    /* Use a much lighter transparency so it doesn't stack into pure black */
+    background: rgba(255, 255, 255, 0.05) !important; 
     
-    /* This is the magic line that blurs the image behind the box */
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px); /* For Safari support */
+    /* This creates the frosted effect by blurring the body's background image */
+    backdrop-filter: blur(20px) brightness(1.2);
+    -webkit-backdrop-filter: blur(20px) brightness(1.2);
     
-    /* Adds a thin, elegant gold border */
-    border: 1px solid rgba(212, 175, 55, 0.4); 
-    
+    border: 1px solid rgba(212, 175, 55, 0.3);
     padding: 50px;
     border-radius: 15px;
     max-width: 900px;
     margin: 40px auto;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Adds depth */
     text-align: left;
 }
 
