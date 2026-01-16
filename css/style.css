@@ -1368,3 +1368,24 @@ lightbox.onclick = (e) => { if (e.target === lightbox) closeLightbox(); };
 .terms-content p, .terms-content li {
     margin-bottom: 15px;
 }
+
+
+
+/* This targets the column containing the numbered list */
+.terms-right-column {
+    text-align: left !important;
+    padding: 60px; /* Gives the text room to breathe away from the edges */
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.terms-right-column li {
+    text-align: left;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    list-style-position: outside; /* Keeps numbers aligned outside the text block */
+}
+
+
