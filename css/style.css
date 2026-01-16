@@ -1414,3 +1414,46 @@ lightbox.onclick = (e) => { if (e.target === lightbox) closeLightbox(); };
 }
 
 
+/* Restores the side-by-side layout */
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+/* Restores the Glass Input look */
+.glass-input {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05); /* Very light tint */
+    border: 1px solid rgba(212, 175, 55, 0.3); /* Subtle Gold border */
+    border-radius: 5px;
+    color: white;
+    outline: none;
+}
+
+.glass-textarea {
+    height: 100px;
+    margin-bottom: 20px;
+    resize: none;
+}
+
+/* Restores the Professional Gold Button */
+.gold-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #d4af37;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.gold-button:hover {
+    background-color: #f1c40f;
+    transform: translateY(-2px);
+}
+
