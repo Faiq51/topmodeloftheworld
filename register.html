@@ -59,7 +59,20 @@
         </div>
 
         <div class="form-row">
-            <input type="date" name="dob" placeholder="Date of Birth" required title="Date of Birth">
+<div class="form-row">
+    <select name="dob_day" class="glass-input" style="flex: 1;">
+        <option value="" disabled selected>Day</option>
+        </select>
+    <select name="dob_month" class="glass-input" style="flex: 2;">
+        <option value="" disabled selected>Month</option>
+        <option value="01">January</option>
+        <option value="02">February</option>
+        </select>
+    <select name="dob_year" class="glass-input" style="flex: 2;">
+        <option value="" disabled selected>Year</option>
+        <option value="2000">2000</option>
+    </select>
+</div>
             <input type="text" name="city" placeholder="City/State" required>
         </div>
 
@@ -69,12 +82,10 @@
     <a href="terms.html#refunds">Refund Policy</a>.
 </p>
 
-                <div class="payment-notice">
-                    <p><i class="fas fa-lock"></i> Secure Registration Fee: <strong>$350.00 AUD</strong></p>
+<div class="payment-notice">
+                   <p><i class="fas fa-lock"></i> Secure Registration Fee: <strong>$350.00 AUD</strong></p>
                     <p class="small-text">By clicking below, you will proceed to the secure credit card payment portal.</p>
                 </div>
-
-
 
         <button type="submit">PROCEED TO PAYMENT</button>
     </form>

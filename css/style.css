@@ -1514,3 +1514,28 @@ lightbox.onclick = (e) => { if (e.target === lightbox) closeLightbox(); };
     transform: translateY(-2px);
 }
 
+
+/* Forces the date text and icon to be white/visible */
+input[type="date"] {
+    color: white !important;
+    position: relative;
+}
+
+/* Fixes the "blank" look on mobile Safari/Chrome */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* Turns the little calendar icon white */
+    cursor: pointer;
+}
+
+/* Optional: Label the field if the placeholder isn't showing */
+input[type="date"]::before {
+    content: attr(placeholder);
+    width: 100%;
+    margin-right: 0.5em;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+input[type="date"]:focus::before,
+input[type="date"]:valid::before {
+    display: none;
+}
