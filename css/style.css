@@ -1457,3 +1457,60 @@ lightbox.onclick = (e) => { if (e.target === lightbox) closeLightbox(); };
     transform: translateY(-2px);
 }
 
+
+
+/* --- THE MASTER FORM STYLE --- */
+
+/* 1. The Main Glass Box */
+.form-container {
+    background: rgba(0, 0, 0, 0.1) !important; 
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 650px; /* Slightly wider for side-by-side fields */
+    margin: 40px auto;
+    text-align: center;
+}
+
+/* 2. The Side-by-Side Rows */
+.form-row {
+    display: flex !important;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+/* 3. The Inputs & Textarea */
+.form-container input, 
+.form-container textarea {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(212, 175, 55, 0.2) !important;
+    color: white !important;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+}
+
+/* 4. The Gold Submission Button */
+.form-container button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background: #d4af37 !important; /* Gold */
+    color: #000 !important; /* Black text for contrast */
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.form-container button[type="submit"]:hover {
+    background: #f1c40f !important;
+    transform: translateY(-2px);
+}
+
