@@ -64,31 +64,31 @@
 </div>
 </div>
 
-                <form action="https://formspree.io/f/xzdzarow" method="POST" class="apply-form contact-form">
-                    <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Subject</label>
-                        <select name="subject">
-                            <option value="General Inquiry">General Inquiry</option>
-                            <option value="Sponsorship">Sponsorship Opportunity</option>
-                            <option value="Media/Press">Media & Press</option>
-                            <option value="Application Question">Application Question</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Message</label>
-                        <textarea name="message" rows="5" required style="background: rgba(255, 255, 255, 0.05); border: 1px solid #444; color: #fff; padding: 12px; border-radius: 5px;"></textarea>
-                    </div>
-                    <button type="submit" class="cta-button">Send Message</button>
-                </form>
-            </div>
+<div class="form-container">
+    <h1 class="gold-text">Contact Us</h1>
+    <p>Have a question? Our team is available to assist you.</p>
+
+    <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="de2e3c55-38ef-47ca-926b-9d51e0292d29">
+        <input type="hidden" name="redirect" value="https://topmodeloftheworldaustralia.com.au/thankyou.html">
+        <input type="hidden" name="subject" value="New Inquiry - Contact Page">
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+        <div class="form-group">
+            <input type="text" name="name" placeholder="Your Name" class="glass-input" style="margin-bottom: 15px;" required>
+        </div>
+        
+        <div class="form-group">
+            <input type="email" name="email" placeholder="Your Email Address" class="glass-input" style="margin-bottom: 15px;" required>
+        </div>
+
+        <div class="form-group">
+            <textarea name="message" placeholder="How can we help you?" class="glass-input" style="height: 150px; margin-bottom: 20px;" required></textarea>
+        </div>
+
+        <button type="submit" class="gold-button">SEND MESSAGE</button>
+    </form>
+</div>
         </section>
     </main>
 
