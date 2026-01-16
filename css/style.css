@@ -1539,3 +1539,24 @@ input[type="date"]:focus::before,
 input[type="date"]:valid::before {
     display: none;
 }
+
+
+
+
+/* Fixes the look of the dropdowns */
+select.glass-input {
+    appearance: none; /* Removes the default grey browser arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white"><path d="M0 0l5 5 5-5z"/></svg>'); /* Adds a custom white arrow */
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    padding-right: 30px;
+    cursor: pointer;
+}
+
+/* Ensures the list of numbers is readable */
+select.glass-input option {
+    background-color: #1a1a1a; /* Dark background for the dropdown list */
+    color: white;
+}

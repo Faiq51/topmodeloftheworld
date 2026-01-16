@@ -60,18 +60,26 @@
 
         <div class="form-row">
 <div class="form-row">
-    <select name="dob_day" class="glass-input" style="flex: 1;">
+    <select name="dob_day" class="glass-input" required>
         <option value="" disabled selected>Day</option>
+        <option value="01">01</option>
+        <option value="02">02</option>
         </select>
-    <select name="dob_month" class="glass-input" style="flex: 2;">
+
+    <select name="dob_month" class="glass-input" required>
         <option value="" disabled selected>Month</option>
-        <option value="01">January</option>
-        <option value="02">February</option>
+        <option value="01">Jan</option>
+        <option value="02">Feb</option>
+        <option value="03">Mar</option>
         </select>
-    <select name="dob_year" class="glass-input" style="flex: 2;">
+
+    <select name="dob_year" class="glass-input" required>
         <option value="" disabled selected>Year</option>
-        <option value="2000">2000</option>
-    </select>
+        <option value="2008">2008</option>
+        <option value="2007">2007</option>
+        <option value="2006">2006</option>
+        <option value="2005">2005</option>
+        </select>
 </div>
             <input type="text" name="city" placeholder="City/State" required>
         </div>
