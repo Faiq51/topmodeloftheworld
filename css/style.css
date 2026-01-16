@@ -1388,4 +1388,21 @@ lightbox.onclick = (e) => { if (e.target === lightbox) closeLightbox(); };
     list-style-position: outside; /* Keeps numbers aligned outside the text block */
 }
 
+/* This recreates the dark semi-transparent box */
+.terms-container {
+    background: rgba(0, 0, 0, 0.75); /* 75% solid black */
+    border: 1px solid rgba(212, 175, 55, 0.3); /* Subtle gold border */
+    padding: 40px;
+    border-radius: 8px;
+    max-width: 900px;
+    margin: 40px auto; /* Centers the block on the page */
+    backdrop-filter: blur(10px); /* This adds that high-end frosted glass effect */
+    text-align: left; /* Ensures all internal text stays left-aligned */
+}
+
+.terms-container h1, .terms-container h2 {
+    color: #d4af37;
+    text-align: left;
+}
+
 
