@@ -1349,15 +1349,22 @@ lightbox.onclick = (e) => { if (e.target === lightbox) closeLightbox(); };
 }
 
 
-.form-footer-text {
-    font-size: 0.75rem;
-    color: #888;
-    text-align: left;
-    margin-top: 15px;
-    font-family: 'Arial', sans-serif;
+/* Create a specific class for the Terms Page content */
+.terms-content {
+    text-align: left !important; /* Forces left alignment */
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: #ccc;
+    padding: 20px;
 }
 
-.form-footer-text a {
-    color: #d4af37; /* The Gold color */
-    text-decoration: underline;
+.terms-content h1, .terms-content h2 {
+    color: #d4af37; /* Keeps your gold headers */
+    text-align: left;
+    margin-top: 30px;
+}
+
+.terms-content p, .terms-content li {
+    margin-bottom: 15px;
 }
