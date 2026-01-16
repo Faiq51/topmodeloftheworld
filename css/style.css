@@ -1560,3 +1560,25 @@ select.glass-input option {
     background-color: #1a1a1a; /* Dark background for the dropdown list */
     color: white;
 }
+
+
+
+/* Fix for the DOB Dropdowns */
+.dob-select {
+    flex: 1; /* Makes them share the row equally */
+    min-width: 80px; /* Prevents them from becoming tiny "slits" */
+    color: white !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    cursor: pointer;
+}
+
+/* Forces the dropdown list (the options) to be readable */
+.dob-select option {
+    background: #1a1a1a; /* Dark background so white text shows */
+    color: white;
+}
+
+/* Ensure the text is visible even before clicking */
+.dob-select:invalid {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
