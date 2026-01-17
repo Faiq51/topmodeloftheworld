@@ -1704,4 +1704,27 @@ select.glass-input option {
 
 
 
+/* The Journey line */
+.hero-subtitle {
+    font-size: 1.4rem; /* Enlarged from standard size */
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 10px;
+    margin-bottom: 40px !important; /* This creates the distance to the button */
+    line-height: 1.6;
+}
+
+/* Mobile specific adjustment for the subtitle */
+@media (max-width: 768px) {
+    .hero-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 30px !important;
+        padding: 0 20px;
+    }
+}
+
+
+
+
 
