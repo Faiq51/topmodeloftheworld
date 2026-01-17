@@ -367,4 +367,18 @@ if (registrationForm) {
 
 
 
+// This script handles the 'Click to Return' functionality
+document.addEventListener('click', function (e) {
+    // Look for the lightbox container (check if your ID is 'lightbox-overlay' or similar)
+    const lightbox = document.querySelector('.lightbox-overlay'); 
+    
+    if (lightbox && lightbox.style.display !== 'none') {
+        // If the user clicks the black background OR the image, close it
+        lightbox.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Re-enables scrolling on the main page
+    }
+});
+
+
+
 
