@@ -1774,3 +1774,33 @@ select.glass-input option {
         padding: 15px !important;
     }
 }
+
+
+
+/*====================
+TO RETURN JPG to WBPL
+=====================*/
+
+/* Ensure the dark background is the element being clicked */
+.lightbox-overlay {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 9999 !important; /* Forces it to the very top */
+    display: none; /* Controlled by your JS */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* Shows the user they can click to close */
+}
+
+/* Ensure the image itself doesn't close the window when clicked */
+.lightbox-content {
+    cursor: default;
+    position: relative;
+    z-index: 10000;
+}
+
+
