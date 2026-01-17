@@ -2027,3 +2027,36 @@ REMOVED LIGHTBOX
         height: auto !important;
     }
 }
+
+
+
+
+/* New Clean Layout */
+.photo-grid-new {
+    display: flex;
+    flex-wrap: wrap; /* Allows images to move to the next line */
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+}
+
+.finalist-box {
+    flex: 0 1 300px; /* On desktop, they will be 300px wide side-by-side */
+    text-align: center;
+}
+
+.finalist-box img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #d4af37;
+    border-radius: 4px;
+    display: block;
+}
+
+/* Force Vertical Stack on Mobile */
+@media screen and (max-width: 768px) {
+    .finalist-box {
+        flex: 0 1 100% !important; /* Forces 100% width on phones */
+        margin-bottom: 30px;
+    }
+}
