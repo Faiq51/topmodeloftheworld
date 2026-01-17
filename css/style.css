@@ -1967,3 +1967,41 @@ CHANGE STRATEGY BY FORCING THE GRID TO HAVE ONE COLUMN ONLY ON MOBILE
         object-fit: contain !important;
     }
 }
+
+
+
+/*=========================================================================
+REMOVED LIGHTBOX
+===========================================================================*/
+
+
+/* Styling for the model names under photos */
+.model-name {
+    color: #d4af37;
+    text-align: center;
+    margin-top: 10px;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+}
+
+/* Mobile Stack Logic */
+@media screen and (max-width: 768px) {
+    .photo-grid {
+        display: block !important; /* Disables side-by-side flex */
+        padding: 20px !important;
+    }
+
+    .photo-item {
+        width: 100% !important;
+        margin-bottom: 50px !important; /* Space between photos */
+        display: block !important;
+    }
+
+    .image-stack-container img {
+        width: 100% !important;
+        height: auto !important;
+        border: 1px solid rgba(212, 175, 55, 0.4);
+        border-radius: 5px;
+        display: block;
+    }
+}
