@@ -2060,3 +2060,44 @@ REMOVED LIGHTBOX
         margin-bottom: 30px;
     }
 }
+
+
+
+/* Container for the images */
+.photo-grid {
+    display: flex !important;
+    flex-wrap: wrap !important; /* This allows wrapping on mobile */
+    justify-content: center !important;
+    gap: 30px !important;
+    padding: 20px !important;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Individual Image Box */
+.photo-item {
+    flex: 0 1 300px !important; /* Width on Desktop */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-container img {
+    width: 100% !important;
+    height: auto !important;
+    border: 1px solid rgba(212, 175, 55, 0.5); /* Gold border */
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+/* Mobile specific override */
+@media (max-width: 768px) {
+    .photo-item {
+        flex: 0 1 100% !important; /* Full width on phones */
+        margin-bottom: 20px;
+    }
+    
+    .photo-grid {
+        gap: 40px !important; /* More space between stacked items */
+    }
+}
