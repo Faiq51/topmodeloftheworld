@@ -143,5 +143,20 @@ window.onclick = function(event) {
     }
 }
 </script>
+<script>
+// This function detects a click anywhere on the screen
+document.addEventListener('click', function (event) {
+    // Find your lightbox element
+    const lightbox = document.querySelector('.lightbox-overlay') || document.querySelector('.modal'); 
+    
+    // If the lightbox is visible and the user clicks the background (not the image)
+    if (lightbox && lightbox.style.display !== 'none') {
+        if (event.target === lightbox || event.target.className === 'close-btn') {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Brings the scrollbar back
+        }
+    }
+});
+</script>
 </body>
 </html>
