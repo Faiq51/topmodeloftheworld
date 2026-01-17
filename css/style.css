@@ -917,43 +917,70 @@ a:hover, a:active {
     }
 }
 
-/* ==========================================================================
-   AUSTRALIA MEDIA GALLERY - START FROM ZERO
-   ========================================================================== */
+/* Forces the main container to allow side-by-side images */
+.gallery-wrapper, .form-page {
+    width: 100% !important;
+    max-width: 1400px !important; /* Increases the 'Sexy' landscape width */
+    margin: 0 auto !important;
+    display: block !important;
+}
 
-/* 1. The Container: Creates the side-by-side grid */
+/* Fixes the narrow column issue */
 .photo-grid-new {
     display: flex !important;
-    flex-wrap: wrap !important; 
+    flex-direction: row !important; /* Forces side-by-side */
+    flex-wrap: wrap !important;
     justify-content: center !important;
-    gap: 25px !important;
-    padding: 30px 10px !important;
+    width: 100% !important;
+}
+/* ==========================================================================
+   AUSTRALIA MEDIA GALLERY - START FROM ZERO (FINAL REPAIR)
+   ========================================================================== */
+
+/* 1. The Container: Forces the side-by-side grid and opens the "corridor" */
+.form-page, .gallery-wrapper {
+    display: block !important; 
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+.photo-grid-new {
+    display: flex !important;
+    flex-direction: row !important; /* Explicitly side-by-side */
+    flex-wrap: wrap !important;     /* Allows wrapping to next line */
+    justify-content: center !important;
+    gap: 30px !important;           /* Professional spacing */
+    padding: 40px 10px !important;
     width: 100% !important;
 }
 
 /* 2. The Photo Box: The "Thumbnail" wrapper */
 .finalist-box {
-    flex: 0 1 280px !important; /* Elegant size for Desktop */
-    max-width: 280px !important;
+    flex: 0 1 300px !important;     /* Optimal width for 3-across on desktop */
+    max-width: 300px !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    margin-bottom: 25px !important;
+    margin-bottom: 30px !important;
+    text-align: center;
 }
 
 /* 3. The Images: "Vogue" style uniform thumbnails */
 .finalist-box img {
     width: 100% !important;
-    height: 380px !important; /* Uniform height for a perfect grid */
-    object-fit: cover !important; /* Prevents squashing/stretching */
+    height: 400px !important;       /* Uniform height for a perfect grid */
+    object-fit: cover !important;   /* Prevents stretching */
     border: 1px solid rgba(212, 175, 55, 0.6) !important;
     border-radius: 4px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-    transition: transform 0.3s ease;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
 .finalist-box img:hover {
-    transform: scale(1.02); /* Subtle luxury zoom */
+    transform: translateY(-5px) scale(1.02); /* Luxury hover lift */
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.3);
 }
 
 /* 4. The Text: Gold Editorial Style */
@@ -962,7 +989,7 @@ a:hover, a:active {
     color: #d4af37 !important;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 600;
 }
 
@@ -971,14 +998,15 @@ a:hover, a:active {
     .photo-grid-new {
         flex-direction: column !important;
         align-items: center !important;
+        gap: 40px !important;
     }
     
     .finalist-box {
-        width: 80% !important;      /* Elegant margins on phone */
-        max-width: 300px !important; /* Stops images from being 'Giant' */
+        width: 85% !important;      /* Elegant margins on phone */
+        max-width: 320px !important; 
     }
 
     .finalist-box img {
-        height: 350px !important;    /* Slightly shorter for smaller screens */
+        height: 380px !important;    /* Slightly shorter for smaller screens */
     }
 }
