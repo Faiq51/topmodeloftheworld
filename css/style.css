@@ -1695,59 +1695,56 @@ select.glass-input option {
     line-height: 1.6;
 }
 
-/* Mobile specific adjustment for the subtitle */
-@media (max-width: 768px) {
-    .hero-subtitle {
-        font-size: 1.1rem;
-        margin-bottom: 60px !important;
-        padding: 0 20px;
-    }
-}
-
 
 
 /* ==========================================================================
-   FINAL MOBILE PRESTIGE FIX
+   CONSOLIDATED MOBILE PRESTIGE FIX
    ========================================================================== */
 @media screen and (max-width: 768px) {
     
-    /* 1. The Container: We use Flexbox to force space between items */
-    .hero-container, .hero-content {
+    /* 1. Ensure the container can grow and centers content */
+    main {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        min-height: calc(100vh - 70px) !important;
+        padding: 40px 15px !important;
+    }
+
+    .hero-container {
         height: auto !important;
-        min-height: 80vh !important;
+        padding: 50px 20px !important;
         display: flex !important;
         flex-direction: column !important;
         justify-content: center !important;
         align-items: center !important;
-        padding: 80px 20px !important;
-        gap: 0 !important; /* Reset gap to use specific margins */
     }
 
-    /* 2. The "Top Model" Title */
-    .prestige-title {
+    /* 2. The "Top Model" Title - Force proper scaling */
+    .text-middle, .prestige-title {
         font-size: 9vw !important;
         margin-bottom: 20px !important;
         display: block !important;
+        line-height: 1.1 !important;
     }
 
-    /* 3. The "Journey" line - This is the one you wanted larger and spaced out */
-    .hero-subtitle, .text-bottom {
-        font-size: 1.2rem !important; /* Larger text */
+    /* 3. The "Journey" line - Adding the specific spacing you requested */
+    .text-bottom, .hero-subtitle {
+        font-size: 1.2rem !important; 
+        font-style: italic !important;
         margin-top: 10px !important;
-        margin-bottom: 80px !important; /* HUGE margin to force the button down */
+        margin-bottom: 70px !important; /* Forces the button down */
         line-height: 1.5 !important;
         display: block !important;
-        color: rgba(255, 255, 255, 0.9) !important;
+        opacity: 1 !important;
     }
 
-    /* 4. The Button: Ensure it's not 'Absolute' positioned */
+    /* 4. The Button - Ensure it respects the margin above it */
     .cta-button, .gold-button, #apply-button {
         position: relative !important;
-        width: 90% !important;
+        width: 100% !important;
+        max-width: 300px !important;
         margin: 0 auto !important;
         display: block !important;
     }
 }
-
-
-
