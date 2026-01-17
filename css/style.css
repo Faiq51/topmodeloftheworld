@@ -1727,4 +1727,26 @@ select.glass-input option {
 
 
 
+@media (max-width: 768px) {
+    /* 1. Unlock the height of the hero container */
+    .hero-container, .hero-section { 
+        height: auto !important;
+        min-height: 100vh; /* Keeps it full screen but allows it to grow */
+        padding-top: 100px; /* Space for the menu */
+        padding-bottom: 60px; /* Space at the bottom */
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+    }
+
+    /* 2. Apply the bigger margin to the subtitle */
+    .hero-subtitle {
+        font-size: 1.1rem !important;
+        margin-bottom: 60px !important; /* This will now work because height is auto */
+        line-height: 1.5;
+        padding: 0 15px;
+    }
+}
+
+
 
