@@ -1582,3 +1582,56 @@ select.glass-input option {
 .dob-select:invalid {
     color: rgba(255, 255, 255, 0.5) !important;
 }
+
+
+/* The Container for all images */
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Magic: wraps automatically */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* The Individual Image Item */
+.media-item {
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 10px;
+    cursor: pointer;
+    background: rgba(0,0,0,0.2);
+}
+
+/* Ensuring the image keeps its original shape */
+.media-item img {
+    width: 100%;
+    height: auto; /* Keeps original aspect ratio */
+    display: block;
+    transition: transform 0.3s ease;
+    object-fit: contain; /* Shows whole photo without cropping */
+}
+
+.media-item:hover img {
+    transform: scale(1.05);
+}
+
+
+
+
+.hero-gold-prestige {
+    font-family: 'Playfair Display', serif; /* Ensure you have this linked in your HTML head */
+    font-size: 4.5rem; /* Larger than the rest */
+    color: #d4af37;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-shadow: 2px 2px 15px rgba(212, 175, 55, 0.4);
+    display: inline-block;
+    margin: 15px 0;
+}
+
+@media (max-width: 768px) {
+    .hero-gold-prestige { font-size: 2.5rem; }
+}
+
+
