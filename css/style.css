@@ -1719,7 +1719,7 @@ select.glass-input option {
 @media (max-width: 768px) {
     .hero-subtitle {
         font-size: 1.1rem;
-        margin-bottom: 30px !important;
+        margin-bottom: 40px !important;
         padding: 0 20px;
     }
 }
