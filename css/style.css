@@ -1909,3 +1909,37 @@ TARGETING IMAGE CONTAINERS
         object-fit: contain !important; /* Prevents stretching */
     }
 }
+
+
+/*=========================================================================
+CHANGE STRATEGY TO DEAL WITH IMAGE CONTAINERS
+===========================================================================*/
+
+/* This targets the specific HTML structure you found */
+@media screen and (max-width: 768px) {
+    .photo-grid {
+        display: flex !important;
+        flex-direction: column !important; /* Forces vertical stacking */
+        align-items: center !important;
+    }
+
+    .photo-item {
+        flex: 0 0 100% !important; /* Forces it to take 100% width */
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 25px !important;
+    }
+
+    .image-container {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .image-container img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+    }
+}
+
+

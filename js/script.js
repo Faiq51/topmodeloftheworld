@@ -420,3 +420,29 @@ document.addEventListener('click', function(e) {
 });
 
 
+
+
+
+
+// This script listens for ANY click on the body while an image is open
+document.addEventListener('DOMContentLoaded', function() {
+    document.body.addEventListener('click', function() {
+        // We look for common 'Lightbox' containers
+        const lightboxOverlay = document.querySelector('.lb-overlay, .lightbox-overlay, .lb-outerContainer, .lg-outer');
+        
+        if (lightboxOverlay) {
+            // We trigger a 'click' on the close button if it exists
+            const closeBtn = document.querySelector('.lb-close, .lg-close, .close-button');
+            if (closeBtn) {
+                closeBtn.click();
+            } else {
+                // If no button, just hide the whole thing
+                lightboxOverlay.style.display = 'none';
+                // Remove any library-added classes that lock the scroll
+                document.body.classList.remove('lb-disable-scrolling');
+            }
+        }
+    });
+});
+
+
