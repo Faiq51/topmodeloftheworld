@@ -2005,3 +2005,25 @@ REMOVED LIGHTBOX
         display: block;
     }
 }
+
+
+
+
+@media (max-width: 768px) {
+    /* Target the container you shared */
+    .image-container {
+        display: flex !important;
+        flex-direction: column !important; /* Forces them to stack vertically */
+        gap: 30px !important; /* Space between the photos */
+    }
+
+    .image-container a {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .image-container img {
+        width: 100% !important;
+        height: auto !important;
+    }
+}
