@@ -966,7 +966,7 @@ a:hover, a:active {
     text-align: center;
 }
 
-/* 3. The Images: "Vogue" style uniform thumbnails */
+/* 3. The Images: "Vogue" style uniform thumbnails with Luxury Zoom */
 .finalist-box img {
     width: 100% !important;
     height: 400px !important;       /* Uniform height for a perfect grid */
@@ -974,13 +974,17 @@ a:hover, a:active {
     border: 1px solid rgba(212, 175, 55, 0.6) !important;
     border-radius: 4px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Smooth transition for the zoom */
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out !important;
     cursor: pointer;
 }
 
+/* The Zoom Effect - Replaces the old 'Lift' effect */
 .finalist-box img:hover {
-    transform: translateY(-5px) scale(1.02); /* Luxury hover lift */
-    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.3);
+    transform: scale(1.08) !important; /* Elegant 8% zoom outward */
+    box-shadow: 0 20px 45px rgba(212, 175, 55, 0.4) !important;
+    z-index: 10; /* Ensures the zoomed image stays on top */
 }
 
 /* 4. The Text: Gold Editorial Style */

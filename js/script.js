@@ -391,8 +391,34 @@ function handleGlobalClose(e) {
 
 
 
+<script>
+function openLightbox(src) {
+    const modal = document.getElementById("lightbox-modal");
+    const img = document.getElementById("lightbox-img");
+    const loader = document.getElementById("lightbox-loader");
 
+    modal.style.display = "block";
+    loader.style.display = "block"; // Show loading spinner
+    img.src = src;
 
+    img.onload = function() {
+        loader.style.display = "none"; // Hide spinner when image loads
+    };
+}
+
+// Close the Lightbox when the 'X' is clicked
+document.querySelector(".close-lightbox").onclick = function() {
+    document.getElementById("lightbox-modal").style.display = "none";
+};
+
+// Close the Lightbox if the user clicks anywhere outside the image
+window.onclick = function(event) {
+    const modal = document.getElementById("lightbox-modal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
+</script>
 
 
 
