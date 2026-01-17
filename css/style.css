@@ -1803,4 +1803,29 @@ TO RETURN JPG to WBPL
     z-index: 10000;
 }
 
+/* ==========================================================================
+   AUSTRALIA MEDIA GRID WRAP FIX
+   ========================================================================== */
+.photo-grid {
+    display: flex !important;
+    flex-wrap: wrap !important; /* This is the key to stopping the squashing */
+    justify-content: center !important;
+    gap: 20px !important;
+    padding: 20px !important;
+}
 
+.photo-item {
+    flex: 1 1 300px !important; /* On desktop, they sit side-by-side */
+    max-width: 400px !important;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    aspect-ratio: 3 / 4;
+}
+
+/* On Mobile: Force images to stack 1-per-row if screen is small */
+@media screen and (max-width: 768px) {
+    .photo-item {
+        flex: 1 1 100% !important; /* Takes full width on phones */
+    }
+}

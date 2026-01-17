@@ -143,6 +143,9 @@ window.onclick = function(event) {
     }
 }
 </script>
+
+
+
 <script>
 document.addEventListener('click', function (event) {
     // 1. Identify the lightbox overlay (the dark background)
@@ -158,5 +161,27 @@ document.addEventListener('click', function (event) {
     }
 }, false);
 </script>
+
+
+
+<script>
+// "Click to Close" Final Fix
+document.addEventListener('click', function (event) {
+    // 1. Identify your overlay (check if it's 'lightbox-overlay', 'modal', or 'image-container')
+    const overlay = document.querySelector('.lightbox-overlay') || 
+                    document.querySelector('.modal') || 
+                    document.querySelector('.image-container');
+    
+    // 2. If the user clicks the dark area (not the image itself)
+    if (overlay && overlay.style.display !== 'none') {
+        // If the thing clicked is the overlay background OR has the "close" class
+        if (event.target === overlay || event.target.classList.contains('close-btn')) {
+            overlay.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restores scrolling
+        }
+    }
+}, false);
+</script>
+
 </body>
 </html>
