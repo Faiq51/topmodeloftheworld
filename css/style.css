@@ -1696,54 +1696,72 @@ select.glass-input option {
 }
 
 
-
 /* ==========================================================================
-   CONSOLIDATED MOBILE PRESTIGE FIX
+   FINAL ATOMIC MOBILE FIX
    ========================================================================== */
 @media screen and (max-width: 768px) {
-    
-    /* 1. Ensure the container can grow and centers content */
-    main {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        min-height: calc(100vh - 70px) !important;
-        padding: 40px 15px !important;
-    }
-
-    .hero-container {
+    /* 1. Reset the main container to allow scrolling and natural flow */
+    main, .hero-section, .hero-container {
+        position: relative !important;
         height: auto !important;
-        padding: 50px 20px !important;
+        min-height: 100vh !important;
         display: flex !important;
         flex-direction: column !important;
         justify-content: center !important;
-        align-items: center !important;
+        padding: 60px 20px !important;
     }
 
-    /* 2. The "Top Model" Title - Force proper scaling */
-    .text-middle, .prestige-title {
-        font-size: 9vw !important;
-        margin-bottom: 20px !important;
-        display: block !important;
-        line-height: 1.1 !important;
-    }
-
-    /* 3. The "Journey" line - Adding the specific spacing you requested */
+    /* 2. Target the 'Journey' text specifically */
     .text-bottom, .hero-subtitle {
-        font-size: 1.2rem !important; 
-        font-style: italic !important;
-        margin-top: 10px !important;
-        margin-bottom: 70px !important; /* Forces the button down */
-        line-height: 1.5 !important;
+        font-size: 1.2rem !important;
+        margin-top: 20px !important;
+        margin-bottom: 90px !important; /* Forces the button down significantly */
         display: block !important;
-        opacity: 1 !important;
+        position: relative !important;
     }
 
-    /* 4. The Button - Ensure it respects the margin above it */
+    /* 3. Force the button to stay below the text */
     .cta-button, .gold-button, #apply-button {
         position: relative !important;
-        width: 100% !important;
-        max-width: 300px !important;
+        top: 0 !important;
+        bottom: 0 !important;
         margin: 0 auto !important;
-        display: block !important;
+        display: inline-block !important;
+        width: 80% !important;
     }
+
+
+}/* ==========================================================================
+   FINAL ATOMIC MOBILE FIX
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    /* 1. Reset the main container to allow scrolling and natural flow */
+    main, .hero-section, .hero-container {
+        position: relative !important;
+        height: auto !important;
+        min-height: 100vh !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        padding: 60px 20px !important;
+    }
+
+    /* 2. Target the 'Journey' text specifically */
+    .text-bottom, .hero-subtitle {
+        font-size: 1.2rem !important;
+        margin-top: 20px !important;
+        margin-bottom: 90px !important; /* Forces the button down significantly */
+        display: block !important;
+        position: relative !important;
+    }
+
+    /* 3. Force the button to stay below the text */
+    .cta-button, .gold-button, #apply-button {
+        position: relative !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        margin: 0 auto !important;
+        display: inline-block !important;
+        width: 80% !important;
+    }
+}
