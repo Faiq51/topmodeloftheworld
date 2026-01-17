@@ -918,47 +918,66 @@ a:hover, a:active {
 }
 
 /* ==========================================================================
-   FINAL AUSTRALIA MEDIA GRID - REFINED SIZE & ALIGNMENT FIX
+   FINAL AUSTRALIA MEDIA GRID - LUXURY EDITION
    ========================================================================== */
 
-/* Desktop: Forces images to stay side-by-side */
-.photo-grid, .photo-grid-new, .image-container {
+/* 1. The Container: Allows images to sit side-by-side on Desktop */
+.photo-grid, .photo-grid-new, .gallery-grid {
     display: flex !important;
     flex-wrap: wrap !important; 
     justify-content: center !important;
-    gap: 20px !important;
-    padding: 20px !important;
+    gap: 30px !important; /* Space between photos */
+    padding: 40px 20px !important;
     width: 100% !important;
 }
 
-/* Photo Box: Fixes Desktop vertical stacking and size */
-.photo-item, .finalist-box, .image-container a {
-    flex: 0 1 250px !important;  /* Sets the desktop width to 250px */
-    max-width: 250px !important; /* Prevents them from getting too large */
-    display: block !important;
+/* 2. The Photo Card: Defines the elegant size on Desktop */
+.photo-item, .finalist-box, .gallery-item {
+    flex: 0 1 320px !important; /* Balanced width for high-res look */
+    max-width: 320px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
     text-align: center;
+    transition: transform 0.4s ease;
 }
 
-/* Images: High-end border and fit */
-.photo-item img, .finalist-box img, .image-container img {
+.finalist-box:hover {
+    transform: translateY(-10px); /* Subtle lift on hover */
+}
+
+/* 3. The Images: Adding the professional "Vogue" finish */
+.finalist-box img, .photo-item img {
     width: 100% !important;
-    height: auto !important;
-    display: block !important;
-    border: 1px solid rgba(212, 175, 55, 0.5) !important;
-    border-radius: 5px;
-    object-fit: contain !important;
+    height: 400px !important; /* Forces uniform height for a clean grid */
+    object-fit: cover !important; /* Prevents stretching/squashing */
+    border: 1px solid rgba(212, 175, 55, 0.6) !important;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5); /* Deep shadow for depth */
 }
 
-/* MOBILE FIX: Vertical Stack - elegant, non-giant size */
+/* 4. The Text: Gold editorial style */
+.gold-text, .finalist-box p {
+    margin-top: 15px !important;
+    color: #d4af37 !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* 5. MOBILE FIX: Elegant scaling (Not too big, not too small) */
 @media screen and (max-width: 768px) {
-    .photo-grid, .photo-grid-new, .image-container {
-        flex-direction: column !important;
-        align-items: center !important;
+    .photo-grid, .photo-grid-new {
+        gap: 40px !important;
     }
-    .photo-item, .finalist-box, .image-container a {
-        flex: 0 1 auto !important;
-        width: 70% !important;      /* Shrinks them so they aren't "giant" */
-        max-width: 280px !important; /* Strictly prevents massive images on phones */
-        margin-bottom: 30px !important;
+    
+    .finalist-box, .photo-item {
+        flex: 0 1 85% !important; /* Takes up most of the screen width */
+        max-width: 320px !important; /* But never gets 'giant' */
+    }
+
+    .finalist-box img {
+        height: 380px !important; /* Slightly shorter for mobile screens */
     }
 }
