@@ -2029,44 +2029,14 @@ REMOVED LIGHTBOX
 }
 
 
+/* ==========================================================================
+   AUSTRALIA MEDIA GRID & FINALIST LAYOUT
+   ========================================================================== */
 
-
-/* New Clean Layout */
-.photo-grid-new {
-    display: flex;
-    flex-wrap: wrap; /* Allows images to move to the next line */
-    justify-content: center;
-    gap: 40px;
-    padding: 20px;
-}
-
-.finalist-box {
-    flex: 0 1 300px; /* On desktop, they will be 300px wide side-by-side */
-    text-align: center;
-}
-
-.finalist-box img {
-    width: 100%;
-    height: auto;
-    border: 1px solid #d4af37;
-    border-radius: 4px;
-    display: block;
-}
-
-/* Force Vertical Stack on Mobile */
-@media screen and (max-width: 768px) {
-    .finalist-box {
-        flex: 0 1 100% !important; /* Forces 100% width on phones */
-        margin-bottom: 30px;
-    }
-}
-
-
-
-/* Container for the images */
+/* Container for the images - Desktop View */
 .photo-grid {
     display: flex !important;
-    flex-wrap: wrap !important; /* This allows wrapping on mobile */
+    flex-wrap: wrap !important; 
     justify-content: center !important;
     gap: 30px !important;
     padding: 20px !important;
@@ -2074,30 +2044,30 @@ REMOVED LIGHTBOX
     margin: 0 auto;
 }
 
-/* Individual Image Box */
+/* Individual Image Box - Sets desktop width to ~3 images per row */
 .photo-item {
-    flex: 0 1 300px !important; /* Width on Desktop */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex: 0 1 300px !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
 }
 
-.image-container img {
+/* Ensure images fit the container and look high-end */
+.image-container img, .photo-item img {
     width: 100% !important;
     height: auto !important;
-    border: 1px solid rgba(212, 175, 55, 0.5); /* Gold border */
+    border: 1px solid rgba(212, 175, 55, 0.5) !important;
     border-radius: 5px;
-    transition: transform 0.3s ease;
 }
 
-/* Mobile specific override */
-@media (max-width: 768px) {
+/* Mobile specific override - Forces 1 per row */
+@media screen and (max-width: 768px) {
     .photo-item {
-        flex: 0 1 100% !important; /* Full width on phones */
-        margin-bottom: 20px;
+        flex: 0 1 100% !important; 
+        margin-bottom: 40px !important; /* Space between photos on mobile */
     }
     
     .photo-grid {
-        gap: 40px !important; /* More space between stacked items */
+        gap: 0 !important; /* Let margin-bottom handle the spacing */
     }
 }
