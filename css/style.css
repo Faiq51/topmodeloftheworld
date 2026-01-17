@@ -1881,4 +1881,31 @@ Wrapping photos into rows in mobile - attempt 2 using display flex
     }
 }
 
+/*=========================================================================
+TARGETING IMAGE CONTAINERS
+===========================================================================*/
 
+@media only screen and (max-width: 768px) {
+    /* Target the specific container for your Grand Finale images */
+    .gallery-container, .media-grid, [class*="gallery"], [class*="grid"] {
+        display: block !important; /* Disables Flexbox entirely */
+        padding: 10px !important;
+    }
+
+    .media-item, .gallery-item, [class*="item"] {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        margin-bottom: 30px !important; /* Adds space between stacked photos */
+        display: block !important;
+        position: relative !important;
+        left: 0 !important;
+    }
+
+    .media-item img, .gallery-item img {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+        object-fit: contain !important; /* Prevents stretching */
+    }
+}

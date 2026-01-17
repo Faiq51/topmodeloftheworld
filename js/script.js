@@ -400,6 +400,23 @@ document.addEventListener('click', function (event) {
 
 
 
+// Function to close any open image/overlay
+function closeEverything() {
+    // This finds any element that might be the popup and hides it
+    const overlays = document.querySelectorAll('.lightbox-overlay, .modal, #lightbox');
+    overlays.forEach(ov => {
+        ov.style.display = 'none';
+    });
+    document.body.style.overflow = 'auto';
+}
 
+// Attach the close function to the ENTIRE document
+// So tapping anywhere on the black/image closes it
+document.addEventListener('click', function(e) {
+    const isImgOpen = document.querySelector('.lightbox-overlay');
+    if (isImgOpen && isImgOpen.style.display !== 'none') {
+        closeEverything();
+    }
+});
 
 
