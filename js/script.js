@@ -367,82 +367,32 @@ if (registrationForm) {
 
 
 
-// This script handles the 'Click to Return' functionality
-document.addEventListener('click', function (e) {
-    // Look for the lightbox container (check if your ID is 'lightbox-overlay' or similar)
-    const lightbox = document.querySelector('.lightbox-overlay'); 
+// Force-close any open image gallery when the screen is tapped
+document.addEventListener('touchstart', handleGlobalClose, false);
+document.addEventListener('mousedown', handleGlobalClose, false);
+
+function handleGlobalClose(e) {
+    // Look for common lightbox containers used by libraries
+    const lightbox = document.querySelector('.lb-overlay, .lightbox-overlay, .lb-outerContainer, #lightbox');
     
-    if (lightbox && lightbox.style.display !== 'none') {
-        // If the user clicks the black background OR the image, close it
-        lightbox.style.display = 'none';
-        document.body.style.overflow = 'auto'; // Re-enables scrolling on the main page
-    }
-});
-
-
-
-// Force close ANY open gallery overlay when the screen is tapped
-document.addEventListener('click', function (event) {
-    // Look for common lightbox names
-    const selectors = ['.lightbox-overlay', '.modal', '#lightbox', '.lg-backdrop'];
-    
-    selectors.forEach(selector => {
-        const element = document.querySelector(selector);
-        if (element) {
-            // If the element is visible, hide it
-            element.style.setProperty('display', 'none', 'important');
+    if (lightbox && (window.getComputedStyle(lightbox).display !== 'none')) {
+        // Find the 'Close' button (X) inside the library and click it for the user
+        const closeBtn = document.querySelector('.lb-close, .close-button, .close');
+        if (closeBtn) {
+            closeBtn.click();
+        } else {
+            // If no button found, force-hide the overlay
+            lightbox.style.setProperty('display', 'none', 'important');
+            document.body.style.overflow = 'auto';
         }
-    });
-    
-    // Re-enable scrolling on the body just in case it was locked
-    document.body.style.overflow = 'auto';
-}, false);
-
-
-
-// Function to close any open image/overlay
-function closeEverything() {
-    // This finds any element that might be the popup and hides it
-    const overlays = document.querySelectorAll('.lightbox-overlay, .modal, #lightbox');
-    overlays.forEach(ov => {
-        ov.style.display = 'none';
-    });
-    document.body.style.overflow = 'auto';
+    }
 }
 
-// Attach the close function to the ENTIRE document
-// So tapping anywhere on the black/image closes it
-document.addEventListener('click', function(e) {
-    const isImgOpen = document.querySelector('.lightbox-overlay');
-    if (isImgOpen && isImgOpen.style.display !== 'none') {
-        closeEverything();
-    }
-});
 
 
 
 
 
 
-// This script listens for ANY click on the body while an image is open
-document.addEventListener('DOMContentLoaded', function() {
-    document.body.addEventListener('click', function() {
-        // We look for common 'Lightbox' containers
-        const lightboxOverlay = document.querySelector('.lb-overlay, .lightbox-overlay, .lb-outerContainer, .lg-outer');
-        
-        if (lightboxOverlay) {
-            // We trigger a 'click' on the close button if it exists
-            const closeBtn = document.querySelector('.lb-close, .lg-close, .close-button');
-            if (closeBtn) {
-                closeBtn.click();
-            } else {
-                // If no button, just hide the whole thing
-                lightboxOverlay.style.display = 'none';
-                // Remove any library-added classes that lock the scroll
-                document.body.classList.remove('lb-disable-scrolling');
-            }
-        }
-    });
-});
 
 
