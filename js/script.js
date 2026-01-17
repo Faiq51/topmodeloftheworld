@@ -381,4 +381,25 @@ document.addEventListener('click', function (e) {
 
 
 
+// Force close ANY open gallery overlay when the screen is tapped
+document.addEventListener('click', function (event) {
+    // Look for common lightbox names
+    const selectors = ['.lightbox-overlay', '.modal', '#lightbox', '.lg-backdrop'];
+    
+    selectors.forEach(selector => {
+        const element = document.querySelector(selector);
+        if (element) {
+            // If the element is visible, hide it
+            element.style.setProperty('display', 'none', 'important');
+        }
+    });
+    
+    // Re-enable scrolling on the body just in case it was locked
+    document.body.style.overflow = 'auto';
+}, false);
+
+
+
+
+
 

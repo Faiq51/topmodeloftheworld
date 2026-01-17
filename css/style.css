@@ -1829,3 +1829,56 @@ TO RETURN JPG to WBPL
         flex: 1 1 100% !important; /* Takes full width on phones */
     }
 }
+
+
+
+/*======================================
+wrapping photos into rows
+========================================*/
+/* This ensures gallery items wrap to the next row on mobile */
+.media-grid, .gallery-container {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 20px !important;
+    padding: 15px !important;
+}
+
+.media-item {
+    flex: 1 1 100% !important; /* Forces one image per row on small phones */
+    max-width: 400px !important; /* Keeps them from getting too huge on tablets */
+    margin-bottom: 20px;
+}
+
+.media-item img {
+    width: 100% !important;
+    height: auto !important; /* Prevents the "portrait" stretching */
+    border-radius: 8px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+
+/*=========================================================================
+Wrapping photos into rows in mobile - attempt 2 using display flex
+===========================================================================*/
+/* Force the images to stack on mobile */
+@media (max-width: 768px) {
+    .gallery-grid, .media-grid, #gallery, .media-container {
+        display: block !important; /* Switch from Flex to Block to force stacking */
+        width: 100% !important;
+    }
+
+    .media-item {
+        width: 90% !important;
+        margin: 20px auto !important; /* Centers them and adds space between */
+        display: block !important;
+    }
+
+    .media-item img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+    }
+}
+
+
