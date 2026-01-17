@@ -1662,9 +1662,19 @@ select.glass-input option {
 /* 3. Mobile Adjustment */
 @media (max-width: 768px) {
     .prestige-title {
-        font-size: 2.5rem;
+        /* This keeps the text on one or two clean lines without overflow */
+        font-size: 8vw !important; 
+        line-height: 1.1;
+        display: block; /* Forces it to occupy its own space properly */
+        margin: 5px 0;
     }
+    
     .welcome-text {
-        font-size: 0.9rem;
+        font-size: 3.5vw;
+        letter-spacing: 3px;
+    }
+
+    .hero-main-title {
+        padding: 0 10px; /* Prevents text from touching the very edge of the screen */
     }
 }
