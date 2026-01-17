@@ -917,30 +917,29 @@ a:hover, a:active {
     }
 }
 
-
 /* ==========================================================================
-   FINAL AUSTRALIA MEDIA GRID - REFINED SIZE VERSION
+   FINAL AUSTRALIA MEDIA GRID - REFINED SIZE & ALIGNMENT FIX
    ========================================================================== */
 
-/* Desktop: side-by-side with 250px images */
-.photo-grid, .photo-grid-new {
+/* Desktop: Forces images to stay side-by-side */
+.photo-grid, .photo-grid-new, .image-container {
     display: flex !important;
     flex-wrap: wrap !important; 
     justify-content: center !important;
-    gap: 25px !important;
+    gap: 20px !important;
     padding: 20px !important;
     width: 100% !important;
 }
 
-/* Photo Box: Forces the smaller size you want on Desktop */
+/* Photo Box: Fixes Desktop vertical stacking and size */
 .photo-item, .finalist-box, .image-container a {
-    flex: 0 1 250px !important;  /* Base size 250px */
-    max-width: 250px !important; /* Prevents them from being 'Very Large' */
+    flex: 0 1 250px !important;  /* Sets the desktop width to 250px */
+    max-width: 250px !important; /* Prevents them from getting too large */
     display: block !important;
-    text-decoration: none !important;
+    text-align: center;
 }
 
-/* Images: Ensures they fit the box and have the gold border */
+/* Images: High-end border and fit */
 .photo-item img, .finalist-box img, .image-container img {
     width: 100% !important;
     height: auto !important;
@@ -950,16 +949,16 @@ a:hover, a:active {
     object-fit: contain !important;
 }
 
-/* MOBILE FIX: Vertical Stack - One image per row, but not giant */
+/* MOBILE FIX: Vertical Stack - elegant, non-giant size */
 @media screen and (max-width: 768px) {
-    .photo-grid, .photo-grid-new {
+    .photo-grid, .photo-grid-new, .image-container {
         flex-direction: column !important;
         align-items: center !important;
     }
     .photo-item, .finalist-box, .image-container a {
         flex: 0 1 auto !important;
-        width: 80% !important;      /* Reduces width from 100% so they aren't 'Giant' */
-        max-width: 300px !important; /* Safety limit for large phones */
-        margin-bottom: 40px !important;
+        width: 70% !important;      /* Shrinks them so they aren't "giant" */
+        max-width: 280px !important; /* Strictly prevents massive images on phones */
+        margin-bottom: 30px !important;
     }
 }
