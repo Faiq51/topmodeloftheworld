@@ -1678,3 +1678,30 @@ select.glass-input option {
         padding: 0 10px; /* Prevents text from touching the very edge of the screen */
     }
 }
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .prestige-title {
+        font-family: 'Playfair Display', serif !important;
+        font-size: 8.5vw !important; /* Dynamically sizes to fit screen width */
+        display: block !important;
+        width: 100% !important;
+        line-height: 1.1 !important;
+        color: #d4af37 !important;
+        text-align: center !important;
+        margin: 10px 0 !important;
+    }
+
+    .welcome-text {
+        font-size: 4vw !important;
+        letter-spacing: 2px !important;
+        display: block !important;
+    }
+}
+
+
+
+
+
