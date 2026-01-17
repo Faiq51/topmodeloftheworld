@@ -1659,26 +1659,6 @@ select.glass-input option {
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Adds depth */
 }
 
-/* 3. Mobile Adjustment */
-@media (max-width: 768px) {
-    .prestige-title {
-        /* This keeps the text on one or two clean lines without overflow */
-        font-size: 8vw !important; 
-        line-height: 1.1;
-        display: block; /* Forces it to occupy its own space properly */
-        margin: 5px 0;
-    }
-    
-    .welcome-text {
-        font-size: 3.5vw;
-        letter-spacing: 3px;
-    }
-
-    .hero-main-title {
-        padding: 0 10px; /* Prevents text from touching the very edge of the screen */
-    }
-}
-
 
 
 
@@ -1726,55 +1706,48 @@ select.glass-input option {
 
 
 
-
-@media (max-width: 768px) {
-    /* 1. Unlock the height of the hero container */
-    .hero-container, .hero-section { 
+/* ==========================================================================
+   FINAL MOBILE PRESTIGE FIX
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    
+    /* 1. The Container: We use Flexbox to force space between items */
+    .hero-container, .hero-content {
         height: auto !important;
-        min-height: 100vh; /* Keeps it full screen but allows it to grow */
-        padding-top: 100px; /* Space for the menu */
-        padding-bottom: 60px; /* Space at the bottom */
+        min-height: 80vh !important;
         display: flex !important;
         flex-direction: column !important;
         justify-content: center !important;
-    }
-
-    /* 2. Apply the bigger margin to the subtitle */
-    .hero-subtitle {
-        font-size: 1.1rem !important;
-        margin-bottom: 60px !important; /* This will now work because height is auto */
-        line-height: 1.5;
-        padding: 0 15px;
-    }
-}
-
-
-
-
-@media (max-width: 768px) {
-    /* Target the container holding the text and button */
-    .hero-content {
-        display: flex !important;
-        flex-direction: column !important;
         align-items: center !important;
-        justify-content: center !important;
-        gap: 30px !important; /* This forces 30px of space between EVERY element */
-        padding: 100px 20px !important; /* Extra room top and bottom */
-        text-align: center !important;
+        padding: 80px 20px !important;
+        gap: 0 !important; /* Reset gap to use specific margins */
     }
 
-    .hero-subtitle {
-        font-size: 1.1rem !important;
-        margin-bottom: 20px !important; /* Added to the gap above */
-        line-height: 1.4 !important;
-    }
-
+    /* 2. The "Top Model" Title */
     .prestige-title {
-        font-size: 9vw !important; /* Slightly smaller to ensure it stays clean */
-        margin-bottom: 10px !important;
+        font-size: 9vw !important;
+        margin-bottom: 20px !important;
+        display: block !important;
+    }
+
+    /* 3. The "Journey" line - This is the one you wanted larger and spaced out */
+    .hero-subtitle, .text-bottom {
+        font-size: 1.2rem !important; /* Larger text */
+        margin-top: 10px !important;
+        margin-bottom: 80px !important; /* HUGE margin to force the button down */
+        line-height: 1.5 !important;
+        display: block !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    /* 4. The Button: Ensure it's not 'Absolute' positioned */
+    .cta-button, .gold-button, #apply-button {
+        position: relative !important;
+        width: 90% !important;
+        margin: 0 auto !important;
+        display: block !important;
     }
 }
-
 
 
 
