@@ -1750,3 +1750,31 @@ select.glass-input option {
 
 
 
+
+@media (max-width: 768px) {
+    /* Target the container holding the text and button */
+    .hero-content {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 30px !important; /* This forces 30px of space between EVERY element */
+        padding: 100px 20px !important; /* Extra room top and bottom */
+        text-align: center !important;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem !important;
+        margin-bottom: 20px !important; /* Added to the gap above */
+        line-height: 1.4 !important;
+    }
+
+    .prestige-title {
+        font-size: 9vw !important; /* Slightly smaller to ensure it stays clean */
+        margin-bottom: 10px !important;
+    }
+}
+
+
+
+
