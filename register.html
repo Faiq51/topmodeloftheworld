@@ -1,134 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Official Registration – Top Model of the World - Australia</title>
+    <title>Official Registration – Top Model of the World Australia</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-<meta name="title" content="Top Model of the World – Australia | Official Site">
-<meta name="description" content="The prestigious national search for the next global icon. Apply now for Top Model of the World - Australia. Catwalk, workshops, and international opportunities.">
-<meta name="keywords" content="Top Model of the World - Australia, Modeling Competition Australia, Top Model of the World, Pageant Australia, Catwalk Training, Model Search 2026, fashion show, Photography, Photoshoot">
-<meta name="author" content="Top Model of the World - Australia">
+    <link rel="stylesheet" href="css/style.css?v=430">
+    <style>
+        .registration-wrapper {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 20px;
+        }
+        .form-main-container {
+            border: 1px solid #d4af37;
+            padding: 40px;
+            border-radius: 10px;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+        }
+        .custom-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .custom-form-group {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+        .custom-form-group label {
+            color: #d4af37;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        /* FIXED: Forcing dark background for selects and options */
+        .custom-form-group input, 
+        .custom-form-group select {
+            background: #1a1a1a !important; 
+            border: 1px solid #444;
+            color: #fff !important;
+            padding: 12px;
+            outline: none;
+            appearance: none; /* Removes default browser styling */
+        }
+        .custom-form-group option {
+            background: #1a1a1a;
+            color: #fff;
+        }
+        
+        .submit-btn-container button {
+            background: none; 
+            border: 1px solid rgba(212, 175, 55, 0.4); 
+            padding: 15px 40px; 
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .submit-btn-container button:hover {
+            border-color: #d4af37;
+            background: rgba(212, 175, 55, 0.1);
+        }
 
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.topmodeloftheworld.com.au/">
-<meta property="og:title" content="Top Model of the World – Australia">
-<meta property="og:description" content="Start your journey to the global stage. Applications for the 2026 National Finals are now open.">
-<meta property="og:image" content=""https://www.topmodeloftheworld.com.au/images/og-share-image.jpg">
-
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://www.topmodeloftheworld.com.au/">
-<meta property="twitter:title" content="Top Model of the World – Australia">
-<meta property="twitter:description" content="Start your journey to the global stage. Applications for the 2026 National Finals are now open.">
-<meta property="twitter:image" content="https://www.topmodeloftheworld.com.au/images/og-share-image.jpg">
-
-<link rel="icon" type="image/png" href="images/favicon.png">
+        @media (max-width: 768px) {
+            .custom-grid { grid-template-columns: 1fr; }
+            .registration-wrapper { padding: 10px; margin: 30px auto; }
+            .gold-title { font-size: 2.2rem !important; }
+        }
+    </style>
 </head>
 <body>
+
 <nav>
-<div class="menu-toggle" id="mobile-menu">
-        <i class="fas fa-bars"></i>
-    </div>
-    
     <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
         <a href="apply.html">Apply Now</a>
         <a href="register.html">Register</a>
         <a href="sponsors.html">Sponsors</a>
-        <a href="media.html">Media</a>
+        <a href="media-australia.html">Australia Media</a>
         <a href="contact.html">Contact Us</a>
     </div>
-    </nav>
+</nav>
 
-<div class="form-container">
-    <h1 class="gold-text">Official Registration</h1>
-    <p>Please complete your details to secure your spot.</p>
+<div class="registration-wrapper">
+    <h1 class="gold-title" style="font-size: 3rem; text-align: center; margin-bottom: 20px;">Official Registration</h1>
+    
+    <main class="form-main-container">
+        <form action="https://api.web3forms.com/submit" method="POST" id="registrationForm">
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
 
-    <form action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="6f4ed71b-3c15-4cf1-9f5b-e36032dac516">
-        <input type="hidden" name="redirect" value="https://topmodeloftheworldaustralia.com.au/thankyou.html">
-        <input type="hidden" name="subject" value="OFFICIAL REGISTRATION">
-        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+            <div style="background: rgba(212, 175, 55, 0.1); border: 1px solid #d4af37; padding: 20px; margin-bottom: 30px; text-align: left;">
+                <p style="color: #d4af37; font-weight: bold; margin-bottom: 5px; font-size: 0.9rem;">OFFICIAL NOTICE:</p>
+                <p style="color: #eee; font-size: 0.85rem; line-height: 1.5;">
+                    This form is only for individuals whose applications were approved by Top Model of the World - Australia and invited to complete this Registration Form. This process includes electronic payment that requires a valid credit card.
+                </p>
+            </div>
 
-        <div class="form-row">
-            <input type="text" name="name" placeholder="Full Name" required>
-            <input type="email" name="email" placeholder="Email Address" required>
-        </div>
-
-<div class="dob-label" style="text-align: left; margin-bottom: 5px; font-size: 14px; color: rgba(255,255,255,0.7);">Date of Birth:</div>
-<div class="form-row">
-    <select name="dob_day" class="glass-input dob-select" required>
-        <option value="" disabled selected>Day</option>
-        <option value="01">01</option><option value="02">02</option><option value="03">03</option>
-    </select>
-
-    <select name="dob_month" class="glass-input dob-select" required>
-        <option value="" disabled selected>Month</option>
-        <option value="01">Jan</option>
-        <option value="02">Feb</option>
-        <option value="03">Mar</option>
-        </select>
-
-    <select name="dob_year" class="glass-input dob-select" required>
-        <option value="" disabled selected>Year</option>
-        <option value="2008">2008</option>
-        <option value="2007">2007</option>
-        </select>
-            <input type="text" name="city" placeholder="City/State" required>
-        </div>
-
-<p class="form-footer-text">
-    By clicking below, you agree to our 
-    <a href="terms.html" target="_blank">Terms & Conditions</a> and 
-    <a href="terms.html#refunds">Refund Policy</a>.
-</p>
-
-<div class="payment-notice">
-                   <p><i class="fas fa-lock"></i> Secure Registration Fee: <strong>$350.00 AUD</strong></p>
-                    <p class="small-text">By clicking below, you will proceed to the secure credit card payment portal.</p>
+            <div class="custom-grid">
+                <div class="custom-form-group">
+                    <label>Full Name</label>
+                    <input type="text" name="full_name" required placeholder="Full Name">
                 </div>
+                <div class="custom-form-group">
+                    <label>Email Address</label>
+                    <input type="email" name="email" required placeholder="Email Address">
+                </div>
+            </div>
 
-        <button type="submit">PROCEED TO PAYMENT</button>
-    </form>
+            <div class="custom-grid">
+                <div class="custom-form-group">
+                    <label>Date of Birth</label>
+                    <div style="display: flex; gap: 10px;">
+                        <select name="dob_day" required style="flex: 1;">
+                            <option value="" disabled selected>Day</option>
+                            <script>for(let i=1; i<=31; i++) document.write(`<option value="${i}">${i}</option>`);</script>
+                        </select>
+                        <select name="dob_month" required style="flex: 1;">
+                            <option value="" disabled selected>Month</option>
+                            <option value="Jan">Jan</option><option value="Feb">Feb</option><option value="Mar">Mar</option>
+                            <option value="Apr">Apr</option><option value="May">May</option><option value="Jun">Jun</option>
+                            <option value="Jul">Jul</option><option value="Aug">Aug</option><option value="Sep">Sep</option>
+                            <option value="Oct">Oct</option><option value="Nov">Nov</option><option value="Dec">Dec</option>
+                        </select>
+                        <select name="dob_year" required style="flex: 1;">
+                            <option value="" disabled selected>Year</option>
+                            <script>
+                                const currentYear = new Date().getFullYear();
+                                for(let i=currentYear-28; i<=currentYear-17; i++) document.write(`<option value="${i}">${i}</option>`);
+                            </script>
+                        </select>
+                    </div>
+                </div>
+                <div class="custom-form-group">
+                    <label>City/State</label>
+                    <input type="text" name="city_state" required placeholder="e.g. Sydney, NSW">
+                </div>
+            </div>
+
+            <div class="submit-btn-container" style="text-align: center; margin-top: 40px;">
+                <p style="color: #d4af37; font-family: 'Playfair Display', serif; font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px;">
+                    Click Below to Continue
+                </p>
+                <button type="submit">
+                    <img src="images/logo-submit.png" alt="SUBMIT" style="max-width: 220px; display: block; margin: 0 auto;">
+                </button>
+            </div>
+        </form>
+    </main>
 </div>
 
-        </section>
-    </main>
-
-    <footer>
-    <div class="social-container">
-        <a href="https://www.instagram.com/topmodeloftheworld_aus/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=61579750535578" target="_blank"><i class="fab fa-facebook"></i></a>
-    </div>
-
-        <div class="footer-nav">
-            <a href="sitemap.html">Sitemap</a>
-            <a href="privacy.html">Privacy</a>
-                </div>
-        <p>&copy; 2026 Top Model of the World – Australia.</p>
-<div class="copyright">
-    <p>&copy; 2026 Top Model of the World – Australia. All rights reserved.</p>
-    <p style="font-size: 0.7rem; letter-spacing: 1px; color: #666; margin-top: 5px;">A PRESTIGIOUS GLOBAL PRODUCTION</p>
-        <p class="architect-credit">Digital Architecture & Design support by Gemini.</p>
-</div>   
- </footer>
-
-    <script src="js/script.js"></script>
+<footer style="margin-top: 50px; border-top: 1px solid #222; padding: 40px 0; text-align: center;">
+    <p style="color: #888; font-size: 0.8rem; letter-spacing: 1px;">&copy; 2026 TOP MODEL OF THE WORLD - AUSTRALIA. ALL RIGHTS RESERVED.</p>
+</footer>
 
 <script>
-window.onclick = function(event) {
-    if (event.target.matches('.menu-toggle') || event.target.matches('.fas')) {
-        const menu = document.querySelector('.nav-links');
-        const btn = document.querySelector('.menu-toggle');
-        if (menu) {
-            menu.classList.toggle('active');
-            btn.classList.toggle('is-active');
-        }
-    }
-}
+const form = document.getElementById('registrationForm');
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: json
+        })
+        .then(async (response) => {
+            if (response.status == 200) {
+                window.location.href = "eligibility.html";
+            } else {
+                alert("Submission failed. Please try again.");
+            }
+        })
+        .catch(error => { alert("An error occurred."); });
+});
 </script>
+
 </body>
 </html>

@@ -9,16 +9,59 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css?v=60">
     
-    <meta name="title" content="Top Model of the World – Australia | Official Site">
-    <meta name="description" content="The prestigious national search for the next global icon. Apply now for Top Model of the World - Australia. Catwalk, workshops, and international opportunities.">
-    <meta name="keywords" content="Top Model of the World - Australia, Modeling Competition Australia, Top Model of the World, Pageant Australia, Catwalk Training, Model Search 2026, fashion show, Photography, Photoshoot">
-    <meta name="author" content="Top Model of the World - Australia">
+   <style>
+    /* Reduce top gap for About Us title */
+    .hero-container {
+        padding-top: 40px !important; /* Reduced from 80px */
+    }
 
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://topmodeloftheworldaustralia.com.au/">
-    <meta property="og:title" content="Top Model of the World – Australia">
-    <meta property="og:description" content="Start your journey to the global stage. Applications for the 2026 National Finals are now open.">
-    <meta property="og:image" content="https://topmodeloftheworldaustralia.com.au/images/og-share-image.jpg">
+    /* Interactive hover for the new CTA logo */
+    .cta-logo-link img {
+        transition: transform 0.3s ease, filter 0.3s ease;
+        border: 1px solid #d4af37;
+    }
+    .cta-logo-link:hover img {
+        transform: scale(1.05);
+        filter: brightness(1.1);
+    }
+
+    /* Gold Boxes for Criteria */
+    .criteria-grid {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin: 30px 0;
+        flex-wrap: wrap;
+    }
+    .criteria-box {
+        border: 1px solid #d4af37;
+        padding: 12px 20px;
+        border-radius: 4px;
+        color: #d4af37;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.85rem;
+        display: flex;
+        align-items: center;
+        min-width: 150px;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.3); /* Subtle dark background for contrast */
+    }
+    .criteria-box i {
+        margin-right: 8px;
+        font-size: 0.8rem;
+    }
+
+    @media screen and (max-width: 600px) {
+        .criteria-grid { flex-direction: column; align-items: center; }
+        .criteria-box { width: 90%; }
+        .hero-container { padding-top: 20px !important; } /* Even tighter on mobile */
+    }
+</style>
+
+    <meta name="title" content="Top Model of the World – Australia | Official Site">
+    <meta name="description" content="The prestigious national search for the next global icon. Apply now for Top Model of the World - Australia.">
 </head>
 <body>
 
@@ -55,20 +98,19 @@
                 <p>During this period, contestants from each participating country engage in photoshoots, video shoots, and themed fashion events. These activities provide judges and media more opportunities to evaluate the contestants’ versatility and personality in different settings.</p>
 
                 <h3 class="gold-heading" style="color: #d4af37; font-family: 'Playfair Display', serif; margin-top: 30px;">The Competition Show</h3>
-                <p>The culmination is a final competition show where contestants are typically judged in several segments. According to the official judging criteria, each delegate is evaluated in three main areas:</p>
+                <p>The culmination is a final competition show where contestants are typically judged in several segments. Each delegate is evaluated in three main areas:</p>
                 
-                <ul class="criteria-list" style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 10px;"><i class="fas fa-star" style="color: #d4af37; margin-right: 10px;"></i> Interview</li>
-                    <li style="margin-bottom: 10px;"><i class="fas fa-star" style="color: #d4af37; margin-right: 10px;"></i> Swimsuit</li>
-                    <li style="margin-bottom: 10px;"><i class="fas fa-star" style="color: #d4af37; margin-right: 10px;"></i> Evening Gown</li>
-                </ul>
-
-                <h3 class="gold-heading" style="color: #d4af37; font-family: 'Playfair Display', serif; margin-top: 30px;">The Grand Finale</h3>
-                <p>The finale often features a staged production with choreographed opening numbers, introductions of each country’s model, and an on-stage question or interview portion. The reigning titleholder then ceremonially crowns the new winner at the end of the night.</p>
+                <div class="criteria-grid">
+                    <div class="criteria-box"><i class="fas fa-star"></i> Interview</div>
+                    <div class="criteria-box"><i class="fas fa-star"></i> Swimsuit</div>
+                    <div class="criteria-box"><i class="fas fa-star"></i> Evening Gown</div>
+                </div>
             </div>
 
-            <div style="margin-top: 40px; text-align: center;">
-                <a href="apply.html" class="cta-button">Join the Journey</a>
+            <div style="margin: 60px auto 20px auto; text-align: center;">
+                <a href="apply.html" class="cta-logo-link">
+                    <img src="images/Join-the-journey.jpg" alt="Join the Journey - Top Model of the World Australia" style="max-width: 350px; width: 90%; height: auto; border: 1px solid #d4af37;">
+                </a>
             </div>
         </div>
     </section>

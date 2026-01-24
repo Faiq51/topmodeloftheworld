@@ -1,93 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank you for Application – Top Model of the World - Australia</title>
+    <title>Terms & Refund Policy – Top Model of the World Australia</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=110">
+    <style>
+        .terms-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid #d4af37;
+            padding: 40px;
+            border-radius: 10px;
+            color: #eee;
+        }
+        .terms-container h1 { color: #d4af37; font-family: 'Playfair Display', serif; margin-bottom: 10px; }
+        .terms-container h2 { color: #d4af37; font-size: 1.2rem; margin-top: 30px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-bottom: 10px; }
+        .terms-container p, .terms-container li { line-height: 1.8; margin-bottom: 15px; }
+        .highlight-gold { color: #d4af37; font-weight: 600; }
+    </style>
 </head>
 <body>
-
-    <nav>
-<div class="menu-toggle" id="mobile-menu">
-        <i class="fas fa-bars"></i>
-    </div>
-    
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="apply.html">Apply Now</a>
-        <a href="register.html">Register</a>
-        <a href="sponsors.html">Sponsors</a>
-        <a href="media.html">Media</a>
-        <a href="contact.html">Contact Us</a>
-    </div>
-    </nav>
-
 <main>
-<section class="registration-section">
-    <div class="form-container">
-        <div class="terms-content">
-            <h1>Terms and Conditions & Refund Policy</h1>
-            <p>Last Updated: January 2026</p>
-            </div>
-
-<section class="terms-section-wrapper">
     <div class="terms-container">
+        <h1>Terms & Refund Policy</h1>
+        <p>Last Updated: January 2026</p>
 
-    <ol>
-        <li><strong>Registration & Eligibility</strong> By clicking "Proceed to Payment," you certify that you are between the ages of 18 and 27 and meet the entry requirements for <strong>Top Model of the World - Australia</strong>. All information provided in the registration form must be accurate and truthful.</li>
+        <h2>1. Registration & Eligibility</h2>
+        <p>By clicking "Proceed to Payment," you certify that you are between the ages of 18 and 27 and meet the entry requirements for <span class="highlight-gold">Top Model of the World - Australia</span>. All information provided must be accurate and truthful.</p>
 
-<li><strong>Fees and Payments</strong> All registration fees are processed securely via Stripe. Your entry into the competition is only confirmed once the full payment has been successfully processed.</li>
+        <h2 id="refunds">2. Fees and Refund Policy</h2>
+        <p>All registration fees are processed securely via Stripe.</p>
+        <p><strong class="highlight-gold">Non-Refundable Policy:</strong> Please choose carefully. Due to administrative costs and venue securing, <span class="highlight-gold">all registration fees are non-refundable</span>.</p>
+        <ul>
+            <li>If the pageant is postponed, your registration transfers to the new date.</li>
+            <li>If the event is cancelled without a rescheduled date, a full refund will be issued.</li>
+        </ul>
 
-<li><strong>Refund Policy</strong> Please choose carefully. Due to the administrative costs of processing applications and securing venue capacity, <strong>all registration fees are non-refundable.</strong>
-
-  <ul>
-<li>In the event that the pageant is postponed, your registration will automatically transfer to the new date.</li>
-
-<li>If the event is cancelled by the organizers without a rescheduled date, a full refund will be issued.</li>
-</ul>
-</li>
-
-<li><strong>Media & Usage Rights </strong>By registering, you agree that photos and videos taken during the event may be used by <b>Top Model of the World - Australia</b> for promotional purposes on our website and social media platforms.</li>
-
-<li><strong>Privacy </strong>Your personal data and uploaded photos are used strictly for the selection process and will not be shared with third parties, except for the payment processing handled by Stripe.</li>
-   </ol>
-</div>
-    </section>
+        <h2>3. Media & Privacy</h2>
+        <p>By registering, you agree that photos and videos taken during the event may be used for promotional purposes. Your personal data is used strictly for selection and payment processing.</p>
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="register.html" style="color: #d4af37; text-decoration: none; border: 1px solid #d4af37; padding: 10px 20px; text-transform: uppercase; font-size: 0.8rem;">Back to Registration</a>
+        </div>
+    </div>
 </main>
-
-  <footer>
-    <div class="social-container">
-        <a href="https://www.instagram.com/topmodeloftheworld_aus/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=61579750535578" target="_blank"><i class="fab fa-facebook"></i></a>
-    </div>
-
-    <div class="footer-nav">
-        <a href="sitemap.html">Sitemap</a>
-        <a href="privacy.html">Privacy</a>
-    </div>
-
-        <div class="copyright">
-    <p>&copy; 2026 Top Model of the World – Australia. All rights reserved.</p>
-    <p style="font-size: 0.7rem; letter-spacing: 1px; color: #666; margin-top: 5px;">A PRESTIGIOUS GLOBAL PRODUCTION</p>
-        <p class="architect-credit">Digital Architecture & Design Support by Gemini.</p>
-</div>
-</footer>
-    <script src="js/script.js"></script>
-<script>
-window.onclick = function(event) {
-    if (event.target.matches('.menu-toggle') || event.target.matches('.fas')) {
-        const menu = document.querySelector('.nav-links');
-        const btn = document.querySelector('.menu-toggle');
-        if (menu) {
-            menu.classList.toggle('active');
-            btn.classList.toggle('is-active');
-        }
-    }
-}
-</script>
 </body>
 </html>

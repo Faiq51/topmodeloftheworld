@@ -1,136 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us – Top Model of the World - Australia</title>
+    <title>Contact Us – Top Model of the World Australia</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-<meta name="title" content="Top Model of the World – Australia | Official Site">
-<meta name="description" content="The prestigious national search for the next global icon. Apply now for Top Model of the World - Australia. Catwalk, workshops, and international opportunities.">
-<meta name="keywords" content="Top Model of the World - Australia, Modeling Competition Australia, Top Model of the World, Pageant Australia, Catwalk Training, Model Search 2026, fashion show, Photography, Photoshoot">
-<meta name="author" content="Top Model of the World - Australia">
+    <link rel="stylesheet" href="css/style.css?v=185">
+    <style>
+        .contact-form-container {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid #d4af37;
+            padding: 50px 40px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 40px auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .glass-input {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: white;
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 25px;
+            font-family: 'Open Sans', sans-serif;
+            border-radius: 4px;
+        }
+        textarea.glass-input { height: 160px; resize: none; }
+        .form-label { color: #d4af37; font-size: 0.75rem; letter-spacing: 1.5px; display: block; margin-bottom: 8px; font-weight: 600; text-transform: uppercase; }
 
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.topmodeloftheworldaustralia.com.au/">
-<meta property="og:title" content="Top Model of the World – Australia">
-<meta property="og:description" content="Start your journey to the global stage. Applications for the 2026 National Finals are now open.">
-<meta property="og:image" content="https://www.topmodeloftheworldaustralia.com.au/images/og-share-image.jpg">
+        .gold-submit-btn {
+            background: transparent;
+            color: #d4af37;
+            border: 1px solid #d4af37;
+            padding: 15px 40px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            display: block;
+        }
+        .gold-submit-btn:hover { background: #d4af37; color: #000; }
+        .gold-submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://www.topmodeloftheworldaustralia.com.au/">
-<meta property="twitter:title" content="Top Model of the World – Australia">
-<meta property="twitter:description" content="Start your journey to the global stage. Applications for the 2026 National Finals are now open.">
-<meta property="twitter:image" content="https://www.topmodeloftheworldaustralia.com.au/images/og-share-image.jpg">
-
-<link rel="icon" type="image/png" href="images/favicon.png">
+        @media screen and (max-width: 768px) {
+            .contact-form-container { width: 92%; padding: 30px 20px; }
+        }
+    </style>
 </head>
 <body>
 
-    <nav>
-<div class="menu-toggle" id="mobile-menu">
-        <i class="fas fa-bars"></i>
-    </div>
-    
+<nav>
+    <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
     <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
         <a href="apply.html">Apply Now</a>
         <a href="register.html">Register</a>
         <a href="sponsors.html">Sponsors</a>
-        <a href="media.html">Media</a>
+        <a href="media-australia.html">Australia Media</a>
+        <a href="media-international.html">International Media</a>
         <a href="contact.html">Contact Us</a>
     </div>
-    </nav>
+</nav>
 
-    <main class="form-page">
-        <section class="form-container contact-container">
-            <h1 class="text-middle">Get in Touch</h1>
-            <p class="form-subtitle"><h2>For media enquiries, sponsorships, or general questions.</h2></p>
-	<p></p>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="info-item">
-                        <p><class="fas fa-envelope"> <strong>Email Us:</strong> info@topmodeloftheworldaustralia.com.au</p>
-                    </div>
-                    <div class="info-item">
-                    <p><class="fas fa-map-marker-alt"><strong>Location: </strong>Sydney, NSW, Australia</p>
-                    </div>
- 			<div class="info-item">
-                    <p><class="fab fa-instagram"><strong>Follow Us: </strong> <a href="https://www.instagram.com/topmodeloftheworld_aus/" target="_blank"></i>topmodeloftheworld_aus</a><p>
-<p>
-</p>
-</div>
-</div>
+<main>
+    <h1 class="gold-title" style="margin-top: 60px;">Get in Touch</h1>
+    <p style="text-align: center; color: #ccc; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem;">For media enquiries or general questions</p>
 
-<div class="form-container">
-    <h1 class="gold-text">Contact Us</h1>
-    <p>Have a question? Our team is available to assist you.</p>
+    <div class="contact-form-container">
+        <form id="contactForm">
+            <input type="hidden" name="access_key" value="de2e3c55-38ef-47ca-926b-9d51e0292d29">
+            <input type="checkbox" name="botcheck" style="display:none;">
 
-    <form action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="de2e3c55-38ef-47ca-926b-9d51e0292d29">
-        <input type="hidden" name="redirect" value="https://topmodeloftheworldaustralia.com.au/thankyou.html">
-        <input type="hidden" name="subject" value="New Inquiry - Contact Page">
-        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+            <label class="form-label">Full Name</label>
+            <input type="text" name="name" class="glass-input" placeholder="Your Name" required>
 
-        <div class="form-group">
-            <input type="text" name="name" placeholder="Your Name" class="glass-input" style="margin-bottom: 15px;" required>
-        </div>
-        
-        <div class="form-group">
-            <input type="email" name="email" placeholder="Your Email Address" class="glass-input" style="margin-bottom: 15px;" required>
-        </div>
+            <label class="form-label">Email Address</label>
+            <input type="email" name="email" class="glass-input" placeholder="Your Email" required>
 
-        <div class="form-group">
-            <textarea name="message" placeholder="How can we help you?" class="glass-input" style="height: 150px; margin-bottom: 20px;" required></textarea>
-        </div>
+            <label class="form-label">Message</label>
+            <textarea name="message" class="glass-input" placeholder="How can we help you?" required></textarea>
 
-        <button type="submit" class="gold-button">SEND MESSAGE</button>
-    </form>
-</div>
-        </section>
-    </main>
-
-
-
- <footer>
-    <div class="footer-content">
-    <div class="social-container">
-        <a href="https://www.instagram.com/topmodeloftheworld_aus/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=61579750535578" target="_blank"><i class="fab fa-facebook"></i></a>
+            <button type="submit" id="submitBtn" class="gold-submit-btn">SEND MESSAGE</button>
+            <p id="statusMsg" style="color: #d4af37; text-align: center; margin-top: 15px; display: none; font-size: 0.8rem; letter-spacing: 1px;">SENDING...</p>
+        </form>
     </div>
+</main>
 
-        <div class="footer-nav">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-            <a href="apply.html">Apply</a>
-            <a href="privacy.html" style="font-size: 0.7rem; opacity: 0.6;">Privacy Policy</a>
-        </div>
-
-        <div class="copyright">
-    <p>&copy; 2026 Top Model of the World – Australia. All rights reserved.</p>
-    <p style="font-size: 0.7rem; letter-spacing: 1px; color: #666; margin-top: 5px;">A PRESTIGIOUS GLOBAL PRODUCTION</p>
-        <p class="architect-credit">Digital Architecture & Design support by Gemini.</p>
-</div>
-    <script src="js/script.js"></script>
+<footer>
+    <div class="social-container" style="text-align: center; margin-bottom: 20px;">
+        <a href="https://www.instagram.com/topmodeloftheworld_aus/" target="_blank" style="color: #d4af37; font-size: 1.5rem; margin: 0 10px;"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61579750535578" target="_blank" style="color: #d4af37; font-size: 1.5rem; margin: 0 10px;"><i class="fab fa-facebook"></i></a>
+    </div>
+    <div class="copyright" style="text-align: center;">
+        <p style="color: #ccc;">&copy; 2026 Top Model of the World - Australia. All rights reserved.</p>
+        <p class="architect-credit" style="font-size: 0.6rem; margin-top: 10px; opacity: 0.7; color: #ccc;">Digital Architecture & Design support by Gemini.</p>
+    </div>
 </footer>
 
-
-
-    <script src="js/script.js"></script>
+<script src="js/script.js"></script>
 <script>
-window.onclick = function(event) {
-    if (event.target.matches('.menu-toggle') || event.target.matches('.fas')) {
-        const menu = document.querySelector('.nav-links');
-        const btn = document.querySelector('.menu-toggle');
-        if (menu) {
-            menu.classList.toggle('active');
-            btn.classList.toggle('is-active');
-        }
-    }
-}
+    const form = document.getElementById('contactForm');
+    const btn = document.getElementById('submitBtn');
+    const status = document.getElementById('statusMsg');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        btn.disabled = true;
+        status.style.display = 'block';
+
+        const formData = new FormData(form);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: json
+        })
+        .then(async (response) => {
+            if (response.status == 200) {
+                // SUCCESS: Redirect to your custom page immediately
+                window.location.href = "contact-success.html";
+            } else {
+                alert("Something went wrong. Please try again.");
+                btn.disabled = false;
+                status.style.display = 'none';
+            }
+        })
+        .catch(error => {
+            console.log(error);
+            alert("Connection error. Please check your internet.");
+            btn.disabled = false;
+            status.style.display = 'none';
+        });
+    });
 </script>
 </body>
 </html>

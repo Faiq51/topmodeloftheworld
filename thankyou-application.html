@@ -1,70 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank you for Application – Top Model of the World - Australia</title>
+    <title>Application Received – Top Model of the World Australia</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=60">
+    
+    <style>
+        .hero-container {
+            padding-top: 60px !important;
+            text-align: center;
+        }
+        .thank-you-box {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid #d4af37;
+            padding: 50px 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .gold-divider {
+            height: 1px;
+            background: #d4af37;
+            width: 50px;
+            margin: 20px auto;
+        }
+        .return-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            border: 1px solid #d4af37;
+            color: #d4af37;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+        .return-btn:hover {
+            background: #d4af37;
+            color: #000;
+        }
+    </style>
 </head>
 <body>
 
-    <nav>
-<div class="menu-toggle" id="mobile-menu">
-        <i class="fas fa-bars"></i>
-    </div>
-    
+<nav>
+    <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
     <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
         <a href="apply.html">Apply Now</a>
         <a href="register.html">Register</a>
         <a href="sponsors.html">Sponsors</a>
-        <a href="media.html">Media</a>
+        <a href="media-australia.html">Australia Media</a>
+        <a href="media-international.html">International Media</a>
         <a href="contact.html">Contact Us</a>
+        <a href="sitemap.html">Sitemap</a>
+        <a href="privacy.html">Privacy</a>
     </div>
-    </nav>
+</nav>
 
 <main>
     <section class="hero-container">
-        <div class="content-box">
-            <h1 class="text-middle">Thank You!</h1>
-            <p class="text-bottom">Your application has been received successfully.</p>
-            <p class="text-bottom">Our organizers will review your details and contact you via email within the next 7 days.</p>
+        <div class="thank-you-box">
+            <i class="fas fa-check-circle" style="color: #d4af37; font-size: 3rem; margin-bottom: 20px;"></i>
+            <h1 class="gold-title" style="margin-bottom: 10px;">Thank You</h1>
+            <div class="gold-divider"></div>
+            <p style="font-size: 1.1rem; margin-bottom: 15px;">Your application has been successfully submitted.</p>
+            <p style="color: #ccc; line-height: 1.6;">Our national directors will review your profile and vitals. If your application is shortlisted for the 2026 National Finals, a representative will contact you via email within the next 7 days.</p>
+            
+            <a href="index.html" class="return-btn">Return Home</a>
         </div>
     </section>
 </main>
 
-  <footer>
-    <div class="social-container">
-        <a href="https://www.instagram.com/topmodeloftheworld_aus/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=61579750535578" target="_blank"><i class="fab fa-facebook"></i></a>
+<footer>
+    <div class="social-icons" style="margin-bottom: 15px; text-align: center;">
+        <a href="https://www.instagram.com/topmodeloftheworld_aus/" target="_blank" style="color: #d4af37; font-size: 1.5rem; margin: 0 10px;"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61579750535578" target="_blank" style="color: #d4af37; font-size: 1.5rem; margin: 0 10px;"><i class="fab fa-facebook"></i></a>
     </div>
-
-    <div class="footer-nav">
-        <a href="sitemap.html">Sitemap</a>
-        <a href="privacy.html">Privacy</a>
+    <div class="footer-links" style="text-align: center; margin-bottom: 15px;">
+        <a href="sitemap.html" style="color: #d4af37; margin: 0 10px;">Sitemap</a>
+        <a href="privacy.html" style="color: #d4af37; margin: 0 10px;">Privacy</a>
     </div>
-
-        <div class="copyright">
-    <p>&copy; 2026 Top Model of the World – Australia. All rights reserved.</p>
-    <p style="font-size: 0.7rem; letter-spacing: 1px; color: #666; margin-top: 5px;">A PRESTIGIOUS GLOBAL PRODUCTION</p>
-        <p class="architect-credit">Digital Architecture & Design Support by Gemini.</p>
-</div>
+    <div class="copyright" style="text-align: center;">
+        <p style="color: #ccc;">&copy; 2026 Top Model of the World - Australia. All rights reserved.</p>
+        <p style="font-size: 0.6rem; margin-top: 10px; opacity: 0.7; color: #ccc;">Digital Architecture & Design support by Gemini.</p>
+    </div>
 </footer>
-    <script src="js/script.js"></script>
-<script>
-window.onclick = function(event) {
-    if (event.target.matches('.menu-toggle') || event.target.matches('.fas')) {
-        const menu = document.querySelector('.nav-links');
-        const btn = document.querySelector('.menu-toggle');
-        if (menu) {
-            menu.classList.toggle('active');
-            btn.classList.toggle('is-active');
-        }
-    }
-}
-</script>
+
+<script src="js/script.js"></script>
 </body>
 </html>
