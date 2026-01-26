@@ -128,10 +128,6 @@
     <input type="hidden" name="access_key" value="6f4ed71b-3c15-4cf1-9f5b-e36032dac516">
     ```
 
-### 2. The "Apply Style" Script (The Fix)
-Replace the script at the bottom of your `register.html` with this. This script "catches" the submit button, sends the data to Web3Forms silently, and then pushes the browser to Stripe.
-
-```javascript
 <script>
     // 1. CATEGORY REDIRECT
     function handleCategoryChange(val) {
