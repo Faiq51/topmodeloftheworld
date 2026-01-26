@@ -7,15 +7,21 @@
     <title>About Us – Top Model of the World Australia</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css?v=60">
+    <link rel="stylesheet" href="css/style.css?v=110">
     
    <style>
-    /* Reduce top gap for About Us title */
+    /* 1. Reduced space above ABOUT US */
     .hero-container {
-        padding-top: 40px !important; /* Reduced from 80px */
+        padding-top: 20px !important; /* Tightened from 40px */
+        margin-top: -10px;
     }
 
-    /* Interactive hover for the new CTA logo */
+    .gold-title {
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    /* Existing Page Styles */
     .cta-logo-link img {
         transition: transform 0.3s ease, filter 0.3s ease;
         border: 1px solid #d4af37;
@@ -25,7 +31,6 @@
         filter: brightness(1.1);
     }
 
-    /* Gold Boxes for Criteria */
     .criteria-grid {
         display: flex;
         justify-content: center;
@@ -46,17 +51,39 @@
         align-items: center;
         min-width: 150px;
         justify-content: center;
-        background: rgba(0, 0, 0, 0.3); /* Subtle dark background for contrast */
+        background: rgba(0, 0, 0, 0.3);
     }
     .criteria-box i {
         margin-right: 8px;
         font-size: 0.8rem;
     }
 
+    /* 2. Footer Spacing Fixes */
+    footer {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .social-icons {
+        margin-bottom: 5px !important; /* Reduced space below icons */
+    }
+
+    .footer-line {
+        width: 60%;
+        border: 0;
+        border-top: 1px solid #333;
+        margin: 10px auto; /* Reduced space between line and icons */
+    }
+
+    .footer-links {
+        margin-top: 10px;
+        margin-bottom: 10px !important;
+    }
+
     @media screen and (max-width: 600px) {
         .criteria-grid { flex-direction: column; align-items: center; }
         .criteria-box { width: 90%; }
-        .hero-container { padding-top: 20px !important; } /* Even tighter on mobile */
+        .hero-container { padding-top: 10px !important; }
     }
 </style>
 
@@ -73,11 +100,8 @@
         <a href="apply.html">Apply Now</a>
         <a href="register.html">Register</a>
         <a href="sponsors.html">Sponsors</a>
-        <a href="media-australia.html">Australia Media</a>
-        <a href="media-international.html">International Media</a>
+        <a href="media-australia.html">Media</a>
         <a href="contact.html">Contact Us</a>
-        <a href="sitemap.html">Sitemap</a>
-        <a href="privacy.html">Privacy</a>
     </div>
 </nav>
 
@@ -117,7 +141,7 @@
 </main>
 
 <footer>
-    <div class="social-icons" style="margin-bottom: 15px; text-align: center;">
+    <div class="social-icons" style="text-align: center;">
         <a href="https://www.instagram.com/topmodeloftheworld_aus/" target="_blank" style="color: #d4af37; font-size: 1.5rem; margin: 0 10px;">
             <i class="fab fa-instagram"></i>
         </a>
@@ -125,12 +149,14 @@
             <i class="fab fa-facebook"></i>
         </a>
     </div>
-    <div class="footer-links" style="text-align: center; margin-bottom: 15px;">
+
+    <hr class="footer-line">
+
+    <div class="footer-links" style="text-align: center;">
         <a href="sitemap.html" style="color: #d4af37; margin: 0 10px;">Sitemap</a>
         <a href="privacy.html" style="color: #d4af37; margin: 0 10px;">Privacy</a>
     </div>
     <p style="text-align: center; color: #ccc;">&copy; 2026 Top Model of the World - Australia. All rights reserved.</p>
-    <p style="text-align: center; font-size: 0.6rem; margin-top: 10px; opacity: 0.7;">Digital Architecture & Design support by Gemini.</p>
 </footer>
 
 <script src="js/script.js"></script>

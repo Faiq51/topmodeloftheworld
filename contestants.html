@@ -5,240 +5,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2026 Contestants – Top Model of the World Australia</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css?v=290">
+    <link rel="stylesheet" href="css/style.css?v=552">
     <style>
-        body { background: #000 !important; color: #fff; }
+        body { background: #000 !important; scroll-behavior: smooth; color: #fff; }
+        .contestant-section { max-width: 1300px; margin: 40px auto; padding: 0 20px; min-height: 70vh; }
         
-        .contestant-section {
-            max-width: 1200px;
-            margin: 120px auto 60px;
-            padding: 0 20px;
+        .section-nav-links { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; }
+        .nav-btn { flex: 1; max-width: 200px; border: 1px solid #d4af37; padding: 12px; text-align: center; color: #d4af37; text-decoration: none; text-transform: uppercase; font-weight: 600; transition: 0.3s; }
+        .nav-btn.active { background: #d4af37; color: #000; }
+
+        /* ENSURES 5 IMAGES PER LINE ON DESKTOP */
+        .contestant-grid { 
+            display: grid; 
+            grid-template-columns: repeat(5, 1fr); 
+            gap: 15px; 
         }
 
-        /* Percentage-based Grid for smooth scaling */
-        .contestant-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2.5%; /* Fluid spacing */
-        }
+        .contestant-card { background: #0a0a0a; border: 1px solid #222; padding: 8px; transition: 0.3s; cursor: pointer; }
+        .contestant-card:hover { border-color: #d4af37; transform: translateY(-5px); }
+        .contestant-name { color: #d4af37; font-size: 0.75rem; text-align: center; padding-top: 10px; text-transform: uppercase; letter-spacing: 1px; }
 
-        .contestant-card {
-            width: 20%; /* Approx 5 per row on desktop */
-            margin-bottom: 30px;
-            background: #111;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            transition: transform 0.3s ease, border-color 0.3s ease;
-            cursor: pointer;
-        }
+        /* Photo Zoom Overlay */
+        .zoom-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 10000; justify-content: center; align-items: center; }
+        .zoom-content img { width: 90vw; max-width: 600px; border: 2px solid #d4af37; }
+        .close-zoom { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 40px; cursor: pointer; z-index: 10001; }
 
-        .contestant-card:hover {
-            transform: translateY(-10px);
-            border-color: #d4af37;
-        }
+        .back-to-top { text-align: center; margin: 40px 0; cursor: pointer; color: #d4af37; font-size: 0.8rem; text-transform: uppercase; }
+        .back-to-top i { font-size: 1.5rem; display: block; margin-bottom: 5px; }
 
-        .contestant-card img {
-            width: 100%; /* Scales to percentage width of card */
-            height: auto;
-            display: block;
-            filter: grayscale(20%);
-            transition: filter 0.3s ease;
+        @media screen and (max-width: 1024px) { .contestant-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media screen and (max-width: 768px) {
+            .contestant-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .nav-btn { font-size: 0.7rem; padding: 10px 5px; }
         }
-
-        .contestant-card:hover img {
-            filter: grayscale(0%);
-        }
-
-        .contestant-info {
-            padding: 20px;
-            text-align: center;
-            background: linear-gradient(to top, #000, #111);
-        }
-
-        .contestant-name {
-            font-family: 'Playfair Display', serif;
-            color: #d4af37;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin: 0;
-        }
-
-        /* Mobile Adjustments */
-        @media screen and (max-width: 992px) {
-            .contestant-card { width: 45%; } /* 2 per row */
-        }
-
-        @media screen and (max-width: 600px) {
-            .contestant-card { width: 90%; } /* 1 per row for focus */
-        }
-
-        /* Lightbox for full view */
-        .lightbox-overlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.95);
-            z-index: 10000;
-            justify-content: center;
-            align-items: center;
-        }
-        .lightbox-overlay img { max-width: 90%; max-height: 80vh; border: 1px solid #d4af37; }
-        .close-lightbox { position: absolute; top: 20px; right: 20px; color: #d4af37; font-size: 40px; cursor: pointer; }
     </style>
 </head>
 <body>
 
 <nav>
-    <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
     <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="apply.html">Apply Now</a>
-        <a href="register.html">Register</a>
-        <a href="sponsors.html">Sponsors</a>
-        <a href="media-australia.html">Australia Media</a>
-        <a href="media-international.html">International Media</a>
-        <a href="contact.html">Contact Us</a>
+        <a href="index.html">Home</a><a href="about.html">About Us</a><a href="apply.html">Apply Now</a><a href="register.html">Register</a><a href="sponsors.html">Sponsors</a><a href="media-australia.html">Media</a><a href="contact.html">Contact Us</a>
     </div>
 </nav>
 
-
-<main class="contestants-page">
-    <h1 class="gold-title" style="text-align: center;">2026 National Finalists</h1>
-    
-    <div class="contestant-grid">
-        <div class="contestant-card">
-            <div class="gold-frame">
-                <img src="images/gallery/2026-aus/contestants/A_D.jpg" alt="A_D">
-            </div>
-            <p class="contestant-name" style="font-size: 0.7rem; margin-top: 8px;"A_D-NSW </p>
-        </div>
-        </div>
-</main>
-
-
-
-
-
-
 <main class="contestant-section">
-    <h1 class="gold-title" style="text-align: center;">2026 National Finalists</h1>
-    <p style="text-align: center; color: #ccc; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 50px;">Meet the National Finalists</p>
+    <div class="section-nav-links">
+        <a href="contestants.html" class="nav-btn active">Contestants</a>
+        <a href="ceremony.html" class="nav-btn">Ceremony</a>
+        <a href="winners.html" class="nav-btn">Winners</a>
+    </div>
+    
+    <p style="text-align: center; color: #888; font-size: 0.7rem; margin-bottom: 10px;">FOLLOW US ON INSTAGRAM & FACEBOOK</p>
+    <h1 class="gold-title" style="text-align: center; margin-bottom: 25px;">2026 NATIONAL FINALISTS</h1>
+
     <div class="contestant-grid">
-        <div class="contestant-card" onclick="openLightbox('images/gallery/2026-aus/contestants/A_D.jpg', 'A_D')">
-            <img src="images/gallery/2026-aus/contestants/A_D.jpg" alt="A_D">
-            <div class="contestant-info">
-                <h3 class="contestant-name">A_D</h3>
-            </div>
+        <div class="contestant-card" onclick="openPhoto('images/gallery/2026-aus/contestants/A_D.jpg')">
+            <img src="images/gallery/2026-aus/contestants/A_D.jpg" alt="A_D" style="width:100%;">
+            <div class="contestant-info"><h3 class="contestant-name">A_D - NSW</h3></div>
         </div>
-
-        <div class="contestant-card" onclick="openLightbox('images/gallery/2026-aus/contestants/B_K.jpg', 'B_K')">
-            <img src="images/gallery/2026-aus/contestants/B_K.jpg" alt="B_K">
-            <div class="contestant-info">
-                <h3 class="contestant-name">B_K</h3>
-            </div>
+        <div class="contestant-card" onclick="openPhoto('images/gallery/2026-aus/contestants/A_D.jpg')">
+            <img src="images/gallery/2026-aus/contestants/A_D.jpg" alt="A_D" style="width:100%;">
+            <div class="contestant-info"><h3 class="contestant-name">A_D - NSW</h3></div>
         </div>
-
-        <div class="contestant-card" onclick="openLightbox('images/gallery/2026-aus/contestants/B_H.jpg', 'B_H')">
-            <img src="images/gallery/2026-aus/contestants/B_H.jpg" alt="B_H">
-            <div class="contestant-info">
-                <h3 class="contestant-name">B_H</h3>
-            </div>
+        <div class="contestant-card" onclick="openPhoto('images/gallery/2026-aus/contestants/A_D.jpg')">
+            <img src="images/gallery/2026-aus/contestants/A_D.jpg" alt="A_D" style="width:100%;">
+            <div class="contestant-info"><h3 class="contestant-name">A_D - NSW</h3></div>
         </div>
-
-        <div class="contestant-card" onclick="openLightbox('images/gallery/2026-aus/contestants/D_M.jpg', 'D_M')">
-            <img src="images/gallery/2026-aus/contestants/D_M.jpg" alt="D_M">
-            <div class="contestant-info">
-                <h3 class="contestant-name">D_M</h3>
-            </div>
+        <div class="contestant-card" onclick="openPhoto('images/gallery/2026-aus/contestants/A_D.jpg')">
+            <img src="images/gallery/2026-aus/contestants/A_D.jpg" alt="A_D" style="width:100%;">
+            <div class="contestant-info"><h3 class="contestant-name">A_D - NSW</h3></div>
         </div>
-
-
-        <div class="contestant-card" onclick="openLightbox('images/gallery/2026-aus/contestants/H_M.jpg', 'H_M')">
-            <img src="images/gallery/2026-aus/contestants/H_M.jpg" alt="H_M">
-            <div class="contestant-info">
-                <h3 class="contestant-name">H_M</h3>
-            </div>
+        <div class="contestant-card" onclick="openPhoto('images/gallery/2026-aus/contestants/A_D.jpg')">
+            <img src="images/gallery/2026-aus/contestants/A_D.jpg" alt="A_D" style="width:100%;">
+            <div class="contestant-info"><h3 class="contestant-name">A_D - NSW</h3></div>
         </div>
-
-
-        <div class="contestant-card" onclick="openLightbox('images/gallery/2026-aus/contestants/J_M.jpg', 'J_M')">
-            <img src="images/gallery/2026-aus/contestants/J_M.jpg" alt="J_M">
-            <div class="contestant-info">
-                <h3 class="contestant-name">J_M</h3>
-            </div>
+        <div class="contestant-card" onclick="openPhoto('images/gallery/2026-aus/contestants/A_D.jpg')">
+            <img src="images/gallery/2026-aus/contestants/A_D.jpg" alt="A_D" style="width:100%;">
+            <div class="contestant-info"><h3 class="contestant-name">A_D - NSW</h3></div>
         </div>
+    </div>
 
-        <div class="contestant-card" onclick="openLightbox('images/gallery/2026-aus/contestants/K_L.jpg', 'K_L')">
-            <img src="images/gallery/2026-aus/contestants/K_L.jpg" alt="K_L">
-            <div class="contestant-info">
-                <h3 class="contestant-name">K_L</h3>
-            </div>
-        </div>
-
-        <div class="contestant-card" onclick="openLightbox('images/gallery/2026-aus/contestants/N_R.jpg', 'N_R')">
-            <img src="images/gallery/2026-aus/contestants/N_R.jpg" alt="N_R">
-            <div class="contestant-info">
-                <h3 class="contestant-name">N_R</h3>
-            </div>
-        </div>
-
-        <div class="contestant-card" onclick="openLightbox('images/gallery/2026-aus/contestants/N_X.jpg', 'N_X')">
-            <img src="images/gallery/2026-aus/contestants/N_X.jpg" alt="N_X">
-            <div class="contestant-info">
-                <h3 class="contestant-name">N_X</h3>
-            </div>
-        </div>
-
-        <div class="contestant-card" onclick="openLightbox('images/gallery/2026-aus/contestants/R_T.jpg', 'R_T')">
-            <img src="images/gallery/2026-aus/contestants/R_T.jpg" alt="R_T">
-            <div class="contestant-info">
-                <h3 class="contestant-name">R_T</h3>
-            </div>
-        </div>
-
-        <div class="contestant-card" onclick="openLightbox('images/gallery/2026-aus/contestants/S_M.jpg', 'S_M')">
-            <img src="images/gallery/2026-aus/contestants/S_M.jpg" alt="S_M">
-            <div class="contestant-info">
-                <h3 class="contestant-name">S_M</h3>
-            </div>
-        </div>
-
-
+    <div class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+        <i class="fas fa-chevron-up"></i>
+        <span>Back to Top</span>
     </div>
 </main>
 
-<div id="lightbox" class="lightbox-overlay" onclick="closeLightbox()">
-    <span class="close-lightbox">&times;</span>
-    <img id="lightboxImg" src="">
-</div>
-
-<footer>
-    <div class="copyright" style="text-align: center; padding: 40px 0;">
-        <p style="color: #ccc;">&copy; 2026 Top Model of the World - Australia. All rights reserved.</p>
-        <p class="architect-credit" style="font-size: 0.6rem; opacity: 0.7; color: #ccc;">Digital Architecture & Design support by Gemini.</p>
+<footer style="border-top: 1px solid #222; padding: 40px 0; text-align: center; background: #000;">
+    <div class="social-icons" style="margin-bottom: 10px;">
+        <a href="https://www.instagram.com/topmodeloftheworld_aus/" target="_blank" style="color: #d4af37; font-size: 1.5rem; margin: 0 10px;"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61579750535578" target="_blank" style="color: #d4af37; font-size: 1.5rem; margin: 0 10px;"><i class="fab fa-facebook"></i></a>
     </div>
+    <hr style="width: 60%; border: 0; border-top: 1px solid #333; margin: 15px auto;">
+    <p style="color: #ccc; font-size: 0.8rem;">&copy; 2026 Top Model of the World - Australia. All rights reserved.</p>
 </footer>
 
+<div id="zoomOverlay" class="zoom-overlay" onclick="this.style.display='none'">
+    <span class="close-zoom">&times;</span>
+    <div class="zoom-content">
+        <img id="zoomedImg" src="" alt="Zoomed View">
+    </div>
+</div>
+
 <script>
-    function openLightbox(src, name) {
-        document.getElementById('lightboxImg').src = src;
-        document.getElementById('lightbox').style.display = 'flex';
-        history.pushState({lb: true}, "");
+    function openPhoto(src) {
+        document.getElementById('zoomedImg').src = src;
+        document.getElementById('zoomOverlay').style.display = 'flex';
     }
-
-    function closeLightbox() {
-        document.getElementById('lightbox').style.display = 'none';
-        if(history.state && history.state.lb) history.back();
-    }
-
-    window.onpopstate = function() {
-        document.getElementById('lightbox').style.display = 'none';
-    };
 </script>
-<script src="js/script.js"></script>
 </body>
 </html>

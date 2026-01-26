@@ -4,16 +4,15 @@
     <link rel="icon" type="image/png" href="images/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration – Top Model of the World Australia</title>
+    <title>Registration – Teens</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css?v=650">
+    <link rel="stylesheet" href="css/style.css?v=600">
     <style>
-        body { background: #000; color: #fff; }
-        .registration-container { max-width: 800px; margin: 40px auto 80px; padding: 0 20px; }
+        .registration-container { max-width: 800px; margin: 100px auto 50px; padding: 0 20px; }
         .form-card { background: #0a0a0a; border: 1px solid #d4af37; padding: 40px; border-radius: 4px; }
         
-        /* Category Switcher - Aggressive Mobile Spacing */
+        /* Highlighted Category Switcher */
         .category-box { 
             background: rgba(212, 175, 55, 0.1); 
             border: 1px dashed #d4af37; 
@@ -21,13 +20,26 @@
             margin-bottom: 30px; 
             text-align: center;
         }
+        .category-box label { 
+            display: block; 
+            color: #d4af37; 
+            font-family: 'Playfair Display'; 
+            font-size: 1.1rem; 
+            margin-bottom: 15px; 
+        }
         .category-select { 
-            width: 100%; padding: 12px; background: #000; color: #fff; border: 1px solid #d4af37; font-weight: bold; cursor: pointer;
+            width: 100%; 
+            padding: 12px; 
+            background: #000; 
+            color: #fff; 
+            border: 1px solid #d4af37; 
+            font-family: 'Open Sans';
+            cursor: pointer;
         }
 
         .notice-box { border-left: 4px solid #d4af37; background: #111; padding: 20px; margin-bottom: 30px; }
         .custom-form-group { margin-bottom: 25px; }
-        .custom-form-group label { display: block; color: #ccc; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1px; }
+        .custom-form-group label { display: block; color: #ccc; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1px; }
         .custom-form-group input, .custom-form-group select { 
             width: 100%; padding: 12px; background: #1a1a1a; border: 1px solid #333; color: #fff; transition: 0.3s;
         }
@@ -40,7 +52,7 @@
         .submit-btn:hover { background: #fff; }
 
         @media (max-width: 768px) {
-            .registration-container { margin-top: 20px !important; }
+            .registration-container { margin-top: 40px; }
             .form-card { padding: 20px; }
         }
     </style>
@@ -48,6 +60,7 @@
 <body>
 
 <nav>
+    <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
     <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
@@ -61,34 +74,33 @@
 
 <main class="registration-container">
     <div class="form-card">
-        <h1 class="gold-title" style="text-align: center; margin-bottom: 10px; font-size: 2rem;">Official Registration</h1>
+        <h1 class="gold-title" style="text-align: center; margin-bottom: 10px;">Teens Section Registration</h1>
         
         <div class="category-box">
-            <label style="display: block; color: #d4af37; margin-bottom: 10px; font-family: 'Playfair Display';">Select Your Category</label>
+            <label for="reg-type">Select Registration Category</label>
             <select id="reg-type" class="category-select" onchange="handleCategoryChange(this.value)">
-                <option value="main">TOP MODEL OF THE WORLD (Ages 17-28)</option>
+                <option value="main">TOP MODEL OF THE WORLD (Ages 14-16)</option>
                 <option value="teen">TEEN SECTION (Ages 14-16)</option>
             </select>
         </div>
 
         <div class="notice-box">
-            <p style="color: #d4af37; font-size: 0.8rem; margin: 0;"><strong>REGISTRATION FEE:</strong> A non-refundable fee of $300 AUD applies. You will be redirected to the secure payment portal after clicking continue.</p>
+            <p style="color: #d4af37; font-size: 1.0rem; margin: 0;"><strong>NOTICE:</strong> This form is only for individuals whose applications were approved by Top Model of the World - Australia and invited to complete this Registration Form. This process includes electronic payment of $300 using a valid credit card.</p>
         </div>
 
         <form action="https://api.web3forms.com/submit" method="POST" id="registrationForm">
-            
-            <input type="hidden" name="access_key" value="6f4ed71b-3c15-4cf1-9f5b-e36032dac516">
-
-            <input type="hidden" name="subject" value="New 2026 Registration - Top Model Australia">
+            <input type="hidden" name="access_key" value="YOUR_KEY_HERE">
+            <input type="hidden" name="subject" value="New Registration - Teen Models">
+            <input type="hidden" name="redirect" value="https://yourwebsite.com/eligibility-teen.html">
 
             <div class="custom-form-group">
                 <label>Full Name</label>
-                <input type="text" name="full_name" required placeholder="As it appears on your ID">
+                <input type="text" name="full_name" required>
             </div>
 
             <div class="custom-form-group">
                 <label>Email Address</label>
-                <input type="email" name="email" required placeholder="For registration confirmation">
+                <input type="email" name="email" required>
             </div>
 
             <div class="custom-form-group">
@@ -98,11 +110,6 @@
                     <select name="birth_month" id="month" required></select>
                     <select name="birth_year" id="year" required></select>
                 </div>
-            </div>
-
-            <div class="custom-form-group">
-                <label>Phone Number</label>
-                <input type="tel" name="phone" required placeholder="Mobile number preferred">
             </div>
 
             <div class="custom-form-group">
@@ -120,66 +127,55 @@
                 </select>
             </div>
 
-            <button type="submit" class="submit-btn">Continue to Payment</button>
+            <div class="custom-form-group">
+                <label>Phone Number</label>
+                <input type="tel" name="phone" required>
+            </div>
+
+            <div class="custom-form-group">
+                <label>instagram link</label>
+                <input type="instagram" name="instagram" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Continue to Payment & Rules</button>
         </form>
     </div>
 </main>
-<form id="registrationForm">
-    <input type="hidden" name="access_key" value="YOUR_ACTUAL_WEB3FORMS_UUID">
-    ```
 
-### 2. The "Apply Style" Script (The Fix)
-Replace the script at the bottom of your `register.html` with this. This script "catches" the submit button, sends the data to Web3Forms silently, and then pushes the browser to Stripe.
 
-```javascript
+
 <script>
-    // 1. CATEGORY REDIRECT
+    // REDIRECT LOGIC FOR TEENS
     function handleCategoryChange(val) {
-        if (val === 'teen') { window.location.href = 'register-teen.html'; }
+        if (val === 'teen') {
+            window.location.href = 'register-teen.html';
+        }
     }
 
-    // 2. THE WORKING BYPASS (Based on your apply.html logic)
-    const form = document.getElementById('registrationForm');
-    
-    form.addEventListener('submit', function(e) {
-        e.preventDefault(); // Stop the "Success" page from loading
-        
-        const formData = new FormData(form);
-        const object = Object.fromEntries(formData);
-        const json = JSON.stringify(object);
-
-        // Send to Web3Forms in the background
-        fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: json
-        })
-        .then(async (response) => {
-            if (response.status == 200) {
-                // SUCCESS: Send them to Stripe!
-                window.location.href = "https://buy.stripe.com/test_4gM7sL2WNclgaz104S3AY00"; 
-            } else {
-                console.log(response);
-                alert("Submission failed. Please try again.");
-            }
-        })
-        .catch(error => {
-            console.log(error);
-            alert("Something went wrong.");
-        });
-    });
-
-    // 3. DATE POPULATION (1997-2009)
+    // POPULATE DATE DROPDOWNS (Main Section 2009-2012)
     const daySelect = document.getElementById('day');
-    const monthSelect = document.getElementById('month');
     const yearSelect = document.getElementById('year');
+    const monthSelect = document.getElementById('month');
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    for(let i=1; i<=31; i++) { daySelect.innerHTML += `<option value="${i}">${i}</option>`; }
-    months.forEach(m => { monthSelect.innerHTML += `<option value="${m}">${m}</option>`; });
-    for(let i=2009; i>=1997; i--) { yearSelect.innerHTML += `<option value="${i}">${i}</option>`; }
+
+    for(let i=1; i<=31; i++) {
+        daySelect.innerHTML += `<option value="${i}">${i}</option>`;
+    }
+    months.forEach((m, idx) => {
+        monthSelect.innerHTML += `<option value="${m}">${m}</option>`;
+    });
+    // Main pageant age roughly 17-31
+    for(let i=2012; i>=2009; i--) {
+        yearSelect.innerHTML += `<option value="${i}">${i}</option>`;
+    }
+
+    // FORM LISTENER FOR REDIRECT BYPASS
+    const form = document.getElementById('registrationForm');
+    form.addEventListener('submit', function(e) {
+        // Form submits naturally to Web3Forms, which handles the redirect
+    });
 </script>
+
+<script src="js/script.js"></script>
 </body>
 </html>

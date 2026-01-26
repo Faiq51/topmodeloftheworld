@@ -1,23 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://yourdomain.com.au/index.html</loc>
+    <loc>https://topmodeloftheworldaustralia.com.au/index.html</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://yourdomain.com.au/apply.html</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://yourdomain.com.au/media.html</loc>
+    <loc>https://topmodeloftheworldaustralia.com.au/about.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://yourdomain.com.au/sponsors.html</loc>
+    <loc>https://topmodeloftheworldaustralia.com.au/apply.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://topmodeloftheworldaustralia.com.au/register.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://topmodeloftheworldaustralia.com.au/media-australia.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://topmodeloftheworldaustralia.com.au/contestants.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://yourdomain.com.au/magazine.html</loc>
+    <loc>https://topmodeloftheworldaustralia.com.au/ceremony.html</loc>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://topmodeloftheworldaustralia.com.au/winners.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://topmodeloftheworldaustralia.com.au/sponsors.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://topmodeloftheworldaustralia.com.au/magazine.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://topmodeloftheworldaustralia.com.au/contact.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://topmodeloftheworldaustralia.com.au/privacy.html</loc>
+    <priority>0.3</priority>
   </url>
 </urlset>

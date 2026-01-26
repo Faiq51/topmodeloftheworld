@@ -1,99 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site Map – Top Model Australia</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=65">
+    <style>
+        body { background: #000 !important; color: #fff; }
+        .sitemap-container { max-width: 900px; margin: 60px auto; padding: 0 20px; min-height: 60vh; }
+        .sitemap-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-top: 40px; }
+        .sitemap-column h3 { color: #d4af37; font-family: 'Playfair Display', serif; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 20px; }
+        .sitemap-list { list-style: none; padding: 0; }
+        .sitemap-list li { margin-bottom: 12px; }
+        .sitemap-list a { color: #ccc; text-decoration: none; transition: 0.3s; font-size: 0.95rem; }
+        .sitemap-list a:hover { color: #d4af37; padding-left: 5px; }
+        .sitemap-list i { color: #d4af37; margin-right: 10px; font-size: 0.8rem; }
+    </style>
 </head>
 <body>
 
-    <nav>
-<div class="menu-toggle" id="mobile-menu">
-        <i class="fas fa-bars"></i>
-    </div>
-    
+<nav>
+    <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
     <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
         <a href="apply.html">Apply Now</a>
         <a href="register.html">Register</a>
         <a href="sponsors.html">Sponsors</a>
-        <a href="media.html">Media</a>
+        <a href="media-australia.html">Media</a>
         <a href="contact.html">Contact Us</a>
     </div>
-    </nav>
+</nav>
 
-    <main class="form-page">
-        <section class="form-container" style="max-width: 800px; text-align: left; padding: 60px 40px;">
-            <h1 class="text-middle" style="margin-bottom: 40px;">Site Directory</h1>
-            
-            <div class="sitemap-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
-                
-                <div class="sitemap-section">
-                    <h3 class="gold-heading" style="font-size: 1.2rem; border-bottom: 1px solid #d4af37; padding-bottom: 10px; margin-bottom: 15px;">Main Pages</h3>
-                    <ul style="list-style: none; padding: 0; line-height: 2;">
-                        <li><a href="index.html" class="gold-link"><i class="fas fa-chevron-right" style="font-size: 0.7rem;"></i> Home</a></li>
-                         <li><a href="about.html" class="gold-link"><i class="fas fa-chevron-right" style="font-size: 0.7rem;"></i>About Us</a></li>
-<li><a href="media.html" class="gold-link"><i class="fas fa-chevron-right" style="font-size: 0.7rem;"></i> Media & Gallery</a></li>
-                        <li><a href="sponsors.html" class="gold-link"><i class="fas fa-chevron-right" style="font-size: 0.7rem;"></i> Official Sponsors</a></li>
-                    </ul>
-                </div>
+<main class="sitemap-container">
+    <h1 class="gold-title">Site Map</h1>
+    <p style="color: #888;">Navigate through the official Top Model of the World Australia portal.</p>
 
-                <div class="sitemap-section">
-                    <h3 class="gold-heading" style="font-size: 1.2rem; border-bottom: 1px solid #d4af37; padding-bottom: 10px; margin-bottom: 15px;">Applications</h3>
-                    <ul style="list-style: none; padding: 0; line-height: 2;">
-                        <li><a href="apply.html" class="gold-link"><i class="fas fa-edit" style="font-size: 0.7rem;"></i> Model Application</a></li>
-                        <li><a href="register.html" class="gold-link"><i class="fas fa-edit" style="font-size: 0.7rem;"></i> Model Registration</a></li>
-                        <li><a href="magazine.html" class="gold-link"><i class="fas fa-book-open" style="font-size: 0.7rem;"></i> Digital Program Book</a></li>
-                    </ul>
-                </div>
-
-                <div class="sitemap-section">
-                    <h3 class="gold-heading" style="font-size: 1.2rem; border-bottom: 1px solid #d4af37; padding-bottom: 10px; margin-bottom: 15px;">Support</h3>
-                    <ul style="list-style: none; padding: 0; line-height: 2;">
-                        <li><a href="privacy.html" class="gold-link"><i class="fas fa-shield-alt" style="font-size: 0.7rem;"></i> Privacy Policy</a></li>
-                        <li><a href="contact.html" class="gold-link"><i class="fas fa-edit" style="font-size: 0.7rem;"></i>Contact Us</a></li>
-                        <li><a href="sitemap.html" class="gold-link"><i class="fas fa-sitemap" style="font-size: 0.7rem;"></i> Sitemap</a></li>
-                    </ul>
-                </div>
-
-            </div>
-        </section>
-    </main>
-
-    
-   <footer>
-        <div class="social-container">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
+    <div class="sitemap-grid">
+        <div class="sitemap-column">
+            <h3>Main Pages</h3>
+            <ul class="sitemap-list">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                <li><a href="apply.html"><i class="fas fa-edit"></i> Apply Now</a></li>
+                <li><a href="register.html"><i class="fas fa-user-check"></i> Registration</a></li>
+                <li><a href="sponsors.html"><i class="fas fa-award"></i> Our Sponsors</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+            </ul>
         </div>
 
-        <div class="footer-nav">
-            <a href="sitemap.html">Sitemap</a>
-            <a href="privacy.html">Privacy</a>
+        <div class="sitemap-column">
+            <h3>Media & Events</h3>
+            <ul class="sitemap-list">
+                <li><a href="media-australia.html"><i class="fas fa-camera"></i> Media Hub</a></li>
+                <li><a href="contestants.html"><i class="fas fa-users"></i> 2026 Contestants</a></li>
+                <li><a href="ceremony.html"><i class="fas fa-crown"></i> Official Ceremony</a></li>
+                <li><a href="winners.html"><i class="fas fa-trophy"></i> Hall of Fame</a></li>
+                <li><a href="magazine.html"><i class="fas fa-book-open"></i> Digital Program Book</a></li>
+            </ul>
         </div>
 
-<div class="copyright">
-    <p>&copy; 2026 Top Model of the World – Australia. All rights reserved.</p>
-    <p style="font-size: 0.7rem; letter-spacing: 1px; color: #666; margin-top: 5px;">A PRESTIGIOUS GLOBAL PRODUCTION</p>
-    <p style="font-size: 0.65rem; opacity: 0.4; margin-top: 15px; letter-spacing: 0.5px;">Digital Architecture & Design support by Gemini.</p>
-</div>
+        <div class="sitemap-column">
+            <h3>Legal & Support</h3>
+            <ul class="sitemap-list">
+                <li><a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                <li><a href="sitemap.html"><i class="fas fa-sitemap"></i> Sitemap</a></li>
+            </ul>
+        </div>
+    </div>
+</main>
 
-    </footer>
-<script>
-window.onclick = function(event) {
-    if (event.target.matches('.menu-toggle') || event.target.matches('.fas')) {
-        const menu = document.querySelector('.nav-links');
-        const btn = document.querySelector('.menu-toggle');
-        if (menu) {
-            menu.classList.toggle('active');
-            btn.classList.toggle('is-active');
-        }
-    }
-}
-</script>
+<footer>
+    <div class="social-icons" style="margin-bottom: 15px; text-align: center;">
+        <a href="https://www.instagram.com/topmodeloftheworld_aus/" target="_blank" style="color: #d4af37; font-size: 1.5rem; margin: 0 10px;"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61579750535578" target="_blank" style="color: #d4af37; font-size: 1.5rem; margin: 0 10px;"><i class="fab fa-facebook"></i></a>
+    </div>
+    <div class="footer-links" style="text-align: center; margin-bottom: 15px;">
+        <a href="sitemap.html" style="color: #d4af37; margin: 0 10px;">Sitemap</a>
+        <a href="privacy.html" style="color: #d4af37; margin: 0 10px;">Privacy</a>
+    </div>
+    <p style="text-align: center; color: #ccc;">&copy; 2026 Top Model of the World - Australia. All rights reserved.</p>
+</footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>
