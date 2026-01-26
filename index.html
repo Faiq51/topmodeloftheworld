@@ -94,23 +94,32 @@
 </nav>
 
 <main>
-    <section class="hero-section">
-        <video autoplay muted loop playsinline class="hero-video">
-            <source src="images/shorter.mp4" type="video/mp4">
-        </video>
+<section class="hero-section">
+    <video autoplay muted loop playsinline id="bg-video" class="hero-video">
+        <source src="images/shorter.mp4" type="video/mp4">
+    </video>
 
-        <div class="hero-content">
-            <h1 class="gold-title" style="font-size: 4.2rem;">WELCOME</h1>
-            <p class="journey-text">
-                The journey to the crown begins here. Discover your potential and represent Australia on the world stage.
-            </p>
-            <div class="apply-container">
-                <a href="apply.html">
-                    <img src="images/applynow.jpg" alt="Apply Now" class="apply-btn-img">
-                </a>
-            </div>
+    <div class="hero-content" style="margin-top: -30px;"> <h1 class="gold-title">WELCOME</h1>
+        
+        <p class="journey-text" style="font-size: 1.6rem;">
+            The journey to the crown begins here. Discover your potential and represent Australia on the world stage.
+        </p>
+
+        <div class="apply-container" style="margin-top: 50px;">
+            <a href="apply.html">
+                <img src="images/applynow.jpg" alt="Apply Now" class="apply-btn-img">
+            </a>
         </div>
-    </section>
+    </div>
+</section>
+
+<script>
+    // Ensure the video plays immediately and loops at your 90s mark if needed
+    const video = document.getElementById('bg-video');
+    video.play().catch(error => {
+        console.log("Autoplay prevented. This is normal for some browsers.");
+    });
+</script>
 </main>
 
 <footer>
