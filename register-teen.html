@@ -142,28 +142,30 @@
     </div>
 </main>
 
-
-
 <script>
-**And replace the script at the bottom with the AJAX version:**
-```javascript
+// REPLACE the script in your register-teen.html with this:
 const form = document.getElementById('registrationForm');
+
 form.addEventListener('submit', function(e) {
-    e.preventDefault();
+    e.preventDefault(); // STOPS the green checkmark screen
+    
     const formData = new FormData(form);
     const object = Object.fromEntries(formData);
-    
+
     fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(object)
     })
-    .then(response => {
-        if (response.status === 200) {
+    .then(async (response) => {
+        if (response.status == 200) {
+            // REDIRECT TO STIPE SUCCESS
             window.location.href = "https://buy.stripe.com/test_aFa5kDgVC3t02bEgIM3ks01";
         }
     });
-});</script>
+});
+
+</script>
 
 <script src="js/script.js"></script>
 </body>
