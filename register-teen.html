@@ -145,36 +145,25 @@
 
 
 <script>
-    // REDIRECT LOGIC FOR TEENS
-    function handleCategoryChange(val) {
-        if (val === 'teen') {
-            window.location.href = 'register-teen.html';
+**And replace the script at the bottom with the AJAX version:**
+```javascript
+const form = document.getElementById('registrationForm');
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(object)
+    })
+    .then(response => {
+        if (response.status === 200) {
+            window.location.href = "https://buy.stripe.com/test_aFa5kDgVC3t02bEgIM3ks01";
         }
-    }
-
-    // POPULATE DATE DROPDOWNS (Main Section 2009-2012)
-    const daySelect = document.getElementById('day');
-    const yearSelect = document.getElementById('year');
-    const monthSelect = document.getElementById('month');
-    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-    for(let i=1; i<=31; i++) {
-        daySelect.innerHTML += `<option value="${i}">${i}</option>`;
-    }
-    months.forEach((m, idx) => {
-        monthSelect.innerHTML += `<option value="${m}">${m}</option>`;
     });
-    // Main pageant age roughly 17-31
-    for(let i=2012; i>=2009; i--) {
-        yearSelect.innerHTML += `<option value="${i}">${i}</option>`;
-    }
-
-    // FORM LISTENER FOR REDIRECT BYPASS
-    const form = document.getElementById('registrationForm');
-    form.addEventListener('submit', function(e) {
-        // Form submits naturally to Web3Forms, which handles the redirect
-    });
-</script>
+});</script>
 
 <script src="js/script.js"></script>
 </body>
