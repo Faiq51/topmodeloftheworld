@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Model of the World - Australia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=105">
+
+    <style>
+        /* This forces the section to be the full window size */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        /* LAYER 0: The Video (The Background) */
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Keeps video from stretching */
+            z-index: 0;
+        }
+
+        /* LAYER 1: The Content (The Overlay) */
+        .hero-content {
+            position: relative;
+            z-index: 10; /* Higher number stays on top */
+            text-align: center;
+            color: white;
+            padding: 20px;
+            margin-top: -60px; /* 1. Reduced space above Welcome */
+        }
+
+        /* 2. Increased font size for journey text */
+        .journey-text {
+            font-size: 1.8rem;
+            max-width: 800px;
+            margin: 20px auto 0;
+            line-height: 1.5;
+            text-shadow: 2px 2px 15px rgba(0,0,0,0.9); /* Makes text readable over video */
+        }
+
+        /* 3. Lowered APPLY NOW image */
+        .apply-container {
+            margin-top: 70px;
+        }
+
+        .apply-btn-img {
+            width: 280px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .apply-btn-img:hover { transform: scale(1.1); }
+
+        /* Mobile specific fixes */
+        @media (max-width: 768px) {
+            .gold-title { font-size: 2.5rem !important; }
+            .journey-text { font-size: 1.2rem !important; }
+            .apply-btn-img { width: 220px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="apply.html">Apply Now</a>
+        <a href="register.html">Register</a>
+        <a href="sponsors.html">Sponsors</a>
+        <a href="media-australia.html">Media</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+</nav>
+
+<main>
+    <section class="hero-section">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="images/shorter.mp4" type="video/mp4">
+        </video>
+
+        <div class="hero-content">
+            <h1 class="gold-title" style="font-size: 4.5rem; margin: 0;">WELCOME</h1>
+            <p class="journey-text">
+                The journey to the crown begins here. Discover your potential and represent Australia on the world stage.
+            </p>
+            <div class="apply-container">
+                <a href="apply.html">
+                    <img src="images/applynow.jpg" alt="Apply Now" class="apply-btn-img">
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="social-icons" style="text-align: center; margin-bottom: 10px;">
+        <a href="https://www.instagram.com/topmodeloftheworld_aus/" target="_blank" style="color: #d4af37;"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61579750535578" target="_blank" style="color: #d4af37; margin-left: 15px;"><i class="fab fa-facebook"></i></a>
+    </div>
+    <p style="text-align: center; color: #ccc;">&copy; 2026 Top Model of the World - Australia.</p>
+</footer>
+
+</body>
+</html>
