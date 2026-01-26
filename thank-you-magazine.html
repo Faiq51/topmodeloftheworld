@@ -1,82 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Download Your Program Book – Top Model Australia</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=60">
+    <style>
+        body { background: #000 !important; color: #fff; scroll-behavior: smooth; }
+        .thank-you-section { max-width: 800px; margin: 80px auto; padding: 0 20px; text-align: center; min-height: 60vh; }
+        
+        .download-card {
+            background: #0a0a0a;
+            border: 1px solid #d4af37;
+            padding: 50px 30px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            color: #d4af37;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #d4af37;
+            color: #000;
+            padding: 18px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 20px 0;
+            transition: 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #fff;
+            transform: translateY(-3px);
+        }
+
+        .support-text {
+            margin-top: 40px;
+            font-size: 0.85rem;
+            color: #888;
+            line-height: 1.6;
+        }
+
+        .support-text strong { color: #d4af37; }
+    </style>
 </head>
 <body>
 
-    <nav>
-<div class="menu-toggle" id="mobile-menu">
-        <i class="fas fa-bars"></i>
-    </div>
-    
+<nav>
+    <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
     <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
         <a href="apply.html">Apply Now</a>
         <a href="register.html">Register</a>
         <a href="sponsors.html">Sponsors</a>
-        <a href="media.html">Media</a>
+        <a href="media-australia.html">Media</a>
         <a href="contact.html">Contact Us</a>
     </div>
-    </nav>
+</nav>
 
-    <main class="form-page">
-        <section class="form-container" style="max-width: 800px; text-align: center; padding: 60px 20px;">
-            <i class="fas fa-file-download" style="color: #d4af37; font-size: 4rem; margin-bottom: 20px;"></i>
-            <h1 class="text-middle">Payment Successful</h1>
-            <p class="form-subtitle">Thank you for supporting Top Model of the World Australia</p>
+<main class="thank-you-section">
+    <i class="fas fa-check-circle success-icon"></i>
+    <h1 class="gold-title" style="margin-bottom: 10px;">Thank You!</h1>
+    <p style="font-size: 1.2rem; color: #ccc;">Your payment was successful.</p>
 
-            <div class="download-box" style="background: rgba(212, 175, 55, 0.05); border: 1px solid #d4af37; padding: 40px; margin-top: 30px; border-radius: 5px;">
-                <h3 style="color: #fff; margin-bottom: 10px;">Your Collector's Edition is Ready</h3>
-                <p style="color: #ccc; font-size: 0.9rem; margin-bottom: 30px;">Click the button below to open your digital program book. We recommend saving the PDF to your device for permanent access.</p>
-                
-                <a href="downloads/Top-Model-2026-Program.pdf" download class="cta-button" style="display: inline-block; width: auto; padding: 15px 50px;">
-                    <i class="fas fa-download"></i> DOWNLOAD PDF (45MB)
-                </a>
-            </div>
+    <div class="download-card">
+        <h2 class="gold-heading" style="margin-bottom: 15px;">Your Program Book is Ready</h2>
+        <p style="color: #eee; margin-bottom: 30px;">Click the button below to download your high-resolution 2026 National Finals Collector's Edition.</p>
+        
+        <a href="downloads/Top-Model-2026-Program.pdf" download class="cta-button">
+            <i class="fas fa-file-pdf"></i> Download PDF (45MB)
+        </a>
 
-            <p style="margin-top: 40px; font-size: 0.8rem; color: #666;">
-                If you have any issues with your download, please contact us at <br>
-                <strong>admin@topmodeloftheworld.com.au</strong>
-            </p>
-        </section>
-    </main>
-
-  <footer>
-    <div class="social-container">
-        <a href="https://www.instagram.com/topmodeloftheworld_aus/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=61579750535578" target="_blank"><i class="fab fa-facebook"></i></a>
+        <p style="font-size: 0.75rem; color: #888; margin-top: 10px;">
+            Tip: We recommend saving this file to your device immediately.
+        </p>
     </div>
 
-    <div class="footer-nav">
-        <a href="sitemap.html">Sitemap</a>
-        <a href="privacy.html">Privacy</a>
+    <div class="support-text">
+        <p>If you encounter any issues with your download, please contact our support team at:<br>
+        <strong>admin@topmodeloftheworld.com.au</strong></p>
+        
+        <div style="margin-top: 30px;">
+            <a href="index.html" style="color: #d4af37; text-decoration: none; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">
+                <i class="fas fa-arrow-left"></i> Return to Home
+            </a>
+        </div>
     </div>
+</main>
 
-        <div class="copyright">
-    <p>&copy; 2026 Top Model of the World – Australia. All rights reserved.</p>
-    <p style="font-size: 0.7rem; letter-spacing: 1px; color: #666; margin-top: 5px;">A PRESTIGIOUS GLOBAL PRODUCTION</p>
-        <p class="architect-credit">Digital Architecture & Design Support by Gemini.</p>
-</div>
+<footer style="border-top: 1px solid #222; padding: 40px 0; text-align: center; background: #000;">
+    <div class="social-icons" style="margin-bottom: 10px;">
+        <a href="https://www.instagram.com/topmodeloftheworld_aus/" target="_blank" style="color: #d4af37; font-size: 1.5rem; margin: 0 10px;"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61579750535578" target="_blank" style="color: #d4af37; font-size: 1.5rem; margin: 0 10px;"><i class="fab fa-facebook"></i></a>
+    </div>
+    <hr style="width: 60%; border: 0; border-top: 1px solid #333; margin: 15px auto;">
+    <div class="footer-links" style="margin-bottom: 15px;">
+        <a href="sitemap.html" style="color: #d4af37; text-decoration: none; margin: 0 10px; font-size: 0.8rem;">Sitemap</a>
+        <a href="privacy.html" style="color: #d4af37; text-decoration: none; margin: 0 10px; font-size: 0.8rem;">Privacy</a>
+    </div>
+    <p style="color: #ccc; font-size: 0.8rem;">&copy; 2026 Top Model of the World - Australia. All rights reserved.</p>
+    <p style="color: #666; font-size: 0.6rem; margin-top: 10px;">Digital Architecture & Design support by Gemini.</p>
 </footer>
-    <script src="js/script.js"></script>
-<script>
-window.onclick = function(event) {
-    if (event.target.matches('.menu-toggle') || event.target.matches('.fas')) {
-        const menu = document.querySelector('.nav-links');
-        const btn = document.querySelector('.menu-toggle');
-        if (menu) {
-            menu.classList.toggle('active');
-            btn.classList.toggle('is-active');
-        }
-    }
-}
-</script>
+
+<script src="js/script.js"></script>
 </body>
 </html>
