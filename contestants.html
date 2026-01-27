@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 Contestants – Top Model of the World Australia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=552">
+    <style>
+        body { background: #000 !important; scroll-behavior: smooth; color: #fff; }
+        .contestant-section { max-width: 1300px; margin: 40px auto; padding: 0 20px; min-height: 70vh; }
+        .section-nav-links { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; }
+        .nav-btn { flex: 1; max-width: 200px; border: 1px solid #d4af37; padding: 12px; text-align: center; color: #d4af37; text-decoration: none; text-transform: uppercase; font-weight: 600; transition: 0.3s; }
+        .nav-btn.active { background: #d4af37; color: #000; }
+        .contestant-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; }
+        .contestant-card { background: #0a0a0a; border: 1px solid #222; padding: 8px; transition: 0.3s; cursor: pointer; }
+        .contestant-card:hover { border-color: #d4af37; transform: translateY(-5px); }
+        .contestant-name { color: #d4af37; font-size: 0.75rem; text-align: center; padding-top: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        .zoom-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 10000; justify-content: center; align-items: center; }
+        .zoom-content img { width: 90vw; max-width: 600px; border: 2px solid #d4af37; }
+        .close-zoom { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 40px; cursor: pointer; z-index: 10001; }
+        .back-to-top { text-align: center; margin: 40px 0; cursor: pointer; color: #d4af37; font-size: 0.8rem; text-transform: uppercase; }
+        @media screen and (max-width: 1024px) { .contestant-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media screen and (max-width: 768px) { .contestant-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; } }
+    </style>
+</head>
+<body>
+<nav>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="apply.html">Apply Now</a>
+        <a href="register.html">Register</a>
+        <a href="sponsors.html">Sponsors</a>
+        <a href="media-australia.html">Media</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+</nav>
+
+<main class="contestant-section">
+    <div style="margin-bottom: 20px;">
+        <a href="media-australia.html" style="color: #d4af37; text-decoration: none; font-size: 0.8rem; letter-spacing: 1px; display: inline-flex; align-items: center;">
+            <i class="fas fa-arrow-left" style="margin-right: 8px; font-size: 0.7rem;"></i> BACK TO MEDIA HUB
+        </a>
+    </div>
+
+    <div class="section-nav-links">
+        <a href="contestants.html" class="nav-btn active">Contestants</a>
+        <a href="ceremony.html" class="nav-btn">Ceremony</a>
+        <a href="winners.html" class="nav-btn">Winners</a>
+    </div>
+    
+    <p style="text-align: center; color: #888; font-size: 0.7rem; margin-bottom: 10px; letter-spacing: 1px;">
+        FOLLOW US ON <a href="https://www.instagram.com/topmodeloftheworld_aus/" target="_blank" style="color: #d4af37; text-decoration: none;">INSTAGRAM</a> & <a href="https://www.facebook.com/profile.php?id=61579750535578" target="_blank" style="color: #d4af37; text-decoration: none;">FACEBOOK</a>
+    </p>
+
+    <h1 class="gold-title" style="text-align: center; margin-bottom: 25px;">2026 NATIONAL FINALISTS</h1>
+
+    <div class="contestant-grid">
+        <div class="contestant-card" onclick="openPhoto('images/gallery/2026-aus/contestants/temp.png')">
+            <img src="images/gallery/2026-aus/contestants/temp.png" alt="temp" style="width:100%;">
+            <h3 class="contestant-name">..</h3>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-nav" style="text-align: center; margin-bottom: 15px;">
+        <a href="sitemap.html" style="color: #ccc; text-decoration: none; margin: 0 10px; font-size: 0.8rem;">Sitemap</a>
+        <a href="privacy.html" style="color: #ccc; text-decoration: none; margin: 0 10px; font-size: 0.8rem;">Privacy</a>
+    </div>
+    <p style="text-align: center; color: #ccc; font-size: 0.8rem;">&copy; 2026 Top Model of the World - Australia. All rights reserved.</p>
+</footer>
+
+<div id="zoomOverlay" class="zoom-overlay" onclick="this.style.display='none'">
+    <div class="zoom-content"><img id="zoomedImg" src=""></div>
+</div>
+<script>
+    function openPhoto(src) { document.getElementById('zoomedImg').src = src; document.getElementById('zoomOverlay').style.display = 'flex'; }
+</script>
+</body>
+</html>
