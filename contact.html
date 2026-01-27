@@ -7,7 +7,7 @@
     <title>Contact Us – Top Model of the World Australia</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css?v=185">
+    <link rel="stylesheet" href="css/style.css?v=187">
     <style>
         .contact-form-container {
             background: rgba(0, 0, 0, 0.7);
@@ -75,11 +75,6 @@
 
     <div class="contact-form-container">
         <form id="contactForm">
-            <input type="hidden" name="access_key" value="de2e3c55-38ef-47ca-926b-9d51e0292d29">
-            <input type="hidden" name="subject" value="New Website Inquiry – TMW Australia">
-            <input type="hidden" name="from_name" value="Top Model Australia Website">
-            <input type="checkbox" name="botcheck" style="display:none;">
-
             <label class="form-label">Full Name</label>
             <input type="text" name="name" class="glass-input" placeholder="Your Name" required>
 
@@ -112,37 +107,26 @@
 
 <script src="js/script.js"></script>
 <script>
+    // PASTE YOUR GOOGLE WEB APP URL BELOW
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwminhURNe0uM8_5e3DawGoE7fksTExeqL5dOha-phlQ9Otbr1dF5VGVBYY0g3xPzLD0A/exec'; 
+    
     const form = document.getElementById('contactForm');
     const btn = document.getElementById('submitBtn');
     const status = document.getElementById('statusMsg');
 
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        btn.disabled = true;
-        status.style.display = 'block';
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      btn.disabled = true;
+      status.style.display = 'block';
+      status.innerText = "SENDING...";
 
-        const formData = new FormData(form);
-        const object = Object.fromEntries(formData);
-        const json = JSON.stringify(object);
-
-        fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-            body: json
-        })
-        .then(async (response) => {
-            if (response.status == 200) {
-                // SUCCESS: Redirect to your custom page immediately
-                window.location.href = "contact-success.html";
-            } else {
-                alert("Something went wrong. Please try again.");
-                btn.disabled = false;
-                status.style.display = 'none';
-            }
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            // Success: Redirect to success page
+            window.location.href = "contact-success.html";
         })
         .catch(error => {
-            console.log(error);
-            alert("Connection error. Please check your internet.");
+            alert("There was an error sending your message. Please try again.");
             btn.disabled = false;
             status.style.display = 'none';
         });

@@ -4,36 +4,44 @@
     <link rel="icon" type="image/png" href="images/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eligibility – Top Model of the World Australia</title>
-    <link rel="stylesheet" href="css/style.css?v=380">
+    <title>Eligibility – Teens</title>
+    <link rel="stylesheet" href="css/style.css?v=381">
     <style>
         .policy-container { max-width: 500px; margin: 40px auto; padding: 15px; border: 1px solid #d4af37; background: #000; }
-        .gold-title { font-size: 1.4rem !important; margin-bottom: 5px; text-align: center; } /* Reduced Size */
+        .gold-title { font-size: 1.4rem !important; margin-bottom: 5px; text-align: center; }
         .policy-text h2 { font-size: 1rem; color: #d4af37; margin-bottom: 5px; }
         .policy-text ul { font-size: 0.8rem; color: #ccc; padding-left: 20px; margin-bottom: 10px; }
-        .policy-text li { margin-bottom: 4px; }
-        .cta-button { font-size: 0.85rem !important; padding: 12px !important; display: block; text-align: center; text-decoration: none; }
+        .cta-button { font-size: 0.85rem !important; padding: 12px !important; display: block; text-align: center; background: #d4af37; color: #000; font-weight: bold; border: none; width: 100%; cursor: pointer; }
     </style>
 </head>
 <body>
     <main class="policy-container">
-        <h1 class="gold-title">Step 2: Eligibility Check</h1>
+        <h1 class="gold-title">Step 2: Teen Eligibility</h1>
         <div class="policy-text">
             <h2>Criteria</h2>
             <ul>
-                <li><strong>Age: 14 to 16 years at the time of the event.</strong></li>
-		<li><strong>Parental Consent: A parent or legal guardian must accompany the contestant to all rehearsals and the finale.</strong></li>
-		<li><strong>Official photography for the Teen Section is for judging purposes only and will not be published in the public media galleries of this website.</strong></li>
-		<li><strong>Payment: Payment of non-refundable $300 registration fee, consistent with the main pageant.</strong></li>
+                <li><strong>Age:</strong> 14 to 16 years at the time of the event.</li>
+                <li><strong>Guardian:</strong> A parent or legal guardian must accompany the contestant.</li>
+                <li><strong>Privacy:</strong> Teen photography is for judging only and not public media.</li>
+                <li><strong>Fee:</strong> Non-refundable $300 registration fee applies.</li>
             </ul>
         </div>
         <div style="margin: 15px 0; text-align: center;">
             <label style="color: #fff; font-size: 0.75rem; cursor: pointer;">
-                <input type="checkbox" id="eligCheck" required style="accent-color: #d4af37;">
+                <input type="checkbox" id="eligCheck" style="accent-color: #d4af37;">
                 I confirm my child meets these requirements.
             </label>
         </div>
-        <a href="terms-media.html" class="cta-button">I CONFIRM - NEXT STEP</a>
+        <button onclick="checkTeenEligibility()" class="cta-button">I CONFIRM - NEXT STEP</button>
     </main>
+    <script>
+        function checkTeenEligibility() {
+            if (document.getElementById('eligCheck').checked) {
+                window.location.href = "payment-authorization.html";
+            } else {
+                alert("Please confirm eligibility.");
+            }
+        }
+    </script>
 </body>
 </html>

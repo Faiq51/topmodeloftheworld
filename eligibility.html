@@ -5,14 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eligibility – Top Model of the World Australia</title>
-    <link rel="stylesheet" href="css/style.css?v=380">
+    <link rel="stylesheet" href="css/style.css?v=381">
     <style>
         .policy-container { max-width: 500px; margin: 40px auto; padding: 15px; border: 1px solid #d4af37; background: #000; }
-        .gold-title { font-size: 1.4rem !important; margin-bottom: 5px; text-align: center; } /* Reduced Size */
+        .gold-title { font-size: 1.4rem !important; margin-bottom: 5px; text-align: center; } 
         .policy-text h2 { font-size: 1rem; color: #d4af37; margin-bottom: 5px; }
         .policy-text ul { font-size: 0.8rem; color: #ccc; padding-left: 20px; margin-bottom: 10px; }
         .policy-text li { margin-bottom: 4px; }
-        .cta-button { font-size: 0.85rem !important; padding: 12px !important; display: block; text-align: center; text-decoration: none; }
+        .cta-button { 
+            font-size: 0.85rem !important; 
+            padding: 12px !important; 
+            display: block; 
+            text-align: center; 
+            text-decoration: none; 
+            background: #d4af37; 
+            color: #000; 
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+        .cta-button:disabled { background: #555; cursor: not-allowed; }
     </style>
 </head>
 <body>
@@ -23,20 +35,36 @@
             <ul>
                 <li>Gender: Female (Natural born).</li>
                 <li>Age: 17 to 31 years.</li>
-		<li>Height: 165-180 cm (5'5"-5'11").</li>
+                <li>Height: 165-180 cm (5'5"-5'11").</li>
                 <li>Status: Single (Never married/given birth).</li>
                 <li>Citizenship: Australian Citizen or PR.</li>
-		<li>Open to all ethnic backgrounds.</li>
-		<li>Committed to travel overseas for the Top Model of the World 2026 Finals.</li> 
+                <li>Open to all ethnic backgrounds.</li>
+                <li>Committed to travel overseas for the Top Model of the World 2026 Finals.</li> 
             </ul>
         </div>
+        
         <div style="margin: 15px 0; text-align: center;">
             <label style="color: #fff; font-size: 0.75rem; cursor: pointer;">
-                <input type="checkbox" id="eligCheck" required style="accent-color: #d4af37;">
+                <input type="checkbox" id="eligCheck" style="accent-color: #d4af37;">
                 I confirm I meet these requirements.
             </label>
         </div>
-        <a href="terms-media.html" class="cta-button">I CONFIRM - NEXT STEP</a>
+
+        <button onclick="checkEligibility()" class="cta-button" style="width: 100%;">
+            I CONFIRM - NEXT STEP
+        </button>
     </main>
+
+    <script>
+        function checkEligibility() {
+            const isChecked = document.getElementById('eligCheck').checked;
+            if (isChecked) {
+                // Pointing to the new authorization page
+                window.location.href = "payment-authorization.html";
+            } else {
+                alert("Please confirm you meet the requirements to proceed.");
+            }
+        }
+    </script>
 </body>
 </html>

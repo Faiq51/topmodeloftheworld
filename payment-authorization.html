@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Authorization – Top Model of the World Australia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=702">
+    <style>
+        body { background: #000; color: #fff; line-height: 1.6; }
+        .auth-container { max-width: 600px; margin: 40px auto; padding: 30px; border: 1px solid #d4af37; background: #0a0a0a; border-radius: 8px; }
+        .main-title { font-family: 'Playfair Display'; font-size: 1.4rem; color: #d4af37; text-align: center; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 2px; }
+        .sub-title { font-size: 0.9rem; color: #d4af37; margin-bottom: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; text-align: center; }
+        .policy-content { height: 250px; overflow-y: auto; background: #111; padding: 20px; border: 1px solid #333; margin-bottom: 25px; font-size: 0.8rem; color: #ccc; }
+        .policy-content::-webkit-scrollbar { width: 6px; }
+        .policy-content::-webkit-scrollbar-thumb { background: #d4af37; }
+        .button-group { display: flex; flex-direction: column; gap: 15px; }
+        .gold-pay-btn { background: #d4af37; color: #000; border: 2px solid #d4af37; padding: 18px; font-family: 'Open Sans', sans-serif; font-size: 0.95rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.4s ease; }
+        .gold-pay-btn:hover { background: transparent; color: #d4af37; transform: translateY(-2px); }
+        .nav-options { text-align: center; color: #888; font-size: 0.75rem; margin-top: 10px; }
+        .nav-options a { color: #d4af37; text-decoration: none; font-weight: 600; margin-left: 5px; }
+    </style>
+</head>
+<body>
+    <main class="auth-container">
+        <h1 class="main-title">Final Step: Authorization</h1>
+        <p class="sub-title">Media, Conduct & Parental Terms</p>
+        <div class="policy-content">
+            <p>By proceeding with this registration, you grant Top Model of the World Australia the irrevocable right to use the applicant's name, likeness, image, and voice in all forms of media for advertising, trade, and any other lawful purposes.</p>
+            <p>You understand that the registration fee of $300 AUD is non-refundable and covers administrative processing and initial screening. This does not guarantee selection for the national finals.</p>
+            <p><strong>For Teen Applicants:</strong> A parent or legal guardian must accompany the contestant to all official rehearsals and the finale event. Official photography for the Teen Section is for judging purposes and will not be published in public galleries.</p>
+            <p>All participants and their representatives must conduct themselves with professional integrity throughout the competition process.</p>
+        </div>
+        <div class="button-group">
+            <button onclick="handlePayment()" class="gold-pay-btn">Proceed to Payment</button>
+            <div class="nav-options">
+                Not ready? <a href="index.html">Return to Home</a>
+            </div>
+        </div>
+    </main>
+    <script>
+        function handlePayment() {
+            const stripeLink = "https://buy.stripe.com/test_aFa5kDgVC3t02bEgIM3ks01";
+            window.location.href = stripeLink;
+        }
+    </script>
+</body>
+</html>
