@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration – Teens</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=601">
+    <style>
+        body { background: #000; color: #fff; }
+        .registration-container { max-width: 800px; margin: 40px auto 80px; padding: 0 20px; }
+        .form-card { background: #0a0a0a; border: 1px solid #d4af37; padding: 40px; border-radius: 4px; }
+        .category-box { background: rgba(212, 175, 55, 0.1); border: 1px dashed #d4af37; padding: 20px; margin-bottom: 30px; text-align: center; }
+        .category-select { width: 100%; padding: 12px; background: #000; color: #fff; border: 1px solid #d4af37; font-weight: bold; cursor: pointer; }
+        .notice-box { border-left: 4px solid #d4af37; background: #111; padding: 20px; margin-bottom: 30px; }
+        .custom-form-group { margin-bottom: 25px; }
+        .custom-form-group label { display: block; color: #ccc; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1px; }
+        .custom-form-group input, .custom-form-group select { width: 100%; padding: 12px; background: #1a1a1a; border: 1px solid #333; color: #fff; }
+        .submit-btn { width: 100%; padding: 18px; background: #d4af37; color: #000; border: none; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; }
+    </style>
+</head>
+<body>
+<main class="registration-container">
+    <div class="form-card">
+        <h1 class="gold-title" style="text-align: center; margin-bottom: 10px; font-size: 2rem;">Teens Registration</h1>
+        <div class="category-box">
+            <select id="reg-type" class="category-select" onchange="window.location.href='register.html'">
+                <option value="teen">TEEN SECTION (Ages 14-16)</option>
+                <option value="main">TOP MODEL OF THE WORLD (Ages 17-31)</option>
+            </select>
+        </div>
+        <div class="notice-box">
+            <p style="color: #d4af37; font-size: 0.8rem; margin: 0;"><strong>TEEN REGISTRATION:</strong> Fee is $300 AUD. Parent/Guardian details and consent are required during this process.</p>
+        </div>
+        <form id="registrationForm">
+            <input type="hidden" name="access_key" value="6f4ed71b-3c15-4cf1-9f5b-e36032dac516">
+            <input type="hidden" name="subject" value="New TEEN Registration - Top Model Australia">
+            <div class="custom-form-group"><label>Full Name (Teen)</label><input type="text" name="full_name" required></div>
+            <div class="custom-form-group"><label>Parent/Guardian Email</label><input type="email" name="email" required></div>
+            <div class="custom-form-group">
+                <label>Date of Birth</label>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                    <select name="birth_day" id="day" required></select>
+                    <select name="birth_month" id="month" required></select>
+                    <select name="birth_year" id="year" required></select>
+                </div>
+            </div>
+            <div class="custom-form-group"><label>Parent Phone Number</label><input type="tel" name="phone" required></div>
+            <div class="custom-form-group"><label>Instagram (Optional)</label><input type="text" name="instagram"></div>
+            <button type="submit" class="submit-btn">Continue</button>
+        </form>
+    </div>
+</main>
+<footer>
+    <div class="social-icons" style="margin-bottom: 15px; text-align: center;">
+        <a href="https://www.instagram.com/topmodeloftheworld_aus/" target="_blank" style="color: #d4af37; font-size: 1.5rem; margin: 0 10px;"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61579750535578" target="_blank" style="color: #d4af37; font-size: 1.5rem; margin: 0 10px;"><i class="fab fa-facebook"></i></a>
+    </div>
+    <div class="footer-links" style="text-align: center; margin-bottom: 15px;">
+        <a href="sitemap.html" style="color: #d4af37; margin: 0 10px;">Sitemap</a>
+        <a href="privacy.html" style="color: #d4af37; margin: 0 10px;">Privacy</a>
+    </div>
+    <div class="copyright" style="text-align: center;">
+        <p style="color: #ccc;">&copy; 2026 Top Model of the World - Australia. All rights reserved.</p>
+        <p class="architect-credit" style="font-size: 0.6rem; margin-top: 10px; opacity: 0.7; color: #ccc;">Digital Architecture & Design support by Gemini.</p>
+    </div>
+</footer>
+<script>
+    const form = document.getElementById('registrationForm');
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = document.querySelector('.submit-btn');
+        btn.disabled = true; btn.innerText = "PROCESSING...";
+        fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) })
+        .then(res => { if(res.ok) window.location.href = "eligibility-teen.html"; else alert("Error."); });
+    });
+
+    const daySelect = document.getElementById('day');
+    const monthSelect = document.getElementById('month');
+    const yearSelect = document.getElementById('year');
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    for(let i=1; i<=31; i++) { daySelect.innerHTML += `<option value="${i}">${i}</option>`; }
+    months.forEach(m => { monthSelect.innerHTML += `<option value="${m}">${m}</option>`; });
+    // Teens aged 14-16 in 2026: born 2010-2012
+    for(let i=2012; i>=2010; i--) { yearSelect.innerHTML += `<option value="${i}">${i}</option>`; }
+</script>
+</body>
+</html>
