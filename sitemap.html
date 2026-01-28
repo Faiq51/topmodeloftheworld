@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Map – Top Model Australia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .sitemap-container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 0 20px;
+            text-align: left;
+        }
+        .sitemap-section {
+            margin-bottom: 40px;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            padding-top: 20px;
+        }
+        .sitemap-section h2 {
+            color: #d4af37;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        .sitemap-list {
+            list-style: none;
+            padding: 0;
+        }
+        .sitemap-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .sitemap-list i {
+            color: #d4af37;
+            margin-right: 15px;
+            width: 20px;
+            text-align: center;
+        }
+        .sitemap-list a {
+            color: #ccc !important;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        .sitemap-list a:hover {
+            color: #d4af37 !important;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="apply.html">Apply Now</a>
+        <a href="register.html">Register</a>
+        <a href="sponsors.html">Sponsors</a>
+        <a href="media-australia.html">Media</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+</nav>
+
+<main class="sitemap-container">
+    <h1 class="gold-title" style="text-align: center;">Site Map</h1>
+    <p style="text-align: center; color: #ccc; margin-bottom: 50px;">Navigate through the official Top Model of the World Australia portal.</p>
+
+    <div class="sitemap-section">
+        <h2>Main Pages</h2>
+        <ul class="sitemap-list">
+            <li><i class="fas fa-home"></i><a href="index.html">Home</a></li>
+            <li><i class="fas fa-info-circle"></i><a href="about.html">About Us</a></li>
+            <li><i class="fas fa-edit"></i><a href="apply.html">Apply Now</a></li>
+            <li><i class="fas fa-user-check"></i><a href="register.html">Registration</a></li>
+            <li><i class="fas fa-award"></i><a href="sponsors.html">Our Sponsors</a></li>
+            <li><i class="fas fa-envelope"></i><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <div class="sitemap-section">
+        <h2>Media & Events</h2>
+        <ul class="sitemap-list">
+            <li><i class="fas fa-camera"></i><a href="media-australia.html">Media Hub</a></li>
+            <li><i class="fas fa-users"></i><a href="contestants.html">Australian Contestants</a></li>
+            <li><i class="fas fa-globe"></i><a href="media-international.html">International Gallery</a></li>
+        </ul>
+    </div>
+
+    <div class="sitemap-section">
+        <h2>Legal & Support</h2>
+        <ul class="sitemap-list">
+            <li><i class="fas fa-lock"></i><a href="privacy.html">Privacy Policy</a></li>
+            <li><i class="fas fa-sitemap"></i><a href="sitemap.html">Site Map</a></li>
+        </ul>
+    </div>
+</main>
+
+<footer>
+    <div class="social-container" style="text-align: center; margin-bottom: 20px;">
+        <a href="https://www.instagram.com/topmodeloftheworld_aus/" style="color: #d4af37; font-size: 1.5rem; margin: 0 10px;"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61579750535578" style="color: #d4af37; font-size: 1.5rem; margin: 0 10px;"><i class="fab fa-facebook"></i></a>
+    </div>
+    <div class="copyright" style="text-align: center;">
+        <p style="color: #ccc;">&copy; 2026 Top Model Australia. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('mobile-menu').addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.toggle('active');
+    });
+</script>
+
+</body>
+</html>

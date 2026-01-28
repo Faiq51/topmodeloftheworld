@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Partners – Top Model Australia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="apply.html">Apply Now</a>
+            <a href="register.html">Register</a>
+            <a href="sponsors.html" class="active">Sponsors</a>
+            <a href="media-australia.html">Media</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </nav>
+
+    <main class="partners-container">
+        <h1 class="gold-title" style="font-size: 2.5rem !important;">Our Partners</h1>
+        <p style="text-transform: uppercase; letter-spacing: 2px; color: #888; font-size: 0.8rem;">Supported by Industry Leaders</p>
+
+        <h2 class="partner-tier-title">Platinum Partners</h2>
+        <div class="partner-grid">
+            <div class="partner-card">
+                <img src="images/platinum-partner-1.png" alt="Platinum Partner">
+            </div>
+        </div>
+
+        <h2 class="partner-tier-title">Production & Media</h2>
+        <div class="partner-grid">
+            <div class="partner-card">
+                <img src="images/media-partner-1.png" alt="Media Partner">
+            </div>
+            <div class="partner-card">
+                <img src="images/production-partner-1.png" alt="Production Partner">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+        <div class="footer-links">
+            <a href="#">Sitemap</a> <a href="#">Privacy</a>
+        </div>
+        <p style="color: #666; font-size: 0.8rem; margin-top: 15px;">&copy; 2026 Top Model of the World - Australia.</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

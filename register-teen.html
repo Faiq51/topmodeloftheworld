@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teen Registration – Top Model Australia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=651">
+    <style>
+        body { background: #000; color: #fff; }
+        .registration-container { max-width: 800px; margin: 40px auto 80px; padding: 0 20px; }
+        .form-card { background: #0a0a0a; border: 1px solid #d4af37; padding: 40px; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        
+        .category-box { background: rgba(212, 175, 55, 0.1); border: 1px dashed #d4af37; padding: 20px; margin-bottom: 30px; text-align: center; }
+        
+        .category-select, .custom-form-group select, .custom-form-group input { 
+            width: 100%; 
+            padding: 12px; 
+            background: #1a1a1a; 
+            color: #fff; 
+            border: 1px solid #333; 
+            font-size: 0.85rem; 
+            transition: 0.3s; 
+        }
+
+        .category-select { background: #000; border: 1px solid #d4af37; font-weight: bold; color: #d4af37; }
+        
+        .notice-box { border-left: 4px solid #d4af37; background: #111; padding: 20px; margin-bottom: 30px; }
+        .custom-form-group { margin-bottom: 25px; }
+        .custom-form-group label { display: block; color: #d4af37; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1px; font-weight: 600; }
+
+        .submit-btn { 
+            width: 100%; 
+            padding: 18px; 
+            background: #d4af37; 
+            color: #000; 
+            border: none; 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            cursor: pointer; 
+            transition: 0.3s; 
+        }
+        .submit-btn:hover { background: #fff; }
+
+        @media (max-width: 768px) { 
+            .registration-container { margin-top: 10px !important; } 
+            .form-card { padding: 25px 20px; border: none; } 
+            .gold-title { font-size: 1.8rem !important; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="apply.html">Apply Now</a>
+        <a href="register.html" class="active">Register</a>
+        <a href="sponsors.html">Sponsors</a>
+        <a href="media-australia.html">Media</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+</nav>
+
+<main class="registration-container">
+    <div class="form-card">
+        <h1 class="gold-title" style="text-align: center; margin-bottom: 10px;">Teen Registration</h1>
+        <p style="text-align: center; color: #888; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 30px;">Ages 14 — 16</p>
+        
+        <div class="category-box">
+            <label style="display: block; color: #d4af37; margin-bottom: 10px; font-family: 'Playfair Display';">Current Selection</label>
+            <select id="reg-type" class="category-select" onchange="handleCategoryChange(this.value)">
+                <option value="teen" selected>TEEN SECTION (Ages 14-16)</option>
+                <option value="main">TOP MODEL OF THE WORLD (Ages 17-31)</option>
+            </select>
+        </div>
+
+        <div class="notice-box">
+            <p style="color: #fff; font-size: 0.85rem; margin: 0; line-height: 1.5;">
+                <strong style="color: #d4af37;">TEEN ENTRY:</strong> Applicants in this category require parental consent. The registration fee is $300 AUD.
+            </p>
+        </div>
+
+        <form id="teenRegistrationForm">
+            <input type="hidden" name="access_key" value="6f4ed71b-3c15-4cf1-9f5b-e36032dac516">
+            <input type="hidden" name="subject" value="New 2026 TEEN Registration">
+
+            <div class="custom-form-group">
+                <label>Full Name</label>
+                <input type="text" name="full_name" required placeholder="Full name of applicant">
+            </div>
+
+            <div class="custom-form-group">
+                <label>Parent/Guardian Email</label>
+                <input type="email" name="guardian_email" required placeholder="Email of consenting adult">
+            </div>
+
+            <div class="custom-form-group">
+                <label>Date of Birth</label>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                    <select name="birth_day" id="day" required><option value="" disabled selected>Day</option></select>
+                    <select name="birth_month" id="month" required><option value="" disabled selected>Month</option></select>
+                    <select name="birth_year" id="year" required><option value="" disabled selected>Year</option></select>
+                </div>
+            </div>
+
+            <div class="custom-form-group">
+                <label>Guardian Phone</label>
+                <input type="tel" name="phone" required placeholder="Best contact number">
+            </div>
+
+            <div class="custom-form-group">
+                <label>State</label>
+                <select name="state" required>
+                    <option value="" disabled selected>Select</option>
+                    <option value="NSW">New South Wales</option>
+                    <option value="VIC">Victoria</option>
+                    <option value="QLD">Queensland</option>
+                    <option value="WA">Western Australia</option>
+                    <option value="SA">South Australia</option>
+                    <option value="TAS">Tasmania</option>
+                    <option value="ACT">ACT</option>
+                    <option value="NT">Northern Territory</option>
+                </select>
+            </div>
+
+            <button type="submit" class="submit-btn">Continue to Eligibility</button>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <p style="text-align: center; color: #555; font-size: 0.75rem;">&copy; 2026 Top Model Australia. All rights reserved.</p>
+</footer>
+
+<script>
+    function handleCategoryChange(val) {
+        if (val === 'main') { window.location.href = 'register.html'; }
+    }
+
+    document.getElementById('mobile-menu').addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.toggle('active');
+    });
+
+    document.getElementById('teenRegistrationForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        window.location.href = "eligibility-teen.html";
+    });
+
+    const daySelect = document.getElementById('day');
+    const monthSelect = document.getElementById('month');
+    const yearSelect = document.getElementById('year');
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    
+    for(let i=1; i<=31; i++) { daySelect.innerHTML += `<option value="${i}">${i}</option>`; }
+    months.forEach(m => { monthSelect.innerHTML += `<option value="${m}">${m}</option>`; });
+    for(let i=2012; i>=2009; i--) { yearSelect.innerHTML += `<option value="${i}">${i}</option>`; }
+</script>
+</body>
+</html>
