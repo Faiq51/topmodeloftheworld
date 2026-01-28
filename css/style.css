@@ -1,0 +1,129 @@
+/* --- 1. GLOBAL RESET & BASE --- */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body { 
+    margin: 0; padding: 0; width: 100%; min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/a.jpg') no-repeat center center fixed !important;
+    background-size: cover !important; color: #fff; font-family: 'Open Sans', sans-serif; font-size: 16px; 
+}
+
+/* FORCE GOLD LINKS */
+a, a:link, a:visited, a:active { color: #d4af37 !important; text-decoration: none !important; }
+a:hover { color: #ffffff !important; }
+
+/* --- 2. UNIFIED NAVIGATION (Centered Desktop / Mobile Hamburger) --- */
+nav { 
+    background: rgba(0,0,0,0.95); 
+    border-bottom: 1px solid #d4af37; 
+    display: flex; 
+    justify-content: center; /* Centers "HOME" and links on Desktop */
+    align-items: center; 
+    min-height: 70px; 
+    position: sticky; 
+    top: 0; 
+    z-index: 9999;
+    padding: 0 20px;
+}
+
+.nav-links { 
+    display: flex; 
+    list-style: none; 
+    margin: 0; 
+    padding: 0; 
+    gap: 30px; 
+}
+
+.nav-links a { 
+    font-weight: 600; 
+    text-transform: uppercase; 
+    font-size: 0.85rem !important; 
+    letter-spacing: 1.5px;
+    color: #d4af37 !important;
+}
+
+.nav-links a.active {
+    color: #ffffff !important;
+}
+
+.menu-toggle { 
+    display: none; /* Hidden on Desktop */
+    color: #d4af37 !important; 
+    font-size: 1.8rem; 
+    cursor: pointer; 
+}
+
+/* --- 3. MOBILE ADAPTATION (Samsung S21) --- */
+@media screen and (max-width: 992px) {
+    nav { 
+        justify-content: flex-end; /* Pushes Hamburger to the right */
+        padding: 0 15px;
+    }
+
+    .menu-toggle { display: block !important; }
+
+    .nav-links {
+        display: none; /* Hidden until toggled via JavaScript */
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.98);
+        padding: 30px 0;
+        text-align: center;
+        border-bottom: 1px solid #d4af37;
+    }
+
+    .nav-links.active { display: flex !important; }
+
+    .nav-links a { padding: 15px 0; font-size: 1.1rem !important; width: 100%; }
+}
+
+/* --- 4. MODERN FORM STYLING --- */
+.form-container-modern {
+    max-width: 650px; margin: 40px auto; padding: 30px;
+    background: rgba(10, 10, 10, 0.95); border: 1px solid #d4af37;
+}
+
+.form-group-modern { margin-bottom: 25px; text-align: left; }
+.form-group-modern label { 
+    display: block; color: #d4af37; font-size: 0.75rem; 
+    text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; font-weight: 600; 
+}
+
+.form-group-modern input, .form-group-modern select, .form-group-modern textarea {
+    width: 100%; background: transparent; border: none; border-bottom: 1px solid #333; 
+    color: #fff; padding: 12px 0; font-size: 1.1rem; border-radius: 0; transition: border-color 0.3s ease;
+}
+
+.form-group-modern input:focus { outline: none; border-bottom: 1px solid #d4af37; }
+
+/* --- 5. SPONSORS & PARTNERS --- */
+.partner-grid { 
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 30px; align-items: center; justify-items: center; 
+}
+
+/* --- 6. HERO & HEADINGS --- */
+.gold-title {
+    color: #d4af37 !important; font-family: 'Playfair Display', serif !important;
+    font-size: 3.5rem !important; line-height: 1.1; margin: 20px auto; text-align: center !important;
+}
+
+/* 5-Column Gallery Grid (Desktop) */
+.media-grid, .intl-gallery-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr); 
+    max-width: 1400px; margin: 40px auto; gap: 15px; padding: 0 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .gold-title { font-size: 2.2rem !important; }
+    .media-grid, .intl-gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+}
+
+/* --- 7. FOOTER --- */
+footer { 
+    background: rgba(0,0,0,0.9); padding: 40px 20px; border-top: 1px solid #d4af37; 
+    text-align: center; width: 100%; margin-top: auto;
+}
