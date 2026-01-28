@@ -98,7 +98,6 @@
 <body>
 
 <nav>
-
     <div class="menu-toggle" id="mobile-menu">
         <i class="fas fa-bars"></i>
     </div>
@@ -128,15 +127,14 @@
 
     <div class="category-nav">
         <button class="cat-btn active">Finalists</button>
-        <button class="cat-btn">Ceremony</button>
-        <button class="cat-btn">Winners</button>
+        <button class="cat-btn" onclick="showCeremonySoon()">Ceremony</button>
+        <button class="cat-btn" onclick="showWinnersSoon()">Winners</button>
     </div>
 
     <h1 class="gold-title" style="margin-top: 0;">2026 National Finalists</h1>
     <p style="text-align: center; color: #888; text-transform: uppercase; font-size: 0.65rem; letter-spacing: 2px; margin-bottom: 40px;">Official Gallery</p>
 
     <div class="contestant-grid">
-        
         <div class="model-card">
             <img src="images/gallery/2026-aus/contestants/temp.png" alt="National Finalist">
             <div class="model-name">Coming Soon</div>
@@ -177,7 +175,6 @@
             <img src="images/gallery/2026-aus/contestants/temp.png" alt="National Finalist">
             <div class="model-name">Coming Soon</div>
         </div>
-
     </div>
 </main>
 
@@ -194,18 +191,25 @@
 </footer>
 
 <script>
-    document.getElementById('mobile-menu').addEventListener('click', () => {
-        document.querySelector('.nav-links').classList.toggle('active');
-    });
-</script>
-<script>
+    // Combined Mobile Menu Logic
     const menuBtn = document.getElementById('mobile-menu');
     const navItems = document.querySelector('.nav-links');
 
-    menuBtn.addEventListener('click', () => {
-        navItems.classList.toggle('active');
-    });
+    if (menuBtn) {
+        menuBtn.addEventListener('click', () => {
+            navItems.classList.toggle('active');
+        });
+    }
+
+    // Function for Ceremony button
+    function showCeremonySoon() {
+        alert("The 2026 National Finale highlights and ceremony footage will be uploaded here shortly after the event!");
+    }
+
+    // Function for Winners button
+    function showWinnersSoon() {
+        alert("The 2026 National Winners will be announced following the Finale event. Stay tuned!");
+    }
 </script>
 </body>
-
 </html>
