@@ -7,67 +7,76 @@
     <title>Apply Now – Top Model of the World Australia</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css?v=80">
+    <link rel="stylesheet" href="css/style.css?v=651">
     
     <style>
-        /* Desktop spacing */
-        .hero-container { padding-top: 40px !important; }
+        body { background: #000; color: #fff; }
+        .application-container { max-width: 800px; margin: 30px auto 60px; padding: 0 20px; }
         
-        .form-container {
-            background: rgba(0, 0, 0, 0.7);
-            border: 1px solid #d4af37;
-            padding: 40px;
-            border-radius: 10px;
-            max-width: 850px;
-            margin: 0 auto;
+        /* Centered Premium Card */
+        .form-card { 
+            background: rgba(10, 10, 10, 0.9); 
+            border: 1px solid #d4af37; 
+            padding: 30px; 
+            border-radius: 4px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.8); 
         }
-        .form-label {
-            color: #d4af37;
-            display: block;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-        .glass-input, .glass-select, .glass-textarea {
-            background: rgba(255, 255, 255, 0.05) !important;
-            border: 1px solid rgba(212, 175, 55, 0.3) !important;
-            color: white !important;
-            margin-bottom: 20px;
-            padding: 12px;
-            font-family: 'Open Sans', sans-serif;
-            width: 100%;
-            font-size: 0.9rem;
-        }
-        .glass-select option { background: #000; color: white; }
         
-        .form-row { display: flex; gap: 20px; align-items: flex-start; }
-        .field-group { flex: 1; display: flex; flex-direction: column; }
-        
-        .dob-container { display: flex; gap: 8px; width: 100%; }
-        .dob-field { flex: 1; min-width: 0; }
+        /* REVISED: Reduced Header Font Size */
+        .gold-title { 
+            text-align: center; 
+            margin-bottom: 25px; 
+            font-size: 1.7rem !important; 
+            letter-spacing: 1px;
+        }
 
-        .submit-image-btn {
-            background: none;
-            border: none;
-            padding: 0;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            margin-top: 20px;
+        /* REVISED: Smaller Label & Entry Sizes */
+        .custom-form-group { margin-bottom: 18px; }
+        .custom-form-group label { 
+            display: block; 
+            color: #d4af37; 
+            font-size: 0.7rem; /* Reduced */
+            text-transform: uppercase; 
+            margin-bottom: 6px; 
+            letter-spacing: 1.2px; 
+            font-weight: 600; 
         }
-        .submit-image-btn:hover { transform: scale(1.03); }
-        .submit-image-btn img { max-width: 320px; width: 100%; border: 1px solid #d4af37; }
+        
+        /* REVISED: Reduced Box Sizes (Padding & Font) */
+        .custom-form-group input, .custom-form-group select, .custom-form-group textarea { 
+            width: 100%; 
+            padding: 10px; /* Reduced padding */
+            background: #1a1a1a; 
+            border: 1px solid #333; 
+            color: #fff; 
+            font-size: 0.8rem; /* Reduced font */
+            transition: 0.3s; 
+        }
+        .custom-form-group input:focus { border-color: #d4af37; outline: none; }
 
-        /* Mobile specific adjustments */
-        @media screen and (max-width: 768px) {
-            .hero-container { padding-top: 15px !important; } /* Reduced gap above "Application Form" */
-            .gold-title { font-size: 2rem !important; margin-bottom: 5px !important; }
-            .form-row { flex-direction: column; gap: 0; }
-            .form-container { padding: 20px; width: 95%; margin-top: 10px; }
-            .dob-container { gap: 5px; }
-            .submit-image-btn img { max-width: 280px; }
+        .submit-btn { 
+            width: 100%; 
+            padding: 15px; 
+            background: #d4af37; 
+            color: #000; 
+            border: none; 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            cursor: pointer; 
+            transition: 0.3s; 
+            font-size: 0.85rem;
         }
+        .submit-btn:hover { background: #fff; }
+
+        @media (max-width: 768px) { 
+            .application-container { margin-top: 15px !important; } 
+            .form-card { padding: 20px 15px; border: none; background: rgba(10, 10, 10, 0.95); } 
+            .gold-title { font-size: 1.4rem !important; } 
+            .form-row { display: block !important; } /* Stack on mobile */
+        }
+        
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
     </style>
 </head>
 <body>
@@ -77,7 +86,7 @@
     <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
-        <a href="apply.html">Apply Now</a>
+        <a href="apply.html" class="active">Apply Now</a>
         <a href="register.html">Register</a>
         <a href="sponsors.html">Sponsors</a>
         <a href="media-australia.html">Media</a>
@@ -85,63 +94,60 @@
     </div>
 </nav>
 
-<main>
-    <div class="apply-container">
-        <div class="form-header-modern">
-            <h1>Application Form</h1>
-            <p>2026 National Finalist Search</p>
-        </div>
+<main class="application-container">
+    <div class="form-card">
+        <h1 class="gold-title">Application Form</h1>
+        
+        <form id="applicationForm">
+            <input type="hidden" name="access_key" value="3ec49bf1-c2e5-4733-8661-5f5164d0a07b">
+            <input type="hidden" name="subject" value="New National Finalist Application">
 
-        <form id="applicationForm" action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-            <input type="hidden" name="subject" value="New Finalist Application">
-            <input type="checkbox" name="botcheck" style="display: none;">
-
-            <div class="form-group-modern">
-                <label>Full Name</label>
-                <input type="text" name="name" required placeholder="As per ID">
+            <div class="form-row">
+                <div class="custom-form-group">
+                    <label>Full Name</label>
+                    <input type="text" name="name" required placeholder="As per ID">
+                </div>
+                <div class="custom-form-group">
+                    <label>Email Address</label>
+                    <input type="email" name="email" required placeholder="Active email">
+                </div>
             </div>
 
-            <div class="form-group-modern">
-                <label>Email Address</label>
-                <input type="email" name="email" required placeholder="Active email">
+            <div class="form-row">
+                <div class="custom-form-group">
+                    <label>Instagram Link</label>
+                    <input type="url" name="instagram" required placeholder="link to profile">
+                </div>
+                <div class="custom-form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" name="phone" required placeholder="Mobile number">
+                </div>
             </div>
 
-            <div class="form-group-modern">
-                <label>Instagram Link</label>
-                <input type="text" name="instagram" required placeholder="link to profile">
+            <div class="form-row" style="grid-template-columns: 0.8fr 1.2fr;">
+                <div class="custom-form-group">
+                    <label>Height (cm)</label>
+                    <input type="number" name="height" required placeholder="e.g. 175">
+                </div>
+                <div class="custom-form-group">
+                    <label>State</label>
+                    <select name="state" required>
+                        <option value="" disabled selected>Select</option>
+                        <option value="NSW">NSW</option><option value="VIC">VIC</option>
+                        <option value="QLD">QLD</option><option value="WA">WA</option>
+                        <option value="SA">SA</option><option value="TAS">TAS</option>
+                        <option value="ACT">ACT</option><option value="NT">NT</option>
+                    </select>
+                </div>
             </div>
 
-            <div class="form-group-modern">
-                <label>Phone Number</label>
-                <input type="tel" name="phone" required placeholder="Mobile number">
+            <div class="custom-form-group">
+                <label>Experience / Short Bio</label>
+                <textarea name="bio" rows="3" placeholder="Briefly describe your modeling background..." required></textarea>
             </div>
 
-            <div class="form-group-modern">
-                <label>Height (cm)</label>
-                <input type="number" name="height" required placeholder="e.g. 175">
-            </div>
-
-            <div class="form-group-modern">
-                <label>Current Location</label>
-                <select name="location" required>
-                    <option value="" disabled selected>Select State</option>
-                    <option value="NSW">New South Wales</option>
-                    <option value="VIC">Victoria</option>
-                    <option value="QLD">Queensland</option>
-                    <option value="WA">Western Australia</option>
-                    <option value="SA">South Australia</option>
-                    <option value="TAS">Tasmania</option>
-                    <option value="ACT">ACT</option>
-                    <option value="NT">Northern Territory</option>
-                </select>
-            </div>
-
-            <div style="text-align: center; margin-top: 40px;">
-                <button type="submit" style="background: none; border: none; padding: 0; cursor: pointer;">
-                    <img src="images/applynow.jpg" alt="Apply Now" class="applynow-img">
-                </button>
-            </div>
+            <button type="submit" class="submit-btn" id="submitBtn">Submit Application</button>
+            <p id="formStatus" style="color: #d4af37; font-size: 0.7rem; text-align: center; margin-top: 10px; display: none; text-transform: uppercase;">Sending...</p>
         </form>
     </div>
 </main>
@@ -156,25 +162,28 @@
         <a href="privacy.html" style="color: #d4af37; margin: 0 10px;">Privacy</a>
     </div>
     <div class="copyright" style="text-align: center;">
-        <p style="color: #ccc;">&copy; 2026 Top Model of the World - Australia. All rights reserved.</p>
+        <p style="color: #ccc; font-size: 0.75rem;">&copy; 2026 Top Model of the World - Australia. All rights reserved.</p>
         <p class="architect-credit" style="font-size: 0.6rem; margin-top: 10px; opacity: 0.7; color: #ccc;">Digital Architecture & Design support by Gemini.</p>
     </div>
 </footer>
 
 <script src="js/script.js"></script>
 <script>
-const form = document.getElementById('applicationForm');
-const statusText = document.getElementById('formStatus');
+    const form = document.getElementById('applicationForm');
+    const statusText = document.getElementById('formStatus');
+    const btn = document.getElementById('submitBtn');
 
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    statusText.style.display = 'block';
-    
-    const formData = new FormData(form);
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        statusText.style.display = 'block';
+        btn.disabled = true;
+        btn.innerText = "Processing...";
+        
+        const formData = new FormData(form);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
 
-    fetch('https://api.web3forms.com/submit', {
+        fetch('https://api.web3forms.com/submit', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
             body: json
@@ -183,15 +192,19 @@ form.addEventListener('submit', function(e) {
             if (response.status == 200) {
                 window.location.href = "thankyou-application.html";
             } else {
-                alert("Please check all fields and try again.");
+                alert("Submission failed. Please check your entries.");
                 statusText.style.display = 'none';
+                btn.disabled = false;
+                btn.innerText = "Submit Application";
             }
         })
         .catch(error => {
-            alert("Submission failed. Check your internet connection.");
+            alert("Error connecting. Check your internet.");
             statusText.style.display = 'none';
+            btn.disabled = false;
+            btn.innerText = "Submit Application";
         });
-});
+    });
 </script>
 </body>
 </html>
