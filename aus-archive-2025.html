@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 National Archive – Top Model Australia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .archive-header { text-align: center; margin: 40px 0 20px 0; }
+        .top-nav-link { max-width: 1200px; margin: 20px auto 0; padding: 0 15px; }
+        .top-nav-link a { color: #d4af37; text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Photo Gallery */
+        .archive-gallery { 
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 15px; 
+            max-width: 1200px; 
+            margin: 40px auto; 
+            padding: 0 20px; 
+        }
+        .archive-item { border: 1px solid #333; cursor: zoom-in; transition: 0.3s; aspect-ratio: 1/1; overflow: hidden; }
+        .archive-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .archive-item:hover { border-color: #d4af37; transform: scale(1.02); }
+
+        /* Video Section (Moved Below Photos) */
+        .video-archive-section { max-width: 900px; margin: 60px auto; padding: 0 20px; text-align: center; }
+        .video-placeholder { 
+            border: 1px dashed #444; 
+            padding: 60px 20px; 
+            background: rgba(212, 175, 55, 0.02); 
+            color: #666; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            font-size: 0.8rem;
+        }
+
+        /* Modal & Fixed Close Button Position */
+        #photo-modal {
+            display: none;
+            position: fixed;
+            z-index: 99999; /* Higher than nav to prevent overlaps */
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95);
+            justify-content: center; align-items: center;
+        }
+        #modal-img { max-width: 90%; max-height: 85%; border: 1px solid #d4af37; }
+        
+        /* Fixed "X" position to avoid nav conflict */
+        .close-x { 
+            position: absolute; 
+            top: 40px; /* Moved down further to clear any top bars */
+            right: 40px; 
+            color: #d4af37; 
+            font-size: 3.5rem; 
+            cursor: pointer; 
+            line-height: 1;
+            z-index: 100000;
+        }
+
+        @media (max-width: 1000px) { .archive-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 768px) { .archive-grid { grid-template-columns: repeat(2, 1fr); } }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="apply.html">Apply Now</a>
+        <a href="register.html">Register</a>
+        <a href="sponsors.html">Sponsors</a>
+        <a href="media-australia.html">Media</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+</nav>
+
+<div class="top-nav-link">
+    <a href="aus-archive.html"><i class="fas fa-arrow-left"></i> Back to Archives Hub</a>
+</div>
+
+<main>
+    <div class="archive-header">
+        <h1 class="gold-title">2025 Ceremony</h1>
+        <p style="color: #888; text-transform: uppercase; letter-spacing: 2px; font-size: 0.7rem;">Official Photo & Video Archive</p>
+    </div>
+
+    <div class="archive-gallery">
+        <div class="archive-item" onclick="openPhoto(this.querySelector('img').src)">
+            <img src="images/gallery/aus-archive/2025/2025_1.png" alt="Australian Finalist 2025">
+        </div>
+        <div class="archive-item" onclick="openPhoto(this.querySelector('img').src)">
+            <img src="images/gallery/aus-archive/2025/2025_2.png" alt="Australian Finalist 2025">
+        </div>
+         <div class="archive-item" onclick="openPhoto(this.querySelector('img').src)">
+            <img src="images/gallery/aus-archive/2025/2025_3.png" alt="Australian Finalist 2025">
+        </div>
+
+</div>
+
+    <div class="video-archive-section">
+        <h2 style="color: #d4af37; font-family: 'Playfair Display'; margin-bottom: 20px;">Video Highlights</h2>
+        <div class="video-placeholder">
+            <i class="fas fa-video" style="display:block; font-size: 2rem; margin-bottom: 10px;"></i>
+            2025 Video Highlights Coming Soon
+        </div>
+    </div>
+</main>
+
+<div id="photo-modal">
+    <span class="close-x" onclick="closePhoto()">&times;</span>
+    <img id="modal-img" src="">
+</div>
+
+<footer>
+    <div class="social-container" style="text-align: center; margin: 40px 0 20px 0;">
+        <a href="https://www.instagram.com/topmodeloftheworld_aus/" target="_blank" style="color: #d4af37; font-size: 1.5rem; margin: 0 10px;"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61579750535578" target="_blank" style="color: #d4af37; font-size: 1.5rem; margin: 0 10px;"><i class="fab fa-facebook"></i></a>
+    </div>
+    <div class="footer-nav" style="text-align: center; margin-bottom: 15px;">
+        <a href="sitemap.html" style="color: #ccc; text-decoration: none; margin: 0 10px; font-size: 0.8rem;">Sitemap</a>
+        <a href="privacy.html" style="color: #ccc; text-decoration: none; margin: 0 10px; font-size: 0.8rem;">Privacy</a>
+    </div>
+    <p style="text-align: center; color: #666; font-size: 0.75rem;">&copy; 2026 Top Model Australia. All rights reserved.</p>
+</footer>
+
+<script>
+    function openPhoto(src) {
+        document.getElementById('modal-img').src = src;
+        document.getElementById('photo-modal').style.display = 'flex';
+    }
+    function closePhoto() {
+        document.getElementById('photo-modal').style.display = 'none';
+    }
+    document.getElementById('mobile-menu').onclick = function() {
+        document.querySelector('.nav-links').classList.toggle('active');
+    };
+</script>
+
+</body>
+</html>
