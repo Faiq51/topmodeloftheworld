@@ -13,24 +13,45 @@
         .intl-header h1 { font-size: 2.2rem; margin-bottom: 5px; }
         .intl-header p { color: #888; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px; }
 
-        .video-list { max-width: 800px; margin: 0 auto 50px auto; padding: 0 15px; }
-        .video-item { border: 1px solid #333; background: #000; margin-bottom: 25px; cursor: pointer; position: relative; }
-        .video-thumb-container { position: relative; aspect-ratio: 16/9; overflow: hidden; }
-        .video-thumb-container img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
+        .top-nav-link { max-width: 900px; margin: 20px auto 0; padding: 0 15px; }
+        .top-nav-link a { color: #d4af37; text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Video Grid */
+        .video-list { 
+            max-width: 1000px; 
+            margin: 0 auto 50px auto; 
+            padding: 0 15px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
         
-        .play-btn-large { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(212, 175, 55, 0.8); font-size: 4rem; }
-        .video-label { text-align: center; padding: 15px; color: #d4af37; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; border-top: 1px solid #222; }
+        .video-item { border: 1px solid #333; background: #000; padding: 10px; cursor: pointer; transition: 0.3s; }
+        .video-item:hover { border-color: #d4af37; }
+        .video-thumb-container { position: relative; width: 100%; aspect-ratio: 16/9; overflow: hidden; }
+        .video-thumb-container img { width: 100%; height: 100%; object-fit: cover; display: block; border: 1px solid #222; opacity: 0.8; }
+        .play-btn-large { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; color: rgba(212, 175, 55, 0.9); }
+        .video-label { color: #d4af37; text-align: center; padding-top: 10px; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
 
-        .intl-gallery-grid { display: grid; grid-template-columns: repeat(5, 1fr); max-width: 1400px; margin: 40px auto; gap: 15px; padding: 0 20px; }
-        .intl-gallery-grid img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border: 1px solid #d4af37; cursor: pointer; }
+        /* Photo Gallery */
+        .photo-gallery { max-width: 1000px; margin: 40px auto; padding: 0 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .zoom-item { cursor: zoom-in; border: 1px solid #333; transition: 0.3s; width: 100%; aspect-ratio: 1/1; object-fit: cover; }
+        .zoom-item:hover { border-color: #d4af37; transform: scale(1.02); }
 
-        #photo-modal { display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); justify-content: center; align-items: center; }
+        /* Modal */
+        #photo-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95);
+            justify-content: center; align-items: center;
+        }
         #modal-img { max-width: 90%; max-height: 85%; border: 1px solid #d4af37; }
-        .close-x { position: absolute; top: 20px; right: 30px; color: #d4af37; font-size: 40px; cursor: pointer; }
+        .close-x { position: absolute; top: 20px; right: 30px; color: #d4af37; font-size: 3rem; cursor: pointer; }
 
-        @media screen and (max-width: 768px) {
-            .intl-gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-            .play-btn-large { font-size: 3rem; }
+        @media (max-width: 768px) {
+            .video-list, .photo-gallery { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -38,7 +59,6 @@
 
 <nav>
     <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
-    
     <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
@@ -50,48 +70,107 @@
     </div>
 </nav>
 
-<main style="padding-top: 20px;">
-    <div style="max-width: 1400px; margin: 0 auto; padding: 0 15px;">
-        <a href="media-australia.html" style="color: #d4af37; font-size: 0.75rem; text-transform: uppercase; text-decoration: none;"><i class="fas fa-arrow-left"></i> Back to Media Hub</a>
-    </div>
+<div class="top-nav-link">
+    <a href="media-australia.html"><i class="fas fa-arrow-left"></i> Back to Media Hub</a>
+</div>
 
+<main>
     <div class="intl-header">
-        <h1 class="gold-title">Top Model of the World Finals</h1>
-        <p>International Highlights</p>
+        <h1 class="gold-title">International Hub</h1>
+        <p>Top Model of the World Global Archive</p>
     </div>
 
     <div class="video-list">
-        <div class="video-item" onclick="this.innerHTML='<iframe width=100% height=450 src=\'https://www.youtube.com/watch?v=53sNMin-LGU?autoplay=1\' frameborder=0 allowfullscreen></iframe>'">
+        <div class="video-item" onclick="loadVideo(this, '5xLvPey5rrI')">
             <div class="video-thumb-container">
-                <img src="images/intl-thumb-1.jpg" alt="Egypt 2025 Highlights">
+                <img src="https://img.youtube.com/vi/5xLvPey5rrI/mqdefault.jpg" alt="2025 Winner">
                 <i class="fas fa-play-circle play-btn-large"></i>
             </div>
-            <div class="video-label">Egypt 2025 Highlights</div>
+            <div class="video-label">2025 Winner: Natalia Garizabal</div>
+        </div>
+
+        <div class="video-item" onclick="loadVideo(this, 'YylccqhqTOo')">
+            <div class="video-thumb-container">
+                <img src="https://img.youtube.com/vi/YylccqhqTOo/mqdefault.jpg" alt="2022 Crowning">
+                <i class="fas fa-play-circle play-btn-large"></i>
+            </div>
+            <div class="video-label">2022 Crowning Moment</div>
+        </div>
+
+        <div class="video-item" onclick="loadVideo(this, '_uui2vAiImw')">
+            <div class="video-thumb-container">
+                <img src="https://img.youtube.com/vi/_uui2vAiImw/mqdefault.jpg" alt="2021 Winner">
+                <i class="fas fa-play-circle play-btn-large"></i>
+            </div>
+            <div class="video-label">2021 Winner: Peru</div>
+        </div>
+
+        <div class="video-item" onclick="loadVideo(this, 'MD0tKQzm6WE')">
+            <div class="video-thumb-container">
+                <img src="https://img.youtube.com/vi/MD0tKQzm6WE/mqdefault.jpg" alt="2020 Final">
+                <i class="fas fa-play-circle play-btn-large"></i>
+            </div>
+            <div class="video-label">2020 World Final Highlights</div>
+        </div>
+
+        <div class="video-item" onclick="loadVideo(this, '53sNMin-LGU')">
+            <div class="video-thumb-container">
+                <img src="https://img.youtube.com/vi/53sNMin-LGU/mqdefault.jpg" alt="Finale 31">
+                <i class="fas fa-play-circle play-btn-large"></i>
+            </div>
+            <div class="video-label">Finale 31: Hurghada</div>
+        </div>
+
+        <div class="video-item" onclick="loadVideo(this, 'AD3JTAQoYx4')">
+            <div class="video-thumb-container">
+                <img src="https://img.youtube.com/vi/AD3JTAQoYx4/mqdefault.jpg" alt="Asia History">
+                <i class="fas fa-play-circle play-btn-large"></i>
+            </div>
+            <div class="video-label">Asia Rankings 2000-2025</div>
         </div>
     </div>
 
-    <h2 style="text-align: center; color: #d4af37; font-family: 'Playfair Display'; font-size: 1.5rem;">International Gallery</h2>
-    <div class="intl-gallery-grid">
-        <img src="images/gallery/intl/2025/winner.jpg" onclick="openPhoto(this)">
-        <img src="images/gallery/intl/2025/2025_01.jpg" onclick="openPhoto(this)">
-        <img src="images/intl-gal-3.jpg" onclick="openPhoto(this)">
-        <img src="images/intl-gal-4.jpg" onclick="openPhoto(this)">
-        <img src="images/intl-gal-5.jpg" onclick="openPhoto(this)">
+    <h2 style="text-align: center; color: #d4af37; font-family: 'Playfair Display'; margin-top: 50px;">World Finale Gallery</h2>
+    <div class="photo-gallery">
+        <img src="images/gallery/intl/winner.jpg" class="zoom-item" onclick="openPhoto(this.src)" alt="Top Model Winner">
+        <img src="images/gallery/intl/2025_01.jpg" class="zoom-item" onclick="openPhoto(this.src)" alt="Top Model 2025 Highlight">
     </div>
 </main>
 
-<div id="photo-modal"><span class="close-x" onclick="closePhoto()">&times;</span><img id="modal-img" src=""></div>
+<div id="photo-modal">
+    <span class="close-x" onclick="closePhoto()">&times;</span>
+    <img id="modal-img" src="">
+</div>
 
-<footer><p style="text-align: center; color: #666; font-size: 0.75rem; margin: 40px 0;">&copy; 2026 Top Model Australia. All rights reserved.</p></footer>
+<footer>
+    <div class="social-container" style="text-align: center; margin: 40px 0 20px 0;">
+        <a href="https://www.instagram.com/topmodeloftheworld_aus/" target="_blank" style="color: #d4af37; font-size: 1.5rem; margin: 0 10px;"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61579750535578" target="_blank" style="color: #d4af37; font-size: 1.5rem; margin: 0 10px;"><i class="fab fa-facebook"></i></a>
+    </div>
+    <div class="footer-nav" style="text-align: center; margin-bottom: 15px;">
+        <a href="sitemap.html" style="color: #ccc; text-decoration: none; margin: 0 10px; font-size: 0.8rem;">Sitemap</a>
+        <a href="privacy.html" style="color: #ccc; text-decoration: none; margin: 0 10px; font-size: 0.8rem;">Privacy</a>
+    </div>
+    <p style="text-align: center; color: #666; font-size: 0.75rem;">&copy; 2026 Top Model Australia. All rights reserved.</p>
+</footer>
 
 <script>
-    document.getElementById('mobile-menu').addEventListener('click', () => {
+    function loadVideo(element, id) {
+        element.innerHTML = `<iframe width="100%" height="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/${id}?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    }
+
+    function openPhoto(src) {
+        document.getElementById('modal-img').src = src;
+        document.getElementById('photo-modal').style.display = 'flex';
+    }
+    function closePhoto() {
+        document.getElementById('photo-modal').style.display = 'none';
+    }
+
+    document.getElementById('mobile-menu').onclick = function() {
         document.querySelector('.nav-links').classList.toggle('active');
-    });
-    function openPhoto(img) { document.getElementById('modal-img').src = img.src; document.getElementById('photo-modal').style.display = 'flex'; }
-    function closePhoto() { document.getElementById('photo-modal').style.display = 'none'; }
+    };
 </script>
+
 </body>
-
 </html>
-
