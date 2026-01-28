@@ -9,33 +9,90 @@
     <link rel="stylesheet" href="css/style.css?v=702">
     <style>
         body { background: #000; color: #fff; line-height: 1.6; }
-        .auth-container { max-width: 600px; margin: 40px auto; padding: 30px; border: 1px solid #d4af37; background: #0a0a0a; border-radius: 8px; }
-        .main-title { font-family: 'Playfair Display'; font-size: 1.4rem; color: #d4af37; text-align: center; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 2px; }
-        .sub-title { font-size: 0.9rem; color: #d4af37; margin-bottom: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; text-align: center; }
-        .policy-content { height: 250px; overflow-y: auto; background: #111; padding: 20px; border: 1px solid #333; margin-bottom: 25px; font-size: 0.8rem; color: #ccc; }
+        
+        .auth-container { 
+            max-width: 600px; 
+            margin: 15px auto; /* Further reduced margin */
+            padding: 15px 25px; /* Further reduced padding */
+            border: 1px solid #d4af37; 
+            background: #0a0a0a; 
+            border-radius: 8px; 
+        }
+        
+        .main-title { 
+            font-family: 'Playfair Display'; 
+            font-size: 1.3rem; 
+            color: #d4af37; 
+            text-align: center; 
+            margin-top: 0; 
+            margin-bottom: 15px; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+        }
+
+        /* REVISED: Increased height for full visibility */
+        .policy-content { 
+            height: 600px; /* Increased from 420px */
+            overflow-y: auto; 
+            background: #111; 
+            padding: 15px; 
+            border: 1px solid #333; 
+            margin-bottom: 15px; 
+            font-size: 0.9rem; 
+            color: #ccc; 
+        }
+        
         .policy-content::-webkit-scrollbar { width: 6px; }
         .policy-content::-webkit-scrollbar-thumb { background: #d4af37; }
-        .button-group { display: flex; flex-direction: column; gap: 15px; }
-        .gold-pay-btn { background: #d4af37; color: #000; border: 2px solid #d4af37; padding: 18px; font-family: 'Open Sans', sans-serif; font-size: 0.95rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.4s ease; }
-        .gold-pay-btn:hover { background: transparent; color: #d4af37; transform: translateY(-2px); }
-        .nav-options { text-align: center; color: #888; font-size: 0.75rem; margin-top: 10px; }
-        .nav-options a { color: #d4af37; text-decoration: none; font-weight: 600; margin-left: 5px; }
+        
+        .button-group { display: flex; flex-direction: column; gap: 8px; }
+        
+        .gold-pay-btn { 
+            background: #d4af37; 
+            color: #000; 
+            border: 2px solid #d4af37; 
+            padding: 14px; 
+            font-family: 'Open Sans', sans-serif; 
+            font-size: 0.95rem; 
+            font-weight: 700; 
+            letter-spacing: 2px; 
+            text-transform: uppercase; 
+            cursor: pointer; 
+            transition: all 0.4s ease; 
+        }
+        
+        .nav-options { 
+            text-align: center; 
+            color: #888; 
+            font-size: 0.7rem; 
+            margin-top: 5px; 
+        }
+
+        @media (max-width: 768px) {
+            .auth-container { margin: 10px; padding: 15px; width: auto; }
+            .policy-content { height: 420px; } /* Increased from 380px for mobile */
+            .main-title { font-size: 1.1rem; }
+        }
     </style>
 </head>
 <body>
     <main class="auth-container">
         <h1 class="main-title">Final Step: Authorization</h1>
-        <p class="sub-title">Media, Conduct & Parental Terms</p>
+        
         <div class="policy-content">
-            <p>By proceeding with this registration, you grant Top Model of the World Australia the irrevocable right to use the applicant's name, likeness, image, and voice in all forms of media for advertising, trade, and any other lawful purposes.</p>
-            <p>You understand that the registration fee of $300 AUD is non-refundable and covers administrative processing and initial screening. This does not guarantee selection for the national finals.</p>
+            <p>1. <strong>Consent:</strong> By proceeding with this registration, you grant <strong>Top Model of the World Australia</strong> the irrevocable right to use the applicant's name, likeness, image, and voice in all forms of media for advertising, trade, and any other lawful purposes.</p>
+            
+            <p>2. <strong>Refund:</strong> You understand that the registration fee of $300 AUD is non-refundable and covers administrative processing, initial screening, and hall & staff hiring costs. This does not guarantee selection for the national finals.</p>
+            
             <p><strong>For Teen Applicants:</strong> A parent or legal guardian must accompany the contestant to all official rehearsals and the finale event. Official photography for the Teen Section is for judging purposes and will not be published in public galleries.</p>
-            <p>All participants and their representatives must conduct themselves with professional integrity throughout the competition process.</p>
+            
+            <p><strong>All participants and their representatives must conduct themselves with professional integrity throughout the competition process.</strong></p>
         </div>
+
         <div class="button-group">
             <button onclick="handlePayment()" class="gold-pay-btn">Proceed to Payment</button>
             <div class="nav-options">
-                Not ready? <a href="index.html">Return to Home</a>
+                Not ready? <a href="index.html" style="color:#d4af37; text-decoration:none;">Return to Home</a>
             </div>
         </div>
     </main>
