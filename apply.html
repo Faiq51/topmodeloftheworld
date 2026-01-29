@@ -51,6 +51,12 @@
         }
         .custom-form-group input:focus { border-color: #d4af37; outline: none; }
 
+        /* Style for the Date Picker to match Register.html */
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1) sepia(100%) saturate(1000%) hue-rotate(10deg);
+            cursor: pointer;
+        }
+
         .submit-btn { 
             width: 100%; 
             padding: 15px; 
@@ -74,9 +80,7 @@
         }
         
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-
-        /* Style for hidden honeypot */
-        .hidden-field { display: none !important; visibility: hidden !important; }
+        .hidden-field { display: none !important; }
     </style>
 </head>
 <body>
@@ -102,8 +106,6 @@
             <input type="hidden" name="access_key" value="3ec49bf1-c2e5-4733-8661-5f5164d0a07b">
             <input type="hidden" name="subject" value="New National Finalist Application">
             <input type="hidden" name="from_name" value="Top Model Australia Website">
-            <input type="hidden" name="replyto" value="email">
-            
             <input type="checkbox" name="botcheck" class="hidden-field">
 
             <div class="form-row">
@@ -119,8 +121,8 @@
 
             <div class="form-row">
                 <div class="custom-form-group">
-                    <label>Instagram Link</label>
-                    <input type="url" name="instagram" required placeholder="link to profile">
+                    <label>Date of Birth</label>
+                    <input type="date" name="dob" required>
                 </div>
                 <div class="custom-form-group">
                     <label>Phone Number</label>
@@ -128,21 +130,26 @@
                 </div>
             </div>
 
-            <div class="form-row" style="grid-template-columns: 0.8fr 1.2fr;">
+            <div class="form-row">
+                <div class="custom-form-group">
+                    <label>Instagram Link</label>
+                    <input type="url" name="instagram" required placeholder="link to profile">
+                </div>
                 <div class="custom-form-group">
                     <label>Height (cm)</label>
                     <input type="number" name="height" required placeholder="e.g. 175">
                 </div>
-                <div class="custom-form-group">
-                    <label>State</label>
-                    <select name="state" required>
-                        <option value="" disabled selected>Select</option>
-                        <option value="NSW">NSW</option><option value="VIC">VIC</option>
-                        <option value="QLD">QLD</option><option value="WA">WA</option>
-                        <option value="SA">SA</option><option value="TAS">TAS</option>
-                        <option value="ACT">ACT</option><option value="NT">NT</option>
-                    </select>
-                </div>
+            </div>
+
+            <div class="custom-form-group">
+                <label>State</label>
+                <select name="state" required>
+                    <option value="" disabled selected>Select Your State</option>
+                    <option value="NSW">NSW</option><option value="VIC">VIC</option>
+                    <option value="QLD">QLD</option><option value="WA">WA</option>
+                    <option value="SA">SA</option><option value="TAS">TAS</option>
+                    <option value="ACT">ACT</option><option value="NT">NT</option>
+                </select>
             </div>
 
             <div class="custom-form-group">
@@ -193,23 +200,18 @@
             body: json
         })
         .then(async (response) => {
-            let jsonResponse = await response.json();
+            let jsonRes = await response.json();
             if (response.ok) {
-                // Successful submission
                 window.location.href = "thankyou-application.html";
             } else {
-                // Show detailed error if Web3Forms rejects the submission
-                console.error("Web3Forms Error:", jsonResponse);
-                alert("Submission failed: " + (jsonResponse.message || "Please check your entries."));
+                alert("Submission failed: " + (jsonRes.message || "Check entries."));
                 statusText.style.display = 'none';
                 btn.disabled = false;
                 btn.innerText = "Submit Application";
             }
         })
         .catch(error => {
-            // Handle network/connection errors
-            console.error("Network Error:", error);
-            alert("Error connecting to server. Please check your internet connection and try again.");
+            alert("Error connecting. Check your internet.");
             statusText.style.display = 'none';
             btn.disabled = false;
             btn.innerText = "Submit Application";
