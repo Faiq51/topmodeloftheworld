@@ -47,7 +47,6 @@
             display: block;
         }
         .gold-submit-btn:hover { background: #d4af37; color: #000; }
-        .gold-submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
         @media screen and (max-width: 768px) {
             .contact-form-container { width: 92%; padding: 30px 20px; }
@@ -74,7 +73,7 @@
     <p style="text-align: center; color: #ccc; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem;">For media enquiries or general questions</p>
 
     <div class="contact-form-container">
-        <form id="contactForm">
+        <form action="send-contact.php" method="POST">
             <label class="form-label">Full Name</label>
             <input type="text" name="name" class="glass-input" placeholder="Your Name" required>
 
@@ -84,8 +83,7 @@
             <label class="form-label">Message</label>
             <textarea name="message" class="glass-input" placeholder="How can we help you?" required></textarea>
 
-            <button type="submit" id="submitBtn" class="gold-submit-btn">SEND MESSAGE</button>
-            <p id="statusMsg" style="color: #d4af37; text-align: center; margin-top: 15px; display: none; font-size: 0.8rem; letter-spacing: 1px;">SENDING...</p>
+            <button type="submit" class="gold-submit-btn">SEND MESSAGE</button>
         </form>
     </div>
 </main>
@@ -106,31 +104,5 @@
 </footer>
 
 <script src="js/script.js"></script>
-<script>
-    // PASTE YOUR GOOGLE WEB APP URL BELOW
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwminhURNe0uM8_5e3DawGoE7fksTExeqL5dOha-phlQ9Otbr1dF5VGVBYY0g3xPzLD0A/exec'; 
-    
-    const form = document.getElementById('contactForm');
-    const btn = document.getElementById('submitBtn');
-    const status = document.getElementById('statusMsg');
-
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      btn.disabled = true;
-      status.style.display = 'block';
-      status.innerText = "SENDING...";
-
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-            // Success: Redirect to success page
-            window.location.href = "contact-success.html";
-        })
-        .catch(error => {
-            alert("There was an error sending your message. Please try again.");
-            btn.disabled = false;
-            status.style.display = 'none';
-        });
-    });
-</script>
 </body>
 </html>
