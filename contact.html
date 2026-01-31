@@ -27,6 +27,7 @@
             margin-bottom: 25px;
             font-family: 'Open Sans', sans-serif;
             border-radius: 4px;
+            box-sizing: border-box;
         }
         textarea.glass-input { height: 160px; resize: none; }
         .form-label { color: #d4af37; font-size: 0.75rem; letter-spacing: 1.5px; display: block; margin-bottom: 8px; font-weight: 600; text-transform: uppercase; }
@@ -73,7 +74,14 @@
     <p style="text-align: center; color: #ccc; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem;">For media enquiries or general questions</p>
 
     <div class="contact-form-container">
-        <form action="send-contact.php" method="POST">
+        <form action="https://api.web3forms.com/submit" method="POST">
+            
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+            
+            <input type="hidden" name="redirect" value="https://topmodeloftheworldaustralia.com.au/thankyou-contact.html">
+            
+            <input type="hidden" name="subject" value="General Inquiry - Top Model Australia">
+
             <label class="form-label">Full Name</label>
             <input type="text" name="name" class="glass-input" placeholder="Your Name" required>
 
@@ -99,7 +107,7 @@
     </div>
     <div class="copyright" style="text-align: center;">
         <p style="color: #ccc;">&copy; 2026 Top Model of the World - Australia. All rights reserved.</p>
-        <p class="architect-credit" style="font-size: 0.6rem; margin-top: 10px; opacity: 0.7; color: #ccc;">Digital Architecture & Design support by Gemini.</p>
+        <p style="font-size: 0.6rem; margin-top: 10px; opacity: 0.7; color: #ccc;">Verified Professional Infrastructure.</p>
     </div>
 </footer>
 
