@@ -39,7 +39,7 @@
             transform: translate(-50%, -50%); 
             color: #d4af37; font-size: 2rem; opacity: 0.8; 
         }
-
+/* ---- added by copilot ---*/
 .winner-card img {
     width: 100%;
     height: auto;
@@ -47,6 +47,47 @@
     aspect-ratio: 16 / 9;
     border-radius: 8px; /* optional, matches your card style */
 }
+
+        /* ---- added by gemini ---*/
+/* 1. Constrain the card container */
+.winner-card {
+    position: relative; /* Essential for the absolute overlay to work */
+    width: 100%;        /* Allows it to be responsive */
+    max-width: 500px;   /* Change this number to your preferred size (e.g., 400px, 600px) */
+    margin: 20px auto;  /* Centers the video card on the page */
+    cursor: pointer;    /* Makes it obvious it's clickable */
+    overflow: hidden;   /* Keeps everything neat */
+    border-radius: 8px; /* Optional: adds nice rounded corners */
+}
+
+/* 2. Ensure the YouTube thumbnail fits the container */
+.winner-card img {
+    width: 100%;
+    height: auto;       /* Maintains the 16:9 aspect ratio */
+    display: block;     /* Removes unwanted bottom whitespace */
+}
+
+/* 3. Your existing overlay code remains mostly the same */
+.video-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #d4af37;
+    font-size: 3rem;    /* Slightly larger icon usually looks better */
+    opacity: 0.8;
+    transition: opacity 0.3s; /* Smooth fade effect */
+}
+
+/* Optional: Make the play button glow on hover */
+.winner-card:hover .video-overlay {
+    opacity: 1;
+}
+
+        
+
+
+
 
         
         /* --- ZOOM LIGHTBOX --- */
