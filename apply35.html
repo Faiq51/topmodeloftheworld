@@ -7,7 +7,7 @@
     <title>Apply Now – Top Model of the World Australia</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css?v=652">
+    <link rel="stylesheet" href="css/style.css?v=653">
     
     <style>
         body { background: #000; color: #fff; }
@@ -60,7 +60,6 @@
             cursor: pointer;
         }
 
-        /* Gold Divider */
         .eligibility-divider {
             width: 60%;
             height: 1px;
@@ -69,7 +68,6 @@
             opacity: 0.7;
         }
 
-        /* Eligibility Confirmation Section */
         .eligibility-confirm {
             margin: 15px auto 25px;
             text-align: center;
@@ -194,12 +192,9 @@
         <h1 class="gold-title">Application Form</h1>
         
         <form id="applicationForm">
-            <!-- Web3Forms Security Credentials -->
             <input type="hidden" name="access_key" value="3ec49bf1-c2e5-4733-8661-5f5164d0a07b">
             <input type="hidden" name="subject" value="New National Finalist Application">
             <input type="hidden" name="from_name" value="Top Model Australia Website">
-            
-            <!-- Honeypot anti-spam field -->
             <input type="checkbox" name="botcheck" class="hidden-field" style="display: none;">
 
             <div class="form-row">
@@ -272,19 +267,19 @@
                 <div class="eligibility-grid">
                     <div class="eligibility-column">
                         <label class="eligibility-item">
-                            <input type="checkbox" name="confirm_female" value="Yes" required>
+                            <input type="checkbox" id="c_female" required>
                             <span class="checkmark"></span>
                             I confirm I am female
                         </label>
 
                         <label class="eligibility-item">
-                            <input type="checkbox" name="confirm_passport" value="Yes" required>
+                            <input type="checkbox" id="c_passport" required>
                             <span class="checkmark"></span>
                             I possess a valid passport
                         </label>
 
                         <label class="eligibility-item">
-                            <input type="checkbox" name="confirm_health" value="Yes" required>
+                            <input type="checkbox" id="c_health" required>
                             <span class="checkmark"></span>
                             I am in good health
                         </label>
@@ -292,19 +287,22 @@
 
                     <div class="eligibility-column">
                         <label class="eligibility-item">
-                            <input type="checkbox" name="confirm_age" value="Yes" required>
+                            <input type="checkbox" id="c_age" required>
                             <span class="checkmark"></span>
                             I confirm I am aged 18–35
                         </label>
 
                         <label class="eligibility-item">
-                            <input type="checkbox" name="confirm_travel" value="Yes" required>
+                            <input type="checkbox" id="c_travel" required>
                             <span class="checkmark"></span>
                             I am fit to travel overseas
                         </label>
                     </div>
                 </div>
             </div>
+
+            <!-- Single bundled hidden field for eligibility to satisfy Web3Forms security filter -->
+            <input type="hidden" name="eligibility_status" id="eligibility_status" value="Confirmed">
 
             <button type="submit" class="submit-btn" id="submitBtn">Submit Application</button>
             <p id="formStatus" style="color: #d4af37; font-size: 0.7rem; text-align: center; margin-top: 10px; display: none; text-transform: uppercase;">Sending...</p>
@@ -335,6 +333,17 @@
 
     form.addEventListener('submit', function(e) {
         e.preventDefault();
+        
+        // Ensure browser validation checks individual custom checkboxes
+        if (!document.getElementById('c_female').checked ||
+            !document.getElementById('c_passport').checked ||
+            !document.getElementById('c_health').checked ||
+            !document.getElementById('c_age').checked ||
+            !document.getElementById('c_travel').checked) {
+            alert("Please check all eligibility requirements to proceed.");
+            return;
+        }
+
         statusText.style.display = 'block';
         btn.disabled = true;
         btn.innerText = "Processing...";
@@ -342,11 +351,8 @@
         const formData = new FormData(form);
         const object = Object.fromEntries(formData);
         
-        // Ensure checkboxes pass clear affirmative text to Web3Forms
-        const checkboxes = ['confirm_female', 'confirm_passport', 'confirm_health', 'confirm_age', 'confirm_travel'];
-        checkboxes.forEach(id => {
-            object[id] = form.elements[id].checked ? "Confirmed" : "Not Confirmed";
-        });
+        // Pass standard consolidated status to prevent security parameter rejection
+        object.eligibility_status = "All 5 Eligibility Criteria Checked and Confirmed by Applicant";
 
         const json = JSON.stringify(object);
 
