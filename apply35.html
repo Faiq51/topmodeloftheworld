@@ -7,7 +7,7 @@
     <title>Apply Now – Top Model of the World Australia</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css?v=653">
+    <link rel="stylesheet" href="css/style.css?v=654">
     
     <style>
         body { background: #000; color: #fff; }
@@ -60,92 +60,91 @@
             cursor: pointer;
         }
 
+        /* --- REFINED ELIGIBILITY SECTION STYLING --- */
         .eligibility-divider {
-            width: 60%;
+            width: 80%;
             height: 1px;
-            background: #d4af37;
-            margin: 25px auto 15px;
-            opacity: 0.7;
+            background: rgba(212, 175, 55, 0.3);
+            margin: 30px auto 20px;
         }
 
         .eligibility-confirm {
-            margin: 15px auto 25px;
-            text-align: center;
-            max-width: 85%;
+            margin: 0 auto 25px;
+            max-width: 500px;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 20px 25px;
+            border-radius: 4px;
         }
 
         .eligibility-confirm h3 {
-            color: #fff;
-            font-size: 1.1rem;
+            color: #d4af37;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 0;
             margin-bottom: 15px;
-            letter-spacing: 1px;
+            text-align: center;
         }
 
-        .eligibility-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px 20px;
-            justify-items: center;
-        }
-
-        .eligibility-column {
+        .eligibility-stack {
             display: flex;
             flex-direction: column;
             gap: 12px;
-            align-items: center;
         }
 
         .eligibility-item {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 10px;
-            font-size: 0.85rem;
-            color: #d4af37;
-            text-align: center;
+            gap: 12px;
+            font-size: 0.8rem;
+            color: #ccc;
             cursor: pointer;
-            transition: transform 0.2s ease, opacity 0.2s ease;
+            transition: color 0.3s ease;
+            user-select: none;
         }
 
         .eligibility-item:hover {
-            transform: scale(1.05);
-            opacity: 0.9;
+            color: #fff;
         }
 
         .eligibility-item input {
             display: none;
         }
 
-        .eligibility-item .checkmark {
-            width: 20px;
-            height: 20px;
-            background: #d4af37;
-            border-radius: 50%;
-            position: relative;
-            transition: background 0.3s ease;
+        .checkmark {
+            width: 18px;
+            height: 18px;
+            border: 1px solid #d4af37;
+            background: #111;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
         }
 
-        .eligibility-item .checkmark::after {
+        .checkmark::after {
             content: "";
-            position: absolute;
-            top: 4px;
-            left: 6px;
-            width: 6px;
-            height: 12px;
-            border: solid #fff; 
+            width: 4px;
+            height: 9px;
+            border: solid #000;
             border-width: 0 2px 2px 0;
             transform: rotate(45deg);
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            display: none;
+        }
+
+        .eligibility-item input:checked + .checkmark {
+            background: #d4af37;
         }
 
         .eligibility-item input:checked + .checkmark::after {
-            opacity: 1;
+            display: block;
         }
 
         @media (max-width: 768px) {
-            .eligibility-confirm { max-width: 100%; }
-            .eligibility-grid { grid-template-columns: 1fr; }
+            .eligibility-confirm { max-width: 100%; padding: 15px; }
         }
 
         .submit-btn { 
@@ -262,46 +261,41 @@
             <div class="eligibility-divider"></div>
 
             <div class="eligibility-confirm">
-                <h3>Eligibility Confirmation (Required)</h3>
+                <h3>Mandatory Eligibility Criteria</h3>
 
-                <div class="eligibility-grid">
-                    <div class="eligibility-column">
-                        <label class="eligibility-item">
-                            <input type="checkbox" id="c_female" required>
-                            <span class="checkmark"></span>
-                            I confirm I am female
-                        </label>
+                <div class="eligibility-stack">
+                    <label class="eligibility-item">
+                        <input type="checkbox" id="c_female" required>
+                        <span class="checkmark"></span>
+                        <span>I confirm I am female</span>
+                    </label>
 
-                        <label class="eligibility-item">
-                            <input type="checkbox" id="c_passport" required>
-                            <span class="checkmark"></span>
-                            I possess a valid passport
-                        </label>
+                    <label class="eligibility-item">
+                        <input type="checkbox" id="c_age" required>
+                        <span class="checkmark"></span>
+                        <span>I confirm I am aged 18–35</span>
+                    </label>
 
-                        <label class="eligibility-item">
-                            <input type="checkbox" id="c_health" required>
-                            <span class="checkmark"></span>
-                            I am in good health
-                        </label>
-                    </div>
+                    <label class="eligibility-item">
+                        <input type="checkbox" id="c_passport" required>
+                        <span class="checkmark"></span>
+                        <span>I possess a valid passport</span>
+                    </label>
 
-                    <div class="eligibility-column">
-                        <label class="eligibility-item">
-                            <input type="checkbox" id="c_age" required>
-                            <span class="checkmark"></span>
-                            I confirm I am aged 18–35
-                        </label>
+                    <label class="eligibility-item">
+                        <input type="checkbox" id="c_travel" required>
+                        <span class="checkmark"></span>
+                        <span>I am fit to travel overseas</span>
+                    </label>
 
-                        <label class="eligibility-item">
-                            <input type="checkbox" id="c_travel" required>
-                            <span class="checkmark"></span>
-                            I am fit to travel overseas
-                        </label>
-                    </div>
+                    <label class="eligibility-item">
+                        <input type="checkbox" id="c_health" required>
+                        <span class="checkmark"></span>
+                        <span>I am in good health</span>
+                    </label>
                 </div>
             </div>
 
-            <!-- Single bundled hidden field for eligibility to satisfy Web3Forms security filter -->
             <input type="hidden" name="eligibility_status" id="eligibility_status" value="Confirmed">
 
             <button type="submit" class="submit-btn" id="submitBtn">Submit Application</button>
@@ -334,12 +328,11 @@
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // Ensure browser validation checks individual custom checkboxes
         if (!document.getElementById('c_female').checked ||
-            !document.getElementById('c_passport').checked ||
-            !document.getElementById('c_health').checked ||
             !document.getElementById('c_age').checked ||
-            !document.getElementById('c_travel').checked) {
+            !document.getElementById('c_passport').checked ||
+            !document.getElementById('c_travel').checked ||
+            !document.getElementById('c_health').checked) {
             alert("Please check all eligibility requirements to proceed.");
             return;
         }
@@ -351,7 +344,6 @@
         const formData = new FormData(form);
         const object = Object.fromEntries(formData);
         
-        // Pass standard consolidated status to prevent security parameter rejection
         object.eligibility_status = "All 5 Eligibility Criteria Checked and Confirmed by Applicant";
 
         const json = JSON.stringify(object);
