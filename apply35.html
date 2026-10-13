@@ -7,7 +7,7 @@
     <title>Apply Now – Top Model of the World Australia</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css?v=651">
+    <link rel="stylesheet" href="css/style.css?v=652">
     
     <style>
         body { background: #000; color: #fff; }
@@ -16,7 +16,7 @@
         .form-card { 
             background: rgba(10, 10, 10, 0.9); 
             border: 1px solid #d4af37; 
-            padding: 25px 22px; /* FIXED PADDING */
+            padding: 25px 22px; 
             border-radius: 4px; 
             box-shadow: 0 15px 35px rgba(0,0,0,0.8); 
         }
@@ -97,7 +97,6 @@
             align-items: center;
         }
 
-        /* Gold Circle Checkmark */
         .eligibility-item {
             display: flex;
             align-items: center;
@@ -135,7 +134,7 @@
             left: 6px;
             width: 6px;
             height: 12px;
-            border: solid #fff; /* WHITE CHECKMARK */
+            border: solid #fff; 
             border-width: 0 2px 2px 0;
             transform: rotate(45deg);
             opacity: 0;
@@ -166,11 +165,10 @@
         }
         .submit-btn:hover { background: #fff; }
 
-        /* UNIFIED SPACING FOR ALL ROWS */
         .form-row { 
             display: grid; 
             grid-template-columns: 1fr 1fr; 
-            column-gap: 10px;   /* MATCHES STATE + MARITAL STATUS */
+            column-gap: 10px;   
             row-gap: 15px; 
         }
 
@@ -196,10 +194,13 @@
         <h1 class="gold-title">Application Form</h1>
         
         <form id="applicationForm">
+            <!-- Web3Forms Security Credentials -->
             <input type="hidden" name="access_key" value="3ec49bf1-c2e5-4733-8661-5f5164d0a07b">
             <input type="hidden" name="subject" value="New National Finalist Application">
             <input type="hidden" name="from_name" value="Top Model Australia Website">
-            <input type="checkbox" name="botcheck" class="hidden-field">
+            
+            <!-- Honeypot anti-spam field -->
+            <input type="checkbox" name="botcheck" class="hidden-field" style="display: none;">
 
             <div class="form-row">
                 <div class="custom-form-group">
@@ -234,7 +235,6 @@
                 </div>
             </div>
 
-            <!-- STATE + MARITAL STATUS ROW -->
             <div class="form-row">
                 <div class="custom-form-group">
                     <label>State</label>
@@ -264,50 +264,44 @@
                 <textarea name="bio" rows="3" placeholder="Briefly describe your modeling background..." required></textarea>
             </div>
 
-            <!-- GOLD DIVIDER -->
             <div class="eligibility-divider"></div>
 
-            <!-- ELIGIBILITY CONFIRMATION SECTION -->
             <div class="eligibility-confirm">
                 <h3>Eligibility Confirmation (Required)</h3>
 
                 <div class="eligibility-grid">
                     <div class="eligibility-column">
-
                         <label class="eligibility-item">
-                            <input type="checkbox" name="confirm_female" required>
+                            <input type="checkbox" name="confirm_female" value="Yes" required>
                             <span class="checkmark"></span>
                             I confirm I am female
                         </label>
 
                         <label class="eligibility-item">
-                            <input type="checkbox" name="confirm_passport" required>
+                            <input type="checkbox" name="confirm_passport" value="Yes" required>
                             <span class="checkmark"></span>
                             I possess a valid passport
                         </label>
 
                         <label class="eligibility-item">
-                            <input type="checkbox" name="confirm_health" required>
+                            <input type="checkbox" name="confirm_health" value="Yes" required>
                             <span class="checkmark"></span>
                             I am in good health
                         </label>
-
                     </div>
 
                     <div class="eligibility-column">
-
                         <label class="eligibility-item">
-                            <input type="checkbox" name="confirm_age" required>
+                            <input type="checkbox" name="confirm_age" value="Yes" required>
                             <span class="checkmark"></span>
                             I confirm I am aged 18–35
                         </label>
 
                         <label class="eligibility-item">
-                            <input type="checkbox" name="confirm_travel" required>
+                            <input type="checkbox" name="confirm_travel" value="Yes" required>
                             <span class="checkmark"></span>
                             I am fit to travel overseas
                         </label>
-
                     </div>
                 </div>
             </div>
@@ -347,6 +341,13 @@
         
         const formData = new FormData(form);
         const object = Object.fromEntries(formData);
+        
+        // Ensure checkboxes pass clear affirmative text to Web3Forms
+        const checkboxes = ['confirm_female', 'confirm_passport', 'confirm_health', 'confirm_age', 'confirm_travel'];
+        checkboxes.forEach(id => {
+            object[id] = form.elements[id].checked ? "Confirmed" : "Not Confirmed";
+        });
+
         const json = JSON.stringify(object);
 
         fetch('https://api.web3forms.com/submit', {
