@@ -37,7 +37,7 @@
             padding: 20px;
             background-color: #1f2833;
             border-radius: 8px;
-            border: 1px solid #45f3ff;
+            border: 1px solid #c5a059;
         }
         h1 {
             color: #c5a059;
@@ -137,14 +137,15 @@
 <div class="container">
     <h1>Application Form</h1>
     
-    <form action="https://api.web3forms.com/submit" method="POST">
+    <form action="https://web3forms.com" method="POST">
         <!-- Web3Forms System Pipeline Configurations -->
         <input type="hidden" name="access_key" value="3ec49bf1-c2e5-4733-8661-5f5164d0a07b">
         <input type="hidden" name="redirect" value="thankyou.html">
         <input type="hidden" name="from_name" value="Top Model Australia Applications">
-        <!-- Renamed field below to bypass Web3Forms custom security bot filtering rules -->
-        <input type="hidden" name="competition_subject" value="New Model Application Submission">
         
+        <!-- Anti-Spam Bot Honeypot field (Must remain blank for validation) -->
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
         <div class="form-group">
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" required>
