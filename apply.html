@@ -356,7 +356,7 @@
         .then(async (response) => {
             let jsonRes = await response.json();
             if (response.ok) {
-                window.location.href = "thankyou-application.html";
+                window.location.href = "thankyou.html";
             } else {
                 alert("Submission failed: " + (jsonRes.message || "Check entries."));
                 statusText.style.display = 'none';
