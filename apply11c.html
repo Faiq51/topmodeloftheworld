@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Now – Top Model of the World Australia</title>
+    <style>
+        :root {
+            --gold: #d4af37;
+            --dark-bg: #111;
+            --card-bg: #1a1a1a;
+            --text-color: #fff;
+            --text-muted: #aaa;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+        }
+        nav a {
+            color: var(--text-color);
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: var(--gold);
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+        h1 {
+            color: var(--gold);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"], input[type="date"], input[type="tel"], input[type="number"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #444;
+            background-color: #222;
+            color: #fff;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--gold);
+            outline: none;
+        }
+        .criteria-box {
+            border: 1px solid var(--gold);
+            padding: 20px;
+            border-radius: 6px;
+            background-color: rgba(212, 175, 55, 0.05);
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        .criteria-box h3 {
+            color: var(--gold);
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 12px;
+            margin-top: 4px;
+            transform: scale(1.2);
+            accent-color: var(--gold);
+        }
+        .checkbox-group label {
+            font-weight: normal;
+            cursor: pointer;
+            line-height: 1.4;
+        }
+        .btn-submit {
+            background-color: var(--gold);
+            color: #000;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100%;
+            border-radius: 4px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.3s;
+        }
+        .btn-submit:hover {
+            background-color: #bfa130;
+        }
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 12px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#" style="color: var(--gold);">Apply Now</a>
+            <a href="#">Sponsors</a>
+            <a href="#">Media</a>
+            <a href="#">Contact Us</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Application Form</h1>
+        
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <!-- Web3Forms Key Configuration -->
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+            
+            <!-- Strategy 3: Dynamic Local Redirection after validation -->
+            <input type="hidden" name="redirect" value="thankyou.html">
+            
+            <div class="form-group">
+                <label for="full_name">Full Name *</label>
+                <input type="text" id="full_name" name="full_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth *</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="instagram_link">Instagram Link *</label>
+                <input type="text" id="instagram_link" name="instagram_link" placeholder="https://instagram.com/username" required>
+            </div>
+
+            <!-- Strategy 1: Explicit Required Instagram Handle for verification -->
+            <div class="form-group" style="border-left: 3px solid var(--gold); padding-left: 10px;">
+                <label for="instagram_handle" style="color: var(--gold);">Your Instagram Handle *</label>
+                <input type="text" id="instagram_handle" name="instagram_handle" placeholder="@username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="height">Height (cm) *</label>
+                <input type="number" id="height" name="height" required>
+            </div>
+
+            <div class="form-group">
+                <label for="state">State *</label>
+                <select id="state" name="state" required>
+                    <option value="" disabled selected>Select Your State</option>
+                    <option value="NSW">NSW</option>
+                    <option value="VIC">VIC</option>
+                    <option value="QLD">QLD</option>
+                    <option value="WA">WA</option>
+                    <option value="SA">SA</option>
+                    <option value="TAS">TAS</option>
+                    <option value="ACT">ACT</option>
+                    <option value="NT">NT</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="marital_status">Marital Status *</label>
+                <select id="marital_status" name="marital_status" required>
+                    <option value="" disabled selected>Select Marital Status</option>
+                    <option value="Single">Single</option>
+                    <option value="Married">Married</option>
+                    <option value="Separated">Separated</option>
+                    <option value="Divorced/Widow">Divorced/Widow</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="bio">Experience / Short Bio</label>
+                <textarea id="bio" name="bio" rows="4"></textarea>
+            </div>
+
+            <!-- Golden Mandatory Eligibility Criteria Container Box -->
+            <div class="criteria-box">
+                <h3>Mandatory Eligibility Criteria</h3>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="c1" name="criteria_female" required>
+                    <label href="#c1" for="c1">I confirm I am female</label>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="c2" name="criteria_age" required>
+                    <label href="#c2" for="c2">I confirm I am aged 18–35</label>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="c3" name="criteria_passport" required>
+                    <label href="#c3" for="c3">I possess a valid passport</label>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="c4" name="criteria_travel" required>
+                    <label href="#c4" for="c4">I am fit to travel overseas</label>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="c5" name="criteria_health" required>
+                    <label href="#c5" for="c5">I am in good health</label>
+                </div>
+
+                <!-- Strategy 1: Mandatory Photo Shoot Coordination Agreement Checkbox -->
+                <div class="checkbox-group" style="margin-top: 15px; padding-top: 15px; border-top: 1px dashed var(--gold);">
+                    <input type="checkbox" id="c_photo" name="criteria_photographer_contact" required>
+                    <label href="#c_photo" for="c_photo" style="color: var(--gold); font-weight: bold;">I agree to be contacted via Instagram DM by the official tournament photographer to arrange my welcome photoshoot. *</label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-submit">Submit Application</button>
+        </form>
+    </div>
+
+    <footer>
+        <div class="footer-text">
+            <a href="#" style="color: #aaa; margin: 0 10px;">Sitemap</a> | 
+            <a href="#" style="color: #aaa; margin: 0 10px;">Privacy</a>
+        </div>
+        <p class="footer-text">© 2026 Top Model of the World - Australia. All rights reserved.</p>
+        <p class="footer-text" style="color: #666;">Digital Architecture & Design support by Gemini.</p>
+    </footer>
+
+</body>
+</html>
