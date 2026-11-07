@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Now – Top Model of the World Australia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #0b0c10; color: #ffffff; font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; }
+        header { background-color: #1f2833; padding: 20px; text-align: center; border-bottom: 2px solid #c5a059; }
+        nav a { color: #ffffff; text-decoration: none; margin: 0 15px; font-weight: bold; }
+        nav a:hover { color: #c5a059; }
+        .container { max-width: 600px; margin: 40px auto; padding: 20px; background-color: #1f2833; border-radius: 8px; border: 1px solid #c5a059; }
+        h1 { color: #c5a059; text-align: center; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; color: #c5a059; font-weight: bold; }
+        input[type="text"], input[type="email"], input[type="date"], select, textarea { width: 100%; padding: 10px; box-sizing: border-box; background-color: #0b0c10; border: 1px solid #c5a059; color: #ffffff; border-radius: 4px; font-family: 'Montserrat', sans-serif; }
+        .criteria-box { border: 2px solid #c5a059; padding: 20px; background-color: #151c24; border-radius: 6px; margin-bottom: 20px; }
+        .criteria-box h3 { color: #c5a059; margin-top: 0; text-align: center; }
+        .checkbox-group { display: flex; align-items: center; margin-bottom: 12px; }
+        .checkbox-group input { margin-right: 12px; transform: scale(1.2); cursor: pointer; }
+        .checkbox-group label { margin-bottom: 0; color: #ffffff; font-weight: normal; cursor: pointer; }
+        .checkbox-group.photographer-consent label { color: #ffdd67; font-weight: bold; }
+        button { width: 100%; padding: 15px; background-color: #c5a059; color: #0b0c10; border: none; font-weight: bold; font-size: 16px; cursor: pointer; border-radius: 4px; text-transform: uppercase; font-family: 'Montserrat', sans-serif; }
+        button:hover { background-color: #e5b869; }
+        button:disabled { background-color: #555555; color: #aaaaaa; cursor: not-allowed; }
+        footer { background-color: #0b0c10; text-align: center; padding: 20px; font-size: 12px; color: #666; border-top: 1px solid #1f2833; margin-top: 40px; }
+        #error-msg { color: #ff4d4d; font-weight: bold; text-align: center; margin-bottom: 15px; display: none; }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Apply Now</a>
+        <a href="#">Sponsors</a>
+        <a href="#">Media</a>
+        <a href="#">Contact Us</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h1>Application Form</h1>
+    <div id="error-msg">Submission encountered an error. Please try again.</div>
+    
+    <form id="appForm">
+        <input type="checkbox" name="botcheck" style="display: none;">
+
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" name="phone" required>
+        </div>
+
+        <div class="form-group">
+            <label for="instagram">Instagram Link</label>
+            <input type="text" id="instagram" name="instagram" required>
+        </div>
+
+        <div class="form-group">
+            <label for="instagram_handle">Your Instagram Handle (e.g., @username)</label>
+            <input type="text" id="instagram_handle" name="instagram_handle" placeholder="@" required>
+        </div>
+
+        <div class="form-group">
+            <label for="height">Height (cm)</label>
+            <input type="text" id="height" name="height" required>
+        </div>
+
+        <div class="form-group">
+            <label for="state">State</label>
+            <select id="state" name="state" required>
+                <option value="">Select Your State</option>
+                <option value="NSW">NSW</option>
+                <option value="VIC">VIC</option>
+                <option value="QLD">QLD</option>
+                <option value="WA">WA</option>
+                <option value="SA">SA</option>
+                <option value="TAS">TAS</option>
+                <option value="ACT">ACT</option>
+                <option value="NT">NT</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="marital_status">Marital Status</label>
+            <select id="marital_status" name="marital_status" required>
+                <option value="">Select Marital Status</option>
+                <option value="Single">Single</option>
+                <option value="Married">Married</option>
+                <option value="Separated">Separated</option>
+                <option value="Divorced/Widow">Divorced/Widow</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="bio">Experience / Short Bio</label>
+            <textarea id="bio" name="bio" rows="4" required></textarea>
+        </div>
+
+        <div class="criteria-box">
+            <h3>Mandatory Eligibility Criteria</h3>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="female" name="criteria_female" value="Yes" required>
+                <label for="female">I confirm I am female</label>
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="age" name="criteria_age" value="Yes" required>
+                <label for="age">I confirm I am aged 18–35</label>
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="passport" name="criteria_passport" value="Yes" required>
+                <label for="passport">I possess a valid passport</label>
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="travel" name="criteria_travel" value="Yes" required>
+                <label for="travel">I am fit to travel overseas</label>
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="health" name="criteria_health" value="Yes" required>
+                <label for="health">I am in good health</label>
+            </div>
+
+            <div class="checkbox-group photographer-consent">
+                <input type="checkbox" id="photo_consent" name="photographer_contact_consent" value="Yes" required>
+                <label for="photo_consent">I agree to be contacted via Instagram DM by the official tournament photographer to arrange my welcome photoshoot.</label>
+            </div>
+        </div>
+
+        <button type="submit" id="submitBtn">Submit Application</button>
+    </form>
+</div>
+
+<footer>
+    <p><a href="#" style="color: #666; text-decoration: none;">Sitemap</a> | <a href="#" style="color: #666; text-decoration: none;">Privacy</a></p>
+    <p>© 2026 Top Model of the World - Australia. All rights reserved.</p>
+    <p>Digital Architecture & Design support by Gemini.</p>
+</footer>
+
+<script>
+const form = document.getElementById('appForm');
+const submitBtn = document.getElementById('submitBtn');
+const errorMsg = document.getElementById('error-msg');
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    submitBtn.disabled = true;
+    submitBtn.innerText = "Sending...";
+    errorMsg.style.display = "none";
+
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    
+    object.access_key = "YOUR_ACCESS_KEY_HERE";
+    object.from_name = "Top Model Australia Applications";
+
+    const json = JSON.stringify(object);
+
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: json
+    })
+    .then(async (response) => {
+        let res = await response.json();
+        if (response.status == 200) {
+            window.location.href = "thankyou.html";
+        } else {
+            errorMsg.innerText = res.message || "Submission failed.";
+            errorMsg.style.display = "block";
+            submitBtn.disabled = false;
+            submitBtn.innerText = "Submit Application";
+        }
+    })
+    .catch(error => {
+        errorMsg.innerText = "Network error. Please check your connection and try again.";
+        errorMsg.style.display = "block";
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Submit Application";
+    });
+});
+</script>
+
+</body>
+</html>
